@@ -1,35 +1,58 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { BrowserRouter, NavLink, Route, Routes } from "react-router-dom";
+import { routes } from "./routes/index";
+import React from "react";
+import HeaderComponent from "./components/HeaderComponent/HeaderComponent";
+import FooterComponent from "./components/FooterComponent/FooterComponent";
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+    <div>
+      <HeaderComponent />
+      <hr />
+      <BrowserRouter>
+        <header>
+          <div>
+            <div className="img">
+              <img src="https://canifa.com/assets/images/logo.svg" alt="" />
+            </div>
+            <div className="menu">
+              <ul>
+                <li>
+                  <NavLink to="women">Nữ</NavLink>
+                </li>
+                <li>
+                  <NavLink to="men">Nam</NavLink>
+                </li>
+                <li>
+                  <NavLink to="child">Trẻ em</NavLink>
+                </li>
+                <li>
+                  <NavLink to="map">Cửa hàng</NavLink>
+                </li>
+                <li>
+                  <NavLink to="login">Tài khoản</NavLink>
+                </li>
+                <li>
+                  <NavLink to="order">Giỏ hàng</NavLink>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </header>
+        <hr />
+        <Routes>
+          {routes.map((route) => {
+            const Page = route.page;
+            return (
+              <Route key={route.path} path={route.path} element={<Page />} />
+            );
+          })}
+        </Routes>
+      </BrowserRouter>
+      <hr />
+      <FooterComponent />
+    </div>
+  );
 }
 
-export default App
+export default App;
