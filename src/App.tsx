@@ -41,12 +41,13 @@ function App() {
         </header>
         <hr />
         <Routes>
-          {routes.map((route) => {
-            const Page = route.page;
-            return (
-              <Route key={route.path} path={route.path} element={<Page />} />
-            );
-          })}
+          {routes.map((route) => (
+            <Route
+              key={route.path}
+              path={route.path}
+              element={<route.page />}
+            />
+          ))}
         </Routes>
       </BrowserRouter>
       <hr />
