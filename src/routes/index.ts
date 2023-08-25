@@ -7,12 +7,14 @@ import OrderPage from "../pages/OrderPage/OrderPage";
 import WomenProductPage from "../pages/WomenProductPage/WomenProductPage";
 import SignInPage from "../pages/SignInPage/SignInPage";
 import SignUpPage from "../pages/SignUpPage/SignUpPage";
+import LoginPage from "../pages/LoginPage/LoginPage";
 
 export const routes = [
   { path: "/", page: HomePage },
   { path: "/child", page: ChildProductPage },
   { path: "/signin", page: SignInPage },
   { path: "/signup", page: SignUpPage },
+  { path: "/login", page: LoginPage },
   { path: "/map", page: MapPage },
   { path: "/men", page: MenProductPage },
   { path: "/order", page: OrderPage },
