@@ -5,6 +5,7 @@ import { CardMedia, Divider } from "@mui/material";
 import ServiceItemComponent from "../../components/ServiceComponent/ServiceComponent";
 import HotDeal from "../../components/HotDealComponent/HotDeal";
 import { Fragment } from "react";
+import "./HomPage.css";
 
 const HomePage = () => {
   const settings = {
