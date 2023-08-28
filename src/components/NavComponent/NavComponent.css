@@ -1,0 +1,113 @@
+.menu {
+  display: flex;
+  align-items: center;
+}
+
+.menu > div:hover .submenu {
+  display: block;
+}
+.menu > div > a:hover {
+  border-bottom: 4px solid red;
+  padding-bottom: 35px;
+}
+.menu > div > a {
+  text-decoration: none;
+  text-transform: uppercase;
+  margin: 0 10px;
+}
+.menu a {
+  color: black;
+}
+
+.header {
+  font-family: "Montserrat", sans-serif;
+  display: flex;
+  text-align: center;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  height: 96px;
+  margin: auto;
+  position: relative;
+  padding-left: 7.64vw;
+  padding-right: 7.64vw;
+}
+.menu-left {
+  display: flex;
+  white-space: nowrap;
+  font-weight: 600;
+}
+.menu-right {
+  display: flex;
+  font-size: 13px;
+  white-space: nowrap;
+}
+
+.img {
+  margin-right: 30px;
+  height: 38px;
+}
+.img img {
+  height: 38px;
+}
+.group-icon {
+  display: flex;
+  margin-left: 30px;
+}
+.group-icon > div {
+  margin: 0 10px;
+}
+.group-icon > div > div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 5px 0;
+}
+.search label {
+  align-items: center;
+  justify-content: center;
+  display: flex;
+}
+.search label ~ div {
+  border-radius: 40px;
+}
+.slick-next {
+  right: 10px !important;
+}
+.slick-dots {
+  bottom: 15px !important;
+}
+.slick-dots li button:before {
+  font-size: 13px !important;
+}
+
+.submenu {
+  display: none;
+  position: absolute;
+  width: 100%;
+  z-index: 1;
+  top: 100%;
+  left: 0;
+}
+.submenu-content {
+  display: flex;
+  text-align: left;
+  font-weight: 400;
+  font-size: 14px;
+  background-color: white;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  padding: 3vh 13.5vw;
+}
+.submenu-content > div {
+  min-width: 18%;
+}
+.submenu-content > div > a {
+  margin: 5px 0;
+}
+.submenu-content > div > a:first-child {
+  font-weight: 600;
+}
+
+.submenu:hover .submenu-content {
+  display: flex;
+}

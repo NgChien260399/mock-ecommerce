@@ -28,9 +28,9 @@ export default function ServiceComponent() {
             <div className={styles.icon}>
               <img src={item.url} alt="" />
             </div>
-            <div className="content">
-              <h3>{item.title}</h3>
-              <p>{item.content}</p>
+            <div className={styles.box}>
+              <p className={styles.title}>{item.title}</p>
+              <span className={styles.content}>{item.content}</span>
             </div>
           </div>
         ))}

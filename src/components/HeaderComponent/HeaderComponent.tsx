@@ -19,7 +19,7 @@ const HeaderComponent = () => {
 
   return (
     <Fragment>
-      <Box>
+      <Box sx={{ position: "sticky", top: "0px", zIndex: "500  " }}>
         <CardMedia
           component="img"
           height="44px"

@@ -4,7 +4,7 @@ import styles from "./HotDeal.module.css";
 import KeyboardDoubleArrowRightIcon from "@mui/icons-material/KeyboardDoubleArrowRight";
 
 function HotDeal() {
-  const targetDate: any = new Date("2023-08-25T20:20:00");
+  const targetDate: any = new Date("2023-09-02T20:20:00");
   const [timeRemaining, setTimeRemaining] = useState({
     days: 0,
     hours: 0,
@@ -17,16 +17,18 @@ function HotDeal() {
       const now: any = new Date();
       const timeDifference = targetDate - now;
 
-      const days = Math.floor(timeDifference / (1000 * 60 * 60 * 24));
-      const hours = Math.floor(
-        (timeDifference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
-      );
-      const minutes = Math.floor(
-        (timeDifference % (1000 * 60 * 60)) / (1000 * 60)
-      );
-      const seconds = Math.floor((timeDifference % (1000 * 60)) / 1000);
+      if (timeDifference > 0) {
+        const days = Math.floor(timeDifference / (1000 * 60 * 60 * 24));
+        const hours = Math.floor(
+          (timeDifference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
+        );
+        const minutes = Math.floor(
+          (timeDifference % (1000 * 60 * 60)) / (1000 * 60)
+        );
+        const seconds = Math.floor((timeDifference % (1000 * 60)) / 1000);
 
-      setTimeRemaining({ days, hours, minutes, seconds });
+        setTimeRemaining({ days, hours, minutes, seconds });
+      }
     };
 
     calculateTimeRemaining();
@@ -53,7 +55,12 @@ function HotDeal() {
         }}
       >
         <Typography
-          sx={{ marginRight: "20px", fontFamily: '"Montserrat", serif' }}
+          sx={{
+            marginRight: "20px",
+            fontFamily: '"Montserrat", serif',
+            fontWeight: 700,
+            fontSize: "20px",
+          }}
         >
           FLASH DEAL MỖI NGÀY!
         </Typography>
