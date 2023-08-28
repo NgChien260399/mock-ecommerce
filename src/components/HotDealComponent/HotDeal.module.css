@@ -1,5 +1,5 @@
 .box {
-  background-color: #63b1bc;
+  background-color: #000;
   border-radius: 2px;
   line-height: 28px;
   color: #fff;
@@ -13,5 +13,5 @@
 }
 a {
   text-decoration: none;
-  color: #000;
+
 }
