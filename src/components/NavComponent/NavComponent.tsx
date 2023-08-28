@@ -1,10 +1,9 @@
-import { BrowserRouter, NavLink, Route, Routes } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import { Box, TextField } from "@mui/material";
 import SearchIcon from "@mui/icons-material/Search";
 import StorefrontIcon from "@mui/icons-material/Storefront";
 import AccountCircleIcon from "@mui/icons-material/AccountCircle";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
-import { routes } from "../../routes";
 import "./NavComponent.css";
 import CAT_Men from "./CAT_men.json";
 import CAT_Women from "./CAT_women.json";
@@ -38,15 +37,14 @@ const Submenu: React.FC<SubmenuProps> = ({ categoryData }) => {
 
 const NavComponent = () => {
   return (
-    <BrowserRouter>
+    <>
       <Box
         sx={{
           position: "sticky",
           zIndex: "501",
           top: "44px",
           bgcolor: "#fff",
-        }}
-      >
+        }}>
         <Box className="header">
           <div className="menu-left">
             <NavLink to="/">
@@ -110,12 +108,7 @@ const NavComponent = () => {
           </div>
         </Box>
       </Box>
-      <Routes>
-        {routes.map((route) => (
-          <Route key={route.path} path={route.path} element={<route.page />} />
-        ))}
-      </Routes>
-    </BrowserRouter>
+    </>
   );
 };
 

@@ -10,10 +10,10 @@ import SignUpPage from "../pages/SignUpPage/SignUpPage";
 import LoginPage from "../pages/LoginPage/LoginPage";
 
 export const routes = [
-  { path: "/", page: HomePage },
+  { path: "/", page: HomePage, isBlank: false },
   { path: "/child", page: ChildProductPage },
-  { path: "/signin", page: SignInPage },
-  { path: "/signup", page: SignUpPage },
+  { path: "/signin", page: SignInPage, isBlank: true },
+  { path: "/signup", page: SignUpPage, isBlank: true },
   { path: "/login", page: LoginPage },
   { path: "/map", page: MapPage },
   { path: "/men", page: MenProductPage },
