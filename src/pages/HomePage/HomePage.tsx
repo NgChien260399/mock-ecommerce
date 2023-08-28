@@ -6,6 +6,8 @@ import ServiceItemComponent from "../../components/ServiceComponent/ServiceCompo
 import HotDeal from "../../components/HotDealComponent/HotDeal";
 import { Fragment } from "react";
 import "./HomPage.css";
+import offerStyle from "./HomePage.module.css";
+import { Col, Row } from "react-bootstrap";
 
 const HomePage = () => {
   const settings = {
@@ -42,6 +44,73 @@ const HomePage = () => {
       <ServiceItemComponent />
       <Divider />
       <HotDeal />
+
+      {/* offer */}
+      <div className={offerStyle.offer}>
+        <div className={offerStyle.offer_title}>
+          <h2>Ưu đãi độc quyền</h2>
+        </div>
+        <Row>
+          <Col>
+            <img
+              className={offerStyle.offer_img}
+              src="public\images\offer1.webp"
+              alt=""
+            />
+          </Col>
+          <Col>
+            <img
+              className={offerStyle.offer_img}
+              src="public\images\offer2.webp"
+              alt=""
+            />
+          </Col>
+          <Col>
+            <img
+              className={offerStyle.offer_img}
+              src="public\images\offer3.webp"
+              alt=""
+            />
+          </Col>
+        </Row>
+      </div>
+
+      {/* Product 149k */}
+      <div className={offerStyle.offer}>
+        <div className={offerStyle.offer_title}>
+          <h2>Sản phẩm dưới 149k</h2>
+        </div>
+        <Row>
+          <Col>
+            <img
+              className={offerStyle.offer_img}
+              src="public\images\product149_1.webp"
+              alt=""
+            />
+          </Col>
+          <Col>
+            <img
+              className={offerStyle.offer_img}
+              src="public\images\product149_2.webp"
+              alt=""
+            />
+          </Col>
+          <Col>
+            <img
+              className={offerStyle.offer_img}
+              src="public\images\product149_3.webp"
+              alt=""
+            />
+          </Col>
+          <Col>
+            <img
+              className={offerStyle.offer_img}
+              src="public\images\product149_4.webp"
+              alt=""
+            />
+          </Col>
+        </Row>
+      </div>
     </Fragment>
   );
 };
