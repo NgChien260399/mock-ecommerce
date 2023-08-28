@@ -42,7 +42,7 @@ const HomePage = () => {
         />
       </Slider>
       <ServiceItemComponent />
-      <Divider />
+      <Divider sx={{ borderBottomWidth: 3 }} />
       <HotDeal />
 
       {/* offer */}

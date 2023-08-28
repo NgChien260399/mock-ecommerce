@@ -1,6 +1,8 @@
 .service {
   display: flex;
   justify-content: space-between;
+  font-family: "Montserrat", serif;
+  margin: 20px 0;
 }
 .item {
   display: flex;
@@ -12,4 +14,12 @@
 }
 .icon img {
   width: 100%;
+}
+.content {
+  color: rgba(51, 63, 72, 0.5);
+  font-size: 14px;
+}
+.title {
+  margin-bottom: 0;
+  font-weight: 600;
 }
