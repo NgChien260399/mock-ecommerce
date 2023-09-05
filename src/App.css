@@ -1,3 +1,23 @@
 .slick-vertical .slick-slide {
   border: none !important;
 }
+.thumbs {
+  display: flex;
+  flex-direction: column;
+}
+.carousel-root {
+  display: flex;
+}
+
+.carousel-root > div:first-child {
+  flex: 80;
+}
+.carousel-root > div:first-child ~ div {
+  flex: 20;
+}
+.thumbs {
+  transform: none !important;
+}
+.control-arrow {
+  display: none;
+}

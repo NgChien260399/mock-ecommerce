@@ -39,24 +39,3 @@ export default function ServiceComponent() {
   );
 }
 
-// return (
-//   <Container maxWidth="xl">
-//     <div className={styles.service}>
-//       <ServiceItem
-//         title="Thanh toán khi nhận hàng (COD)"
-//         content="Giao hàng toàn quốc."
-//         url="https://media.canifa.com/Simiconnector/Service/s/e/service1.png"
-//       />
-//       <ServiceItem
-//         title="Miễn phí giao hàng"
-//         content="Với đơn hàng trên 599.000đ."
-//         url="https://media.canifa.com/Simiconnector/Service/s/e/service2.png"
-//       />
-//       <ServiceItem
-//         title="Đổi hàng miễn phí"
-//         content="Trong 30 ngày kể từ ngày mua."
-//         url="https://media.canifa.com/Simiconnector/Service/s/e/service3.png"
-//       />
-//     </div>
-//   </Container>
-// );
