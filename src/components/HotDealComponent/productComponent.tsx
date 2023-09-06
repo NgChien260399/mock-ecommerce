@@ -3,20 +3,20 @@ import { Fragment } from 'react';
 import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
 import CardComponent from './CardComponent';
+import { cardData } from '../SuggestionForU/CardData';
 
 const HotDealProductComponent = () => {
   const responsive = {
     superLargeDesktop: {
-      // the naming can be any, depends on you.
-      breakpoint: { max: 4000, min: 3000 },
-      items: 5
+      breakpoint: { max: 3000, min: 1024 },
+      items: 4
     },
     desktop: {
-      breakpoint: { max: 3000, min: 1024 },
+      breakpoint: { max: 1024, min: 900 },
       items: 3
     },
     tablet: {
-      breakpoint: { max: 1024, min: 464 },
+      breakpoint: { max: 900, min: 464 },
       items: 2
     },
     mobile: {
@@ -28,18 +28,20 @@ const HotDealProductComponent = () => {
   return (
     <Fragment>
       <Carousel responsive={responsive}>
-        <div><CardComponent /></div>
-        <div><CardComponent /></div>
-        <div><CardComponent /></div>
-        <div><CardComponent /></div>
-        <div><CardComponent /></div>
-        <div><CardComponent /></div>
-        <div><CardComponent /></div>
-        <div><CardComponent /></div>
-        <div><CardComponent /></div>
-        <div><CardComponent /></div>
-        <div><CardComponent /></div>
-        <div><CardComponent /></div>
+      {cardData.map((item, index) => (
+        <div key={index} style={{display: "flex", justifyContent: "space-between"}}>
+          <div>
+            <CardComponent 
+              url={item.url}
+              content={item.content}
+              giaTien={item.giaTien}
+              giaGoc={item.giaGoc}
+              giamGia={item.giamGia}
+            />
+          </div>
+        </div>
+      ))}
+        
       </Carousel>
     </Fragment>
   )

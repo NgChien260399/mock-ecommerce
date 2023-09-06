@@ -1,31 +1,35 @@
-// import * as React from 'react';
-import Card from '@mui/material/Card';
-import CardContent from '@mui/material/CardContent';
-import CardMedia from '@mui/material/CardMedia';
-import Typography from '@mui/material/Typography';
-import { CardActionArea } from '@mui/material';
+import styles from "./Card.module.css"
 
-const CardComponent = () => {
+const CardComponent = (props: any) => {
   return (
-    <Card sx={{ maxWidth: 345 }}>
-      <CardActionArea>
-        <CardMedia
-          component="img"
-          height="140"
-          image="https://canifa.com/img/1000/1500/resize/6/t/6ts23s018-sw001-1.webp"
-          alt="green iguana"
-        />
-        <CardContent>
-          <Typography gutterBottom variant="h5" component="div">
-            Lizard
-          </Typography>
-          <Typography variant="body2" color="text.secondary">
-            Lizards are a widespread group of squamate reptiles, with over 6,000
-            species, ranging across all continents except Antarctica
-          </Typography>
-        </CardContent>
-      </CardActionArea>
-    </Card>
+    <div className={styles.cardContainer}>
+      <div className={styles.cardImg}>
+        <img className={styles.img} src={props.url} alt="" />
+      </div>
+      <div className={styles.addToCart}>
+        Thêm nhanh vào giỏ
+      </div>
+      <div className="cardInfo">
+        <label htmlFor="">
+          <input className={styles.input} type="radio" name="a" id="" />
+          <input className={styles.input} type="radio" name="a" id="" />
+          <input className={styles.input} type="radio" name="a" id="" />
+          <input className={styles.input} type="radio" name="a" id="" />
+        </label>
+        <br />
+        <span className={styles.contentCard}>{props.content}</span>
+        <br />
+        <span style={{fontWeight: "bolder"}}>{props.giaTien}</span>
+        <br />
+        <span className={styles.giaGoc}>{props.giaGoc}</span>
+        {" "}
+        <span className={styles.giamGia}>{props.giamGia}</span>
+        <br />
+        <div className={styles.onlineExclusive}>
+          Độc quyền online
+        </div>
+      </div>
+    </div>
   );
 };
 
