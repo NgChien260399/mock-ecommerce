@@ -54,13 +54,13 @@ input[type="email"] {
   box-shadow: none;
   outline: 0;
 }
-Button {
+/* Button {
   border-radius: 0;
   width: 173px;
   height: 48px;
   border: none;
   position: absolute;
-}
+} */
 
 .container {
   width: 100%;

@@ -21,5 +21,5 @@ export const routes = [
   { path: "/order", page: OrderPage },
   { path: "/women", page: WomenProductPage },
   { path: "*", page: NotFoundPage },
-  { path: "/detail", page: ProductDetail },
+  { path: "/product/:id", page: ProductDetail },
 ];

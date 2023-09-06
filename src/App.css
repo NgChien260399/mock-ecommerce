@@ -21,3 +21,12 @@
 .control-arrow {
   display: none;
 }
+.slick-next {
+  right: 10px !important;
+}
+.slick-dots {
+  bottom: 15px !important;
+}
+.slick-dots li button:before {
+  font-size: 13px !important;
+}
