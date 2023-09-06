@@ -20,14 +20,6 @@ export default function ProductDetail() {
     category: string;
   }
   const dispatch = useDispatch();
-  const [currentColor, setCurrentColor] = useState("Black");
-  const [currentSize, setCurrentSize] = useState("M");
-  const isColorSelected = (color: string) => {
-    return currentColor === color ? styles.selected : "";
-  };
-  const isSizeSelected = (size: string) => {
-    return currentSize === size ? styles.selected : "";
-  };
   const params = useParams();
   const [data, setData] = useState([]);
   useEffect(() => {
@@ -39,6 +31,14 @@ export default function ProductDetail() {
     .map((item) => item)
     .filter((item: data) => item.id === params.id);
   const itemRender: data = dataRender[0];
+  const [currentColor, setCurrentColor] = useState('Black');
+  const [currentSize, setCurrentSize] = useState('S');
+  const isColorSelected = (color: string) => {
+    return currentColor === color ? styles.selected : "";
+  };
+  const isSizeSelected = (size: string) => {
+    return currentSize === size ? styles.selected : "";
+  };
   let priceVN = "";
   if (itemRender) {
     priceVN = itemRender.price.toLocaleString("it-IT", {
