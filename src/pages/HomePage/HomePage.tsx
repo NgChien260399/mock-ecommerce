@@ -8,6 +8,7 @@ import { Fragment } from "react";
 import "./HomPage.css";
 import offerStyle from "./HomePage.module.css";
 import { Col, Row } from "react-bootstrap";
+import SuggestionForU from "../../components/SuggestionForU/SuggestionForU";
 
 const HomePage = () => {
   const settings = {
@@ -111,43 +112,7 @@ const HomePage = () => {
           </Col>
         </Row>
       </div>
-
-      {/* CanifaLife */}
-      {/* <div className={offerStyle.offer}>
-        <div className={offerStyle.offer_title}>
-          <h2>CANIFALIFE</h2>
-        </div>
-        <Row>
-          <Col>
-            <img
-              className={offerStyle.offer_img}
-              src="public\images\product149_1.webp"
-              alt=""
-            />
-          </Col>
-          <Col>
-            <img
-              className={offerStyle.offer_img}
-              src="public\images\product149_2.webp"
-              alt=""
-            />
-          </Col>
-          <Col>
-            <img
-              className={offerStyle.offer_img}
-              src="public\images\product149_3.webp"
-              alt=""
-            />
-          </Col>
-          <Col>
-            <img
-              className={offerStyle.offer_img}
-              src="public\images\product149_4.webp"
-              alt=""
-            />
-          </Col>
-        </Row>
-      </div> */}
+      <SuggestionForU />
     </Fragment>
   );
 };
