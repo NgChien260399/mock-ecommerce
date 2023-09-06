@@ -4,13 +4,14 @@ import Button from "@mui/material/Button";
 import CssBaseline from "@mui/material/CssBaseline";
 import TextField from "@mui/material/TextField";
 import Link from "@mui/material/Link";
-import Paper from "@mui/material/Paper";
 import Box from "@mui/material/Box";
 import Grid from "@mui/material/Grid";
 import LockOutlinedIcon from "@mui/icons-material/LockOutlined";
 import Typography from "@mui/material/Typography";
 import { useFormik } from "formik";
 import * as Yup from "yup";
+import { AppBar, Container, Toolbar } from "@mui/material";
+import Footer from "../../components/FooterComponent/FooterComponent";
 
 export default function SignInSide() {
   // const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
@@ -48,38 +49,20 @@ export default function SignInSide() {
   });
 
   return (
-    <Grid container component="main" sx={{ height: "100vh" }}>
-      <CssBaseline />
-      <Grid
-        item
-        xs={false}
-        sm={4}
-        md={7}
-        sx={{
-          backgroundImage:
-            "url(https://scontent.fhan2-5.fna.fbcdn.net/v/t1.6435-9/119630097_3236927316425237_8221073884595586000_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=730e14&_nc_ohc=Q8Y1g3CLnVgAX823CdA&_nc_ht=scontent.fhan2-5.fna&oh=00_AfDq2lnjxTZ9AzfmDj0x-2lotK1e6nOH8uUPO6ZN_u3Qcw&oe=6512E812)",
-          backgroundRepeat: "no-repeat",
-          backgroundColor: (t) =>
-            t.palette.mode === "light"
-              ? t.palette.grey[50]
-              : t.palette.grey[900],
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-        }}
-      />
-      <Grid
-        item
-        xs={12}
-        sm={8}
-        md={5}
-        component={Paper}
-        elevation={6}
-        boxShadow="none"
-        square>
+    <>
+      <AppBar position="relative" style={{ background: "#E02725" }}>
+        <Toolbar>
+          <Typography variant="h6" color="inherit" noWrap>
+            GRACEFUL
+          </Typography>
+        </Toolbar>
+      </AppBar>
+
+      <Container component="main" maxWidth="xs" sx={{ height: "53vh" }}>
+        <CssBaseline />
         <Box
           sx={{
-            my: 8,
-            mx: 4,
+            marginTop: 8,
             display: "flex",
             flexDirection: "column",
             alignItems: "center",
@@ -179,7 +162,9 @@ export default function SignInSide() {
             </Grid>
           </Box>
         </Box>
-      </Grid>
-    </Grid>
+      </Container>
+
+      <Footer />
+    </>
   );
 }
