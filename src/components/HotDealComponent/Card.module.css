@@ -1,0 +1,63 @@
+.cardContainer {
+  width: 250px;
+  height: 550px;
+  position: relative;
+  font-size: 16px;
+  &:hover {
+    .addToCart {
+      display: inline-block;
+    }
+  }
+}
+
+.input {
+  margin-right: 10px;
+  font-size: 48px;
+}
+
+.cardImg {
+  width: 100%;
+  height: 350px;
+}
+
+.img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+ 
+.addToCart {
+  display: none;
+  background-color: rgba(255, 255, 255, 0.8);
+  position: absolute;
+  top: 325px;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  width: 95%;
+  padding: 8px;
+  border-radius: 3px;
+
+}
+
+.contentCard {
+  &:hover {
+    color: #da291c
+  }
+}
+
+.giaGoc {
+  text-decoration: line-through;
+}
+
+.giamGia {
+  color: #da291c;
+}
+
+.onlineExclusive {
+  border: 1px solid #da291c;
+  color: #da291c;
+  display: inline-block;
+  padding: 2px 5px;
+  font-size: 12px;
+}

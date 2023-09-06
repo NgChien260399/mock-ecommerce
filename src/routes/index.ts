@@ -8,6 +8,7 @@ import WomenProductPage from "../pages/WomenProductPage/WomenProductPage";
 import SignInPage from "../pages/SignInPage/SignInPage";
 import SignUpPage from "../pages/SignUpPage/SignUpPage";
 import LoginPage from "../pages/LoginPage/LoginPage";
+import ProductDetail from "../components/ProductDetail/ProductDetail";
 
 export const routes = [
   { path: "/", page: HomePage, isBlank: false },
@@ -20,4 +21,5 @@ export const routes = [
   { path: "/order", page: OrderPage },
   { path: "/women", page: WomenProductPage },
   { path: "*", page: NotFoundPage },
+  { path: "/product/:id", page: ProductDetail },
 ];

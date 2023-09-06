@@ -1,15 +1,15 @@
-import { Box, Container, Typography } from "@mui/material";
 import { useEffect, useState } from "react";
 import styles from "./HotDeal.module.css";
 import KeyboardDoubleArrowRightIcon from "@mui/icons-material/KeyboardDoubleArrowRight";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import BoltIcon from '@mui/icons-material/Bolt';
-import HotDealProductComponent from "./productComponent.tsx";
+import HotDealProductComponent from "./ProductComponent.tsx";
 
-function HotDeal() {
+const HotDeal = () => {
 
-  const targetDate: any = new Date("2023-09-02T14:00:00");
+  const targetDate: any = new Date("2023-09-07T14:00:00");
+
   const [timeRemaining, setTimeRemaining] = useState({
     days: 0,
     hours: 0,
@@ -39,63 +39,61 @@ function HotDeal() {
 
     return () => clearInterval(intervalId);
   }, []);
+
   const addLeadingZero = (value: any) => {
-    // return value < 10 ? `0${value}` : value;
-    return value;
+    return value < 10 ? `0${value}` : value;
   };
 
   return (
-    <Container
-      maxWidth="xl"
-      sx={{
-        marginTop: "20px",
+    <div
+      style={{
+        height: "auto",
         fontFamily: '"Montserrat", serif',
-        background: "#ccc",
-        padding: "20px",
+        margin: "0 auto",
+        maxWidth: "none",
+        padding: "20px 7.64vw",
       }}
     >
-      <Box
-        sx={{
+      <div
+        style={{
           display: "flex",
           alignItems: "center",
+          marginBottom: "10px",
         }}
       >
-        <Typography
-          sx={{ marginRight: "20px", fontFamily: '"Montserrat", serif', color: "#da291c", fontWeight: "bolder" }}
+        <h6
+          style={{ marginRight: "20px", fontFamily: '"Montserrat", serif', color: "#da291c", fontWeight: "bolder" }}
         >
           F<BoltIcon />ASH DEALS 
-        </Typography>
-        <Box
-          sx={{
+        </h6>
+        <div
+          style={{
             display: "flex",
             textAlign: "center",
             alignItems: "center",
-            marginBottom: "10px",
           }}
         >
-          <div className={styles.box}>
+          <div className={styles.clock}>
             {addLeadingZero(timeRemaining.hours)}{" "}
           </div>
-          <div className={styles.text}> </div>
 
-          <div className={styles.box}>
+          <div className={styles.clock}>
             {addLeadingZero(timeRemaining.minutes)}{" "}
           </div>
-          <div className={styles.text}> </div>
 
-          <div className={styles.box}>
+          <div className={styles.clock}>
             {addLeadingZero(timeRemaining.seconds)}
           </div>
-        </Box>
-        <Box sx={{ display: "flex", marginLeft: "auto", alignItems: "center", color: "#da291c" }}>
-          <a href={"#"} style={{color: "#da291c"}}>See All</a>
+        </div>
+        <div style={{ display: "flex", marginLeft: "auto", alignItems: "center", color: "#da291c" }}>
+          <a href={"#"} style={{color: "#da291c", textDecoration: "none"}}>Xem tất cả</a>
           <KeyboardDoubleArrowRightIcon fontSize="small" />
-        </Box>
-      </Box>
-      <Box>
+        </div>
+      </div>
+      <div>
         <HotDealProductComponent /> 
-      </Box>
-    </Container>
+      </div>
+    </div>
   );
 }
 
