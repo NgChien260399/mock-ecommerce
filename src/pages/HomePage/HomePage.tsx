@@ -26,19 +26,13 @@ const HomePage = () => {
         <CardMedia
           component="img"
           height="100%"
-          image="https://media.canifa.com/Simiconnector/BannerSlider/t/o/top_desktop_2880x960.webp"
+          image="https://media.canifa.com/Simiconnector/BannerSlider/t/o/top_banner_desktop_2.webp"
           alt="Your Image Alt Text"
         />
         <CardMedia
           component="img"
           height="100%"
-          image="https://media.canifa.com/Simiconnector/BannerSlider/h/o/homepage_desktop_2880x960_1.webp"
-          alt="Your Image Alt Text"
-        />
-        <CardMedia
-          component="img"
-          height="100%"
-          image="https://media.canifa.com/Simiconnector/BannerSlider/t/a/tai-app-desktop.webp"
+          image="https://media.canifa.com/Simiconnector/BannerSlider/c/h/chaothu-top-banner-desktop_2880x960.webp"
           alt="Your Image Alt Text"
         />
       </Slider>

@@ -48,7 +48,7 @@ const NavComponent = () => {
         sx={{
           position: "sticky",
           zIndex: "501",
-          top: "44px",
+          top: "0",
           bgcolor: "#fff",
         }}
       >
@@ -61,15 +61,15 @@ const NavComponent = () => {
             </NavLink>
             <div className={styles.menu}>
               <div>
-                <NavLink to="women">Nữ</NavLink>
+                <NavLink to="/women">Nữ</NavLink>
                 <Submenu categoryData={CAT_Women} />
               </div>
               <div>
-                <NavLink to="men">Nam</NavLink>
+                <NavLink to="/men">Nam</NavLink>
                 <Submenu categoryData={CAT_Men} />
               </div>
               <div>
-                <NavLink to="child">Trẻ em</NavLink>
+                <NavLink to="/child">Trẻ em</NavLink>
               </div>
               <div>
                 <NavLink to="/product/6DS23S006">Demo SP 1</NavLink>

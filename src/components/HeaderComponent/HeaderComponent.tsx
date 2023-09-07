@@ -19,14 +19,14 @@ const HeaderComponent = () => {
 
   return (
     <Fragment>
-      <Box sx={{ position: "sticky", top: "0px", zIndex: "500  " }}>
+      {/* <Box sx={{ position: "sticky", top: "0px", zIndex: "500  " }}>
         <CardMedia
           component="img"
           height="44px"
           image="https://media.canifa.com/popup/d/e/desktop-1920x48_3x.webp"
           alt="Your Image Alt Text"
         />
-      </Box>
+      </Box> */}
       <Box sx={{ height: "36px" }}>
         <Slider {...settings}>
           <TypoCustom>Thêm vào giỏ 599.000 ₫ để miễn phí vận chuyển</TypoCustom>
