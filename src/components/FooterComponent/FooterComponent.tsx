@@ -16,7 +16,7 @@ const SubscribeForm = () => {
           phong cách sống.
         </p>
         <div className={styles.inputContainer}>
-          <TextField type="email" placeholder="Nhập địa chỉ email của bạn" />
+          <TextField  type="email" placeholder="Nhập địa chỉ email của bạn" />
           <Button
             variant="contained"
             color="error"
@@ -48,7 +48,7 @@ const SubscribeForm = () => {
 const ContactInfo = () => {
   return (
     <div className={`${styles.footerSection} col-sm-4`}>
-      <h3 className={styles.title}>CÔNG TY CỔ PHẦN CANIFA</h3>
+      <h3 className={styles.title} >CÔNG TY CỔ PHẦN CANIFA</h3>
       <p>
         Số ĐKKD: 0107574310, ngày cấp: 23/09/2016, Nơi cấp: Sở Kế hoạch và đầu
         tư Hà Nội
@@ -222,7 +222,7 @@ const Footer = () => {
           <AppDownload />
         </div>
       </div>
-      <div className="hr-container">
+      <div className={styles.hrContainer}>
         <hr />
       </div>
       <FooterBottom />
