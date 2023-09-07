@@ -53,7 +53,7 @@
   }
   
   
-  Button {
+  .footerButton {
     border-radius: 0;
     width: 173px;
     height: 48px;
