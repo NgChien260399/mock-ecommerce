@@ -4,18 +4,18 @@ import InstagramIcon from "@mui/icons-material/Instagram";
 import YouTubeIcon from "@mui/icons-material/YouTube";
 import TwitterIcon from "@mui/icons-material/Twitter";
 import "bootstrap/dist/css/bootstrap.css";
-import "./Footer.css";
 
+import styles from "./Footer.module.css"
 const SubscribeForm = () => {
   return (
-    <div className="form">
-      <div className="form-subscribe">
-        <h2>Đăng ký nhận bản tin</h2>
-        <p>
+    <div className={styles.form}>
+      <div className={styles.formSubscribe}>
+        <h2 className={styles.Title}>Đăng ký nhận bản tin</h2>
+        <p className={styles.formSubscribeP}>
           Cùng Canifa Blog cập nhật những thông tin mới nhất về thời trang và
           phong cách sống.
         </p>
-        <div className="input-container">
+        <div className={styles.inputContainer}>
           <TextField type="email" placeholder="Nhập địa chỉ email của bạn" />
           <Button
             variant="contained"
@@ -25,7 +25,7 @@ const SubscribeForm = () => {
             Đăng ký
           </Button>
         </div>
-        <div className="social-icons">
+        <div className={styles.socialIcons}>
           <a href="https://www.facebook.com/canifa.fanpage/"  target="_blank">
             <FacebookIcon />
           </a>
@@ -46,8 +46,8 @@ const SubscribeForm = () => {
 
 const ContactInfo = () => {
   return (
-    <div className="footer-section col-sm-4">
-      <h3>CÔNG TY CỔ PHẦN CANIFA</h3>
+    <div className={`${styles.footerSection} col-sm-4`}>
+      <h3 className={styles.title}>CÔNG TY CỔ PHẦN CANIFA</h3>
       <p>
         Số ĐKKD: 0107574310, ngày cấp: 23/09/2016, Nơi cấp: Sở Kế hoạch và đầu
         tư Hà Nội
@@ -63,17 +63,17 @@ const ContactInfo = () => {
       <p>Điện thoại: +8424 - 7303.0222</p>
       <p>Fax: +8424 - 6277.6419</p>
       <p>Email: hello@canifa.com</p>
-      <div className="social-icons-1">
-        <a href="https://www.facebook.com/canifa.fanpage/"  target="_blank">
+      <div className={styles.socialIcons1}>
+        <a className={styles.socialIcons1A} href="https://www.facebook.com/canifa.fanpage/"  target="_blank">
           <FacebookIcon />
         </a>
-        <a href="https://www.instagram.com/canifa.fashion/"  target="_blank">
+        <a className={styles.socialIcons1A} href="https://www.instagram.com/canifa.fashion/"  target="_blank">
           <InstagramIcon />
         </a>
-        <a href="https://www.youtube.com/CANIFAOfficial"   target="_blank">
+        <a className={styles.socialIcons1A} href="https://www.youtube.com/CANIFAOfficial"   target="_blank">
           <YouTubeIcon />
         </a>
-        <a href="#">
+        <a className={styles.socialIcons1A} href="#">
           <TwitterIcon />
         </a>
       </div>
@@ -83,8 +83,8 @@ const ContactInfo = () => {
 
 const BrandLinks = () => {
   return (
-    <div className="footer-section col-sm-2">
-      <h3>THƯƠNG HIỆU</h3>
+    <div className={`${styles.footerSection} col-sm-2`}>
+      <h3 className={styles.title}>THƯƠNG HIỆU</h3>
       <ul>
         <li>
           <a href="#">Giới thiệu</a>
@@ -111,8 +111,8 @@ const BrandLinks = () => {
 
 const SupportLinks = () => {
   return (
-    <div className="footer-section col-sm-3">
-      <h3>HỖ TRỢ</h3>
+    <div className={`${styles.footerSection} col-sm-3 `}>
+      <h3 className={styles.title}>HỖ TRỢ</h3>
       <ul>
         <li>
           <a href="#">Hỏi đáp</a>
@@ -145,28 +145,28 @@ const SupportLinks = () => {
 
 const AppDownload = () => {
   return (
-    <div className="footer-section col-sm-3">
+    <div className={`${styles.footerSection} col-sm-3 `}>
       <div>
-        <h3>TẢI ỨNG DỤNG</h3>
+        <h3 className={styles.title}>TẢI ỨNG DỤNG</h3>
         <div style={{ display: "flex" }}>
           <div className="bancode">
             <img
-              className="qr"
+              className={styles.QR}
               src="https://canifa.com/assets/images/bancode.png"
               alt="qr"
             />
           </div>
-          <div className="apps">
-            <a href="https://play.google.com/store/apps/details?id=com.app.canifa&hl=en"  target="_blank">
+          <div className={styles.Apps}>
+            <a className={styles.AppsA} href="https://play.google.com/store/apps/details?id=com.app.canifa&hl=en"  target="_blank">
               <img
-                className="app"
+                className={`${styles.AppsImg} ${styles.Apps}`}
                 src="https://canifa.com/assets/images/googleplay.png"
                 alt=""
               />
             </a>
-            <a href="https://apps.apple.com/vn/app/canifa/id1175895653"  target="_blank">
+            <a className={styles.AppsA} href="https://apps.apple.com/vn/app/canifa/id1175895653"  target="_blank">
               <img
-                className="app"
+                  className={`${styles.AppsImg} ${styles.Apps}`}
                 src="https://canifa.com/assets/images/appstore.png"
                 alt=""
               />
@@ -174,9 +174,9 @@ const AppDownload = () => {
           </div>
         </div>
       </div>
-      <div></div>
+    
       <div>
-        <h3>PHƯƠNG THỨC THANH TOÁN</h3>
+        <h3 className={styles.title}>PHƯƠNG THỨC THANH TOÁN</h3>
         <img src="https://canifa.com/assets/images/pay.svg" alt="" />
       </div>
     </div>
@@ -186,7 +186,7 @@ const AppDownload = () => {
 const FooterBottom = () => {
   return (
     <>
-      <div className="footer-bottom ">
+      <div className={styles.footerBottom}>
         <div className="copyright">© 2023 CANIFA</div>
         <div className="bct">
           <a
@@ -195,6 +195,7 @@ const FooterBottom = () => {
             aria-label="Pay"
           >
             <img
+            
               src="https://canifa.com/assets/images/bocongthuong.png"
               alt=""
             />
@@ -208,10 +209,10 @@ const FooterBottom = () => {
 const Footer = () => {
   return (
     <footer>
-      <div className="footer-content row">
+      <div className={`${styles.footerContent} row`}>
         <SubscribeForm />
         <div
-          className="footer-end"
+          className={styles.footerEnd}
           style={{ display: "flex", flexWrap: "wrap" }}
         >
           <ContactInfo />
