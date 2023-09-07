@@ -21,6 +21,7 @@ const SubscribeForm = () => {
             variant="contained"
             color="error"
             style={{ borderRadius: "0" }}
+            className={styles.footerButton}
           >
             Đăng ký
           </Button>
