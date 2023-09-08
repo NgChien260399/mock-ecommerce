@@ -4,7 +4,7 @@ import KeyboardDoubleArrowRightIcon from "@mui/icons-material/KeyboardDoubleArro
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import BoltIcon from '@mui/icons-material/Bolt';
-import HotDealProductComponent from "./ProductComponent.tsx";
+import HotDealProductComponent from "./productComponent";
 
 const HotDeal = () => {
 

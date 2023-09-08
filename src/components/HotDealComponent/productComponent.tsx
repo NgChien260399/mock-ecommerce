@@ -13,7 +13,7 @@ const HotDealProductComponent = () => {
       items: 4
     },
     desktop: {
-      breakpoint: { max: 1024, min: 900 },
+      breakpoint: { max: 1080, min: 900 },
       items: 3
     },
     tablet: {
