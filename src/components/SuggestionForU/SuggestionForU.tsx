@@ -7,7 +7,7 @@ import styles from "./SuggestionForU.module.css"
 import ReactPaginate from 'react-paginate';
 import { useState } from "react";
 import CardComponent from "../HotDealComponent/CardComponent";
-import { cardData } from "./CardData";
+import { productData } from "../../pages/MenProductPage/ProductData";
 
 const SuggestionForU = () => {
   const [pageCount, setPageCount] = useState<number>(1)
@@ -81,14 +81,14 @@ export default SuggestionForU ;
 const ProductsOnPage = (props: any) => {
   return (
     <>
-      {cardData.filter((items) => items.page === props.page).map((item, i) => (
+      {productData.filter((item1) => item1.hotDeals).filter((items) => items.page === props.page).map((item, i) => (
           <div key={i}>
             <CardComponent 
-              url={item.url}
-              content={item.content}
-              giaTien={item.giaTien}
-              giaGoc={item.giaGoc}
-              giamGia={item.giamGia}
+              imageUrl={item.imageUrl}
+              productName={item.productName}
+              salePrice={item.salePrice}
+              price={item.price}
+              percentDiscount={item.percentDiscount}
             />
           </div>
         ))}

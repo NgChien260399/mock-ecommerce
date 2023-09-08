@@ -4,7 +4,7 @@ const CardComponent = (props: any) => {
   return (
     <div className={styles.cardContainer}>
       <div className={styles.cardImg}>
-        <img className={styles.img} src={props.url} alt="" />
+        <img className={styles.img} src={props.imageUrl} alt="" />
       </div>
       <div className={styles.addToCart}>
         Thêm nhanh vào giỏ
@@ -17,13 +17,13 @@ const CardComponent = (props: any) => {
           <input className={styles.input} type="radio" name="a" id="" />
         </label>
         <br />
-        <span className={styles.contentCard}>{props.content}</span>
+        <span className={styles.contentCard}>{props.productName}</span>
         <br />
-        <span style={{fontWeight: "bolder"}}>{props.giaTien}</span>
+        <span style={{fontWeight: "bolder"}}>{props.salePrice}</span>
         <br />
-        <span className={styles.giaGoc}>{props.giaGoc}</span>
+        <span className={styles.price}>{props.price}</span>
         {" "}
-        <span className={styles.giamGia}>{props.giamGia}</span>
+        <span className={styles.percentDiscount}>{props.percentDiscount}</span>
         <br />
         <div className={styles.onlineExclusive}>
           Độc quyền online

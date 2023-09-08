@@ -3,7 +3,8 @@ import { Fragment } from 'react';
 import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
 import CardComponent from './CardComponent';
-import { cardData } from '../SuggestionForU/CardData';
+// import { cardData } from '../SuggestionForU/CardData';
+import { productData } from '../../pages/MenProductPage/ProductData';
 
 const HotDealProductComponent = () => {
   const responsive = {
@@ -28,15 +29,15 @@ const HotDealProductComponent = () => {
   return (
     <Fragment>
       <Carousel responsive={responsive}>
-      {cardData.map((item, index) => (
+      {productData.filter((items) => items.hotDeals).map((item, index) => (
         <div key={index} style={{display: "flex", justifyContent: "space-between"}}>
           <div>
             <CardComponent 
-              url={item.url}
-              content={item.content}
-              giaTien={item.giaTien}
-              giaGoc={item.giaGoc}
-              giamGia={item.giamGia}
+              imageUrl={item.imageUrl}
+              productName={item.productName}
+              salePrice={item.salePrice}
+              price={item.price}
+              percentDiscount={item.percentDiscount}
             />
           </div>
         </div>
