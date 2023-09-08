@@ -9,11 +9,11 @@ import { productData } from '../../pages/MenProductPage/ProductData';
 const HotDealProductComponent = () => {
   const responsive = {
     superLargeDesktop: {
-      breakpoint: { max: 3000, min: 1024 },
+      breakpoint: { max: 3000, min: 1080 },
       items: 4
     },
     desktop: {
-      breakpoint: { max: 1024, min: 900 },
+      breakpoint: { max: 1080, min: 900 },
       items: 3
     },
     tablet: {
