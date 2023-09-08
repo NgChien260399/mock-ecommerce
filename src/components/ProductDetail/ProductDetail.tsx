@@ -121,7 +121,7 @@ export default function ProductDetail() {
         </ul>
       </div>
       <div className={styles.wrap}>
-        <Carousel showArrows={false} className={styles.gallery} autoPlay>
+        <Carousel showArrows={false} className={styles.gallery} autoPlay infiniteLoop>
           {itemRender &&
             itemRender.imageUrl.map((item, index) => (
               <div key={index}>
