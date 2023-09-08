@@ -58,7 +58,10 @@ const NavComponent = () => {
           <div className={styles.menu_left}>
             <NavLink to="/">
               <div className={styles.img}>
-                <img src="http://localhost:5173\public\images\logo-graceful.svg" alt="" />
+                <img
+                  src="http://localhost:5173\public\images\logo-graceful.svg"
+                  alt=""
+                />
               </div>
             </NavLink>
             <div className={styles.menu}>
@@ -74,13 +77,24 @@ const NavComponent = () => {
                 <NavLink to="/child">Trẻ em</NavLink>
               </div>
               <div>
-                <NavLink to="/product/6DS23S006">Demo SP 1</NavLink>
+                <NavLink style={{ color: "red" }} to="/product/6DS23S006">
+                  Demo SP 1
+                </NavLink>
               </div>
               <div>
-                <NavLink to="/product/6DS23W023-SE249">Demo SP 2</NavLink>
+                <NavLink style={{ color: "red" }} to="/product/6DS23W023-SE249">
+                  Demo SP 2
+                </NavLink>
               </div>
               <div>
-                <NavLink to="/product/6TP23W005-SL213">Demo SP 3</NavLink>
+                <NavLink style={{ color: "red" }} to="/product/6TP23W005-SL213">
+                  Demo SP 3
+                </NavLink>
+              </div>
+              <div>
+                <NavLink style={{ color: "red" }} to="/product/6DS23S003-SK010">
+                  Demo SP 4
+                </NavLink>
               </div>
             </div>
           </div>

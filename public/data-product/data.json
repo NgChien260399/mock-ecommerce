@@ -53,5 +53,24 @@
     "sizes": ["S", "M", "L"],
     "colors": ["Black", "Navy"],
     "category": "ao"
+  },
+  {
+    "id": "6DS23S003-SK010",
+    "product_name": "Váy liền nữ cotton xẻ tà dáng suông",
+    "price": 499000,
+    "sale": {
+      "isSale": true,
+      "priceSale": 249500
+    },
+    "imageUrl": [
+      "https://canifa.com/img/1000/1500/resize/6/d/6ds23s003-sk010-1-thumb.webp",
+      "https://canifa.com/img/1000/1500/resize/6/d/6ds23s003-sk010-2.webp",
+      "https://canifa.com/img/1000/1500/resize/6/d/6ds23s003-sk010-3.webp",
+      "https://canifa.com/img/1000/1500/resize/6/d/6ds23s003-sk010-m-1.webp",
+      "https://canifa.com/img/1000/1500/resize/6/d/6ds23s003-sk010-m-2.webp"
+    ],
+    "sizes": ["S", "M", "L", "XL", "XXL"],
+    "colors": ["Yellow", "Navy", "Grey", "Cyan"],
+    "category": "ao"
   }
 ]
