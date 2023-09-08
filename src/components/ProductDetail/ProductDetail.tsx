@@ -121,7 +121,7 @@ export default function ProductDetail() {
         </ul>
       </div>
       <div className={styles.wrap}>
-        <Carousel showArrows={false} className={styles.gallery}>
+        <Carousel showArrows={false} className={styles.gallery} autoPlay>
           {itemRender &&
             itemRender.imageUrl.map((item, index) => (
               <div key={index}>
@@ -146,7 +146,9 @@ export default function ProductDetail() {
                 </span>
               </span>
               <span className={styles.old_price_box}>
-                <span className={styles.sale_price}>{convertPriceVnd(itemRender.price)} đ</span>
+                <span className={styles.sale_price}>
+                  {convertPriceVnd(itemRender.price)} đ
+                </span>
                 <span className={styles.percent_sale}>
                   -
                   {(
