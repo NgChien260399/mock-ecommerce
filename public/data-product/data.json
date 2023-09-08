@@ -2,7 +2,11 @@
   {
     "id": "6DS23S006",
     "product_name": "Váy liền nữ sát nách cổ đức có đai thắt eo",
-    "price": 599000,
+    "price": 1299000,
+    "sale": {
+      "isSale": true,
+      "priceSale": 399000
+    },
     "imageUrl": [
       "https://canifa.com/img/1000/1500/resize/6/d/6ds23s006-sl114-1.webp",
       "https://canifa.com/img/1000/1500/resize/6/d/6ds23s006-sl114-2.webp",
@@ -17,6 +21,10 @@
     "id": "6DS23W023-SE249",
     "product_name": "Váy liền nữ interlock cổ bẻ dáng dài",
     "price": 899000,
+    "sale": {
+      "isSale": false,
+      "priceSale": 399000
+    },
     "imageUrl": [
       "https://canifa.com/img/1000/1500/resize/6/d/6ds23w023-se249-1-thumb.webp",
       "https://canifa.com/img/1000/1500/resize/6/d/6ds23w023-se249-2.webp",
@@ -31,6 +39,10 @@
     "id": "6TP23W005-SL213",
     "product_name": "Áo polo nữ interlock dáng ngắn",
     "price": 299000,
+    "sale": {
+      "isSale": true,
+      "priceSale": 199000
+    },
     "imageUrl": [
       "https://canifa.com/img/1000/1500/resize/6/t/6tp23w005-sl213-2-thumb.webp",
       "https://canifa.com/img/1000/1500/resize/6/t/6tp23w005-sl213-1.webp",
@@ -39,7 +51,7 @@
       "https://canifa.com/img/1000/1500/resize/6/t/6tp23w005-sl213-m-2.webp"
     ],
     "sizes": ["S", "M", "L"],
-    "colors": ["Navy", "Black"],
+    "colors": ["Black", "Navy"],
     "category": "ao"
   }
 ]

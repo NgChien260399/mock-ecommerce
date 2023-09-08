@@ -5,7 +5,6 @@ import "./App.css";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { routes } from "./routes";
 import CartPopupComponent from "./components/CartPopup/cartpopup";
-
 function App() {
   return (
     <BrowserRouter>

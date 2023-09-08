@@ -39,8 +39,10 @@ const Submenu: React.FC<SubmenuProps> = ({ categoryData }) => {
 
 const NavComponent = () => {
   const dispatch = useDispatch();
-  const numberItemCart = useSelector(
-    (state: any) => state.cartItemReduceer.length
+  const numberItemCart = useSelector((state: any) =>
+    state.cartItemReduceer.reduce((acc: any, item: any) => {
+      return (acc = acc + item.qty);
+    }, 0)
   );
   return (
     <>
@@ -56,7 +58,7 @@ const NavComponent = () => {
           <div className={styles.menu_left}>
             <NavLink to="/">
               <div className={styles.img}>
-                <img src="https://canifa.com/assets/images/logo.svg" alt="" />
+                <img src="http://localhost:5173\public\images\logo-graceful.svg" alt="" />
               </div>
             </NavLink>
             <div className={styles.menu}>

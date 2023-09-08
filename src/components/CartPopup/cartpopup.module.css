@@ -3,9 +3,11 @@
   padding: 16px 0;
 }
 .listItems {
+  font-family: "Montserrat", sans-serif;
   overflow-y: auto;
-  max-height: 80vh;
-  padding: 0 16px;
+  max-height: 73vh;
+  padding: 0 15px;
+  width: 100%;
 }
 .itemPhoto img {
   max-width: 74px;
@@ -20,7 +22,7 @@
 .itemDetails {
   display: flex;
   flex-direction: column;
-  width: calc(100% - 102px);
+  width: calc(100% - 100px);
 }
 .item_name {
   margin: 0 0 8px;
@@ -118,14 +120,73 @@
   border-left: 1px solid #e6e7e8;
 }
 .sub_bottom {
-  bottom: 0%;
-  border-top: 1px solid #edf1f5;
-  font-weight: 700;
-  font-size: 16px;
-  line-height: 22px;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+  text-align: left;
+  padding: 10px 16px 0 16px;
 }
 .subtotal {
   display: flex;
   justify-content: space-between;
-  padding: 17px 0;
+  padding: 6px 0;
+}
+.remove_item_cart {
+  width: 18px;
+  height: 18px;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  background: rgba(197, 180, 180, 0.5);
+  border-radius: 2px;
+  background-repeat: no-repeat;
+  background-position: center;
+  position: absolute;
+  background-image: url(../../../public/images/remove-item-cart.svg);
+  top: 2px;
+  left: 2px;
+  z-index: 10;
+}
+.old_price_box {
+  display: flex;
+  align-items: center;
+}
+.old_price {
+  font-weight: 400;
+  text-decoration: line-through;
+  margin-right: 6px;
+  line-height: 16px;
+  margin-bottom: 4px;
+}
+.percent_sale {
+  color: #da291c;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 16px;
+  margin-bottom: 4px;
+}
+.checkout_btn {
+  margin-top: 10px;
+}
+.wrap_empty {
+  font-family: "Montserrat", sans-serif;
+  text-align: center;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  padding: 30px 16px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.empty_icon img {
+  max-width: 140px;
+  margin: 0 auto;
+}
+.empty_icon {
+  display: block;
+  margin: 20px auto;
 }

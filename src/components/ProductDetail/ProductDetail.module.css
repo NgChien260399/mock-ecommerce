@@ -6,6 +6,7 @@
   padding-left: 7.64vw;
   padding-right: 7.64vw;
   margin-bottom: 40px;
+  font-family: "Montserrat", sans-serif;
 }
 .product_name {
   display: block;
@@ -33,6 +34,7 @@
   align-items: center;
   width: 100%;
   margin-top: 20px;
+  height: 50px;
 }
 .normal_price {
   width: 100%;
@@ -113,7 +115,7 @@
   margin-top: 20px;
 }
 .product_options_actions {
-  margin-top: 30px;
+  margin-top: 25px;
 }
 .btn {
   width: 25%;
@@ -123,4 +125,66 @@
   font-size: 18px;
   line-height: 24px;
   font-weight: 700;
+}
+.product_feauture {
+  background: #f7f7f7;
+  display: flex;
+  flex-wrap: wrap;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 14px;
+  text-align: center;
+  color: #737373;
+  margin-bottom: 30px;
+  list-style-type: none;
+  padding: 15px 35px;
+  margin-top: 25px;
+}
+.product_feauture li {
+  width: 33%;
+  display: flex;
+  align-items: center;
+  text-align: left;
+  padding: 10px;
+}
+.icon {
+  height: 38px;
+  margin-right: 13px;
+  margin-bottom: 0;
+  min-width: 50px;
+  width: 50px;
+}
+.text strong {
+  display: block;
+  font-weight: 450;
+  font-size: 13px;
+  line-height: 19px;
+  margin-bottom: 4px;
+  color: #000;
+}
+.breadcrumbs {
+  font-family: "Montserrat", sans-serif;
+  color: #c8c7cc;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 16px;
+  margin: 18px 0;
+  padding-left: 7.64vw;
+  padding-right: 7.64vw;
+}
+.itembred {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  flex-wrap: wrap;
+  display: flex;
+}
+.breadcrumbs a {
+  text-decoration: none;
+  color: #c8c7cc;
+}
+.itembred li:not(:last-child):after {
+  content: "|";
+  margin: 0 6px;
+  color: #c8c7cc;
 }
