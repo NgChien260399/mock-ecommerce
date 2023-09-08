@@ -9,7 +9,7 @@ import { productData } from '../../pages/MenProductPage/ProductData';
 const HotDealProductComponent = () => {
   const responsive = {
     superLargeDesktop: {
-      breakpoint: { max: 3000, min: 1024 },
+      breakpoint: { max: 3000, min: 1080 },
       items: 4
     },
     desktop: {
@@ -30,7 +30,7 @@ const HotDealProductComponent = () => {
     <Fragment>
       <Carousel responsive={responsive}>
       {productData.filter((items) => items.hotDeals).map((item, index) => (
-        <div key={index} style={{display: "flex", justifyContent: "space-between"}}>
+        <div key={index}>
           <div>
             <CardComponent 
               imageUrl={item.imageUrl}
