@@ -43,6 +43,7 @@ const NavComponent = () => {
       return (acc = acc + item.qty);
     }, 0)
   );
+
   return (
     <>
       <Box
@@ -93,26 +94,17 @@ const NavComponent = () => {
                     </NavLink>
                   </div>
                   <div>
-                    <NavLink
-                      style={{ color: "red" }}
-                      to="/product/8TS23S021"
-                    >
+                    <NavLink style={{ color: "red" }} to="/product/8TS23S021">
                       2
                     </NavLink>
                   </div>
                   <div>
-                    <NavLink
-                      style={{ color: "red" }}
-                      to="/product/8TH23S003"
-                    >
+                    <NavLink style={{ color: "red" }} to="/product/8TH23S003">
                       3
                     </NavLink>
                   </div>
                   <div>
-                    <NavLink
-                      style={{ color: "red" }}
-                      to="/product/8TA23S002"
-                    >
+                    <NavLink style={{ color: "red" }} to="/product/8TA23S002">
                       4
                     </NavLink>
                   </div>
