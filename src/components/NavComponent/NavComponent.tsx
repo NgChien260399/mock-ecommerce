@@ -1,6 +1,5 @@
 import { NavLink } from "react-router-dom";
-import { Box, TextField } from "@mui/material";
-import SearchIcon from "@mui/icons-material/Search";
+import { Box } from "@mui/material";
 import StorefrontIcon from "@mui/icons-material/Storefront";
 import AccountCircleIcon from "@mui/icons-material/AccountCircle";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
@@ -54,89 +53,113 @@ const NavComponent = () => {
           bgcolor: "#fff",
         }}
       >
-        <Box className={styles.header}>
-          <div className={styles.menu_left}>
-            <NavLink to="/">
-              <div className={styles.img}>
-                <img
-                  src="http://localhost:5173\public\images\logo-graceful.svg"
-                  alt=""
-                />
-              </div>
-            </NavLink>
-            <div className={styles.menu}>
-              <div>
-                <NavLink to="/women">Nữ</NavLink>
-                <Submenu categoryData={CAT_Women} />
-              </div>
-              <div>
-                <NavLink to="/men">Nam</NavLink>
-                <Submenu categoryData={CAT_Men} />
-              </div>
-              <div>
-                <NavLink to="/child">Trẻ em</NavLink>
-              </div>
-              <div>
-                <NavLink style={{ color: "red" }} to="/product/6DS23S006">
-                  Demo SP 1
+        <div className={`container-fluid ${styles.header}`}>
+          <div className="row h-100 justify-content-between">
+            <div className="d-lg-none my-auto col-1">
+              <NavLink to="/">
+                <div className={styles.img}>
+                  <img
+                    src="http://localhost:5173\public\images\logo-graceful-2.svg"
+                    alt=""
+                  />
+                </div>
+              </NavLink>
+            </div>
+            <div className="col-6 d-lg-block d-none my-auto">
+              <div className={styles.menu_left}>
+                <NavLink to="/">
+                  <div className={styles.img}>
+                    <img
+                      src="http://localhost:5173\public\images\logo-graceful-2.svg"
+                      alt=""
+                    />
+                  </div>
                 </NavLink>
+                <div className={styles.menu}>
+                  <div>
+                    <NavLink to="/women">Nữ</NavLink>
+                    <Submenu categoryData={CAT_Women} />
+                  </div>
+                  <div>
+                    <NavLink to="/men">Nam</NavLink>
+                    <Submenu categoryData={CAT_Men} />
+                  </div>
+                  <div>
+                    <NavLink to="/child">Trẻ em</NavLink>
+                  </div>
+                  <div>
+                    <NavLink style={{ color: "red" }} to="/product/6DS23S006">
+                      1
+                    </NavLink>
+                  </div>
+                  <div>
+                    <NavLink
+                      style={{ color: "red" }}
+                      to="/product/6DS23W023-SE249"
+                    >
+                      2
+                    </NavLink>
+                  </div>
+                  <div>
+                    <NavLink
+                      style={{ color: "red" }}
+                      to="/product/6TP23W005-SL213"
+                    >
+                      3
+                    </NavLink>
+                  </div>
+                  <div>
+                    <NavLink
+                      style={{ color: "red" }}
+                      to="/product/6DS23S003-SK010"
+                    >
+                      4
+                    </NavLink>
+                  </div>
+                </div>
               </div>
-              <div>
-                <NavLink style={{ color: "red" }} to="/product/6DS23W023-SE249">
-                  Demo SP 2
-                </NavLink>
-              </div>
-              <div>
-                <NavLink style={{ color: "red" }} to="/product/6TP23W005-SL213">
-                  Demo SP 3
-                </NavLink>
-              </div>
-              <div>
-                <NavLink style={{ color: "red" }} to="/product/6DS23S003-SK010">
-                  Demo SP 4
-                </NavLink>
+            </div>
+            <div className="col-10 col-lg-6 my-auto">
+              <div className={styles.menu_right}>
+                <div className={`${styles.search} d-none d-sm-block my-auto`}>
+                  <div className={styles.search_input_group}>
+                    <button className={styles.search_btn}></button>
+                    <input
+                      type="text"
+                      placeholder="Tìm kiếm"
+                      className={styles.search_input}
+                    />
+                  </div>
+                </div>
+                <div className={styles.group_icon}>
+                  <div className={styles.store}>
+                    <div>
+                      <StorefrontIcon />
+                    </div>
+                    <span>Cửa hàng</span>
+                  </div>
+                  <div className={styles.account}>
+                    <div>
+                      <AccountCircleIcon />
+                    </div>
+                    <span>Tài khoản</span>
+                  </div>
+                  <div
+                    className={styles.cart}
+                    onClick={() => dispatch(toggleCartPopup())}
+                  >
+                    <div>
+                      {" "}
+                      <ShoppingCartIcon />
+                    </div>
+                    <span>Giỏ hàng</span>
+                    <span className={styles.count}>{numberItemCart}</span>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
-          <div className={styles.menu_right}>
-            <div className={styles.search}>
-              <TextField
-                variant="outlined"
-                label={
-                  <>
-                    {" "}
-                    <SearchIcon /> Tìm kiếm
-                  </>
-                }
-              />
-            </div>
-            <div className={styles.group_icon}>
-              <div className={styles.store}>
-                <div>
-                  <StorefrontIcon />
-                </div>
-                <span>Cửa hàng</span>
-              </div>
-              <div className={styles.account}>
-                <div>
-                  <AccountCircleIcon />
-                </div>
-                <span>Tài khoản</span>
-              </div>
-              <div
-                className={styles.cart}
-                onClick={() => dispatch(toggleCartPopup())}
-              >
-                <div>
-                  {" "}
-                  <ShoppingCartIcon />
-                </div>
-                <span>Giỏ hàng</span>
-                <span className={styles.count}>{numberItemCart}</span>
-              </div>
-            </div>
-          </div>
-        </Box>
+        </div>
       </Box>
     </>
   );

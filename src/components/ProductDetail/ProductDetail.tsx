@@ -120,186 +120,149 @@ export default function ProductDetail() {
           </li>
         </ul>
       </div>
-      <div className={styles.wrap}>
-        <Carousel showArrows={false} className={styles.gallery} autoPlay infiniteLoop>
-          {itemRender &&
-            itemRender.imageUrl.map((item, index) => (
-              <div key={index}>
-                <img src={item} alt="" />
-              </div>
-            ))}
-        </Carousel>
-
-        <div className={styles.info_item}>
-          <h1 className={styles.product_name}>
-            {itemRender && itemRender.product_name}
-          </h1>
-          <div className={styles.product_sku}>
-            <strong className={styles.type}>Mã sản phẩm: </strong>
-            <div>{itemRender && itemRender.id}</div>
-          </div>
-          {itemRender && itemRender.sale.isSale ? (
-            <div className={styles.price_box}>
-              <span className={styles.normal_price}>
-                <span className={styles.price}>
-                  {convertPriceVnd(itemRender.sale.priceSale)} đ
-                </span>
-              </span>
-              <span className={styles.old_price_box}>
-                <span className={styles.sale_price}>
-                  {convertPriceVnd(itemRender.price)} đ
-                </span>
-                <span className={styles.percent_sale}>
-                  -
-                  {(
-                    ((itemRender.price - itemRender.sale.priceSale) /
-                      itemRender.price) *
-                    100
-                  ).toFixed(0)}
-                  %
-                </span>
-              </span>
-            </div>
-          ) : (
-            <div className={styles.price_box}>
-              <span className={styles.normal_price}>
-                <span className={styles.price}>
-                  {itemRender && convertPriceVnd(itemRender.price)} đ
-                </span>
-              </span>
-            </div>
-          )}
-          <div className={styles.color_box}>
-            <span className={styles.color_label}>
-              <span>Màu sắc: </span>
-              <span style={{ fontWeight: "500" }}>{currentColor}</span>
-            </span>
-            <div className={styles.color_option}>
+      <div className={`${styles.wrap} container-fluid`}>
+        <div className="row">
+          <div className="col-12 col-lg-7">
+            <Carousel
+              showArrows={false}
+              className={styles.gallery}
+              autoPlay
+              infiniteLoop
+            >
               {itemRender &&
-                itemRender.colors.map((item, index) => (
-                  <div
-                    className={`${styles.box_wrap} ${isColorSelected(item)}`}
-                    onClick={() => setCurrentColor(item)}
-                    key={index}
-                  >
-                    <div
-                      className={styles.item_color}
-                      style={{ backgroundColor: item }}
-                    ></div>
+                itemRender.imageUrl.map((item, index) => (
+                  <div key={index}>
+                    <img src={item} alt="" />
                   </div>
                 ))}
-            </div>
+            </Carousel>
           </div>
-          <div className={styles.size_box}>
-            <span className={styles.color_label}>
-              <span>Kích cỡ: </span>
-              <span style={{ fontWeight: "500" }}>{currentSize}</span>
-            </span>
-            <div className={styles.color_option}>
-              {itemRender &&
-                itemRender.sizes.map((item, index) => (
-                  <div
-                    key={index}
-                    className={`${styles.box_wrap} ${isSizeSelected(item)}`}
-                    onClick={() => setCurrentSize(item)}
+          <div className="col-12 col-lg-5">
+            <div className={styles.info_item}>
+              <h1 className={styles.product_name}>
+                {itemRender && itemRender.product_name}
+              </h1>
+              <div className={styles.product_sku}>
+                <strong className={styles.type}>Mã sản phẩm: </strong>
+                <div>{itemRender && itemRender.id}</div>
+              </div>
+              {itemRender && itemRender.sale.isSale ? (
+                <div className={styles.price_box}>
+                  <span className={styles.normal_price}>
+                    <span className={styles.price}>
+                      {convertPriceVnd(itemRender.sale.priceSale)} đ
+                    </span>
+                  </span>
+                  <span className={styles.old_price_box}>
+                    <span className={styles.sale_price}>
+                      {convertPriceVnd(itemRender.price)} đ
+                    </span>
+                    <span className={styles.percent_sale}>
+                      -
+                      {(
+                        ((itemRender.price - itemRender.sale.priceSale) /
+                          itemRender.price) *
+                        100
+                      ).toFixed(0)}
+                      %
+                    </span>
+                  </span>
+                </div>
+              ) : (
+                <div className={styles.price_box}>
+                  <span className={styles.normal_price}>
+                    <span className={styles.price}>
+                      {itemRender && convertPriceVnd(itemRender.price)} đ
+                    </span>
+                  </span>
+                </div>
+              )}
+              <div className={styles.color_box}>
+                <span className={styles.color_label}>
+                  <span>Màu sắc: </span>
+                  <span style={{ fontWeight: "500" }}>{currentColor}</span>
+                </span>
+                <div className={styles.color_option}>
+                  {itemRender &&
+                    itemRender.colors.map((item, index) => (
+                      <div
+                        className={`${styles.box_wrap} ${isColorSelected(
+                          item
+                        )}`}
+                        onClick={() => setCurrentColor(item)}
+                        key={index}
+                      >
+                        <div
+                          className={styles.item_color}
+                          style={{ backgroundColor: item }}
+                        ></div>
+                      </div>
+                    ))}
+                </div>
+              </div>
+              <div className={styles.size_box}>
+                <span className={styles.color_label}>
+                  <span>Kích cỡ: </span>
+                  <span style={{ fontWeight: "500" }}>{currentSize}</span>
+                </span>
+                <div className={styles.color_option}>
+                  {itemRender &&
+                    itemRender.sizes.map((item, index) => (
+                      <div
+                        key={index}
+                        className={`${styles.box_wrap} ${isSizeSelected(item)}`}
+                        onClick={() => setCurrentSize(item)}
+                      >
+                        {item}
+                      </div>
+                    ))}
+                </div>
+              </div>
+              <div className={styles.product_options_actions}>
+                <div className="d-grid gap-2">
+                  <button
+                    className="btn btn-warning btn-lg"
+                    type="button"
+                    onClick={() => verifyAddItem(currentItemChoose)}
                   >
-                    {item}
+                    Thêm vào giỏ hàng
+                  </button>
+                  <button className="btn btn-danger btn-lg" type="button">
+                    Mua ngay
+                  </button>
+                </div>
+              </div>
+              <div className={styles.items_information}>
+                <div className={styles.item_information}>
+                  <div className={styles.item_title}>Mô tả</div>
+                  <div className={styles.item_content}>
+                    Áo cộc tay cổ bẻ, dáng ngắn, eo ôm vừa, chất liệu interlock
+                    dầy dặn, thoải mái, dễ chịu cho người mặc, phù hợp với đi
+                    chơi, đi làm, thời tiết mùa thu, mùa xuân. Chất liệu Cotton
+                    Polyester - Ưu điểm của nguyên liệu: Bề mặt lì, chắc dày
+                    dặn, dấu dáng cho người mặc, ít nhăn.- Phom dáng: Phù hợp
+                    với phom dáng vừa đến rộng. - Mùa: Phù hợp thời điểm giao
+                    mùa (Xuân và Thu).
                   </div>
-                ))}
+                </div>
+                <div className={styles.item_information}>
+                  <div className={styles.item_title}>Chất liệu</div>
+                  <div className={styles.item_content}>
+                    60% polyester 40% cotton
+                  </div>
+                </div>
+                <div className={styles.item_information}>
+                  <div className={styles.item_title}>Hướng dẫn sử dụng</div>
+                  <div className={styles.item_content}>
+                    Giặt máy ở chế độ nhẹ, nhiệt độ thường. Không sử dụng hóa
+                    chất tẩy có chứa Clo. Phơi trong bóng mát. Sấy khô ở nhiệt
+                    độ thấp. Là ở nhiệt độ thấp 110 độ C. Giặt với sản phẩm cùng
+                    màu. Không là lên chi tiết trang trí.
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
-          <div className={styles.product_options_actions}>
-            <div className="d-grid gap-2">
-              <button
-                className="btn btn-warning btn-lg"
-                type="button"
-                onClick={() => verifyAddItem(currentItemChoose)}
-              >
-                Thêm vào giỏ hàng
-              </button>
-              <button className="btn btn-danger btn-lg" type="button">
-                Mua ngay
-              </button>
-            </div>
-          </div>
-          <ul className={styles.product_feauture}>
-            <li>
-              <div className={styles.icon}>
-                <img
-                  src="https://routine.vn/static/version1693379826/frontend/Magenest/routine/vi_VN/images/ghn.png"
-                  alt=""
-                />
-              </div>
-
-              <div className={styles.text}>
-                <strong>Giao hàng nhanh</strong>
-                <p>Từ 2 - 5 ngày</p>
-              </div>
-            </li>
-            <li>
-              <div className={styles.icon}>
-                <img
-                  src="https://routine.vn/static/version1693379826/frontend/Magenest/routine/vi_VN/images/free.png"
-                  alt=""
-                />
-              </div>
-
-              <div className={styles.text}>
-                <strong>Miễn phí vận chuyển</strong>
-                <p>Đơn hàng từ 399K</p>
-              </div>
-            </li>
-            <li>
-              <div className={styles.icon}>
-                <img
-                  src="https://routine.vn/static/version1693379826/frontend/Magenest/routine/vi_VN/images/order.png "
-                  alt=""
-                />
-              </div>
-
-              <div className={styles.text}>
-                <strong>Theo dõi đơn hàng một cách dễ dàng</strong>
-              </div>
-            </li>
-            <li>
-              <div className={styles.icon}>
-                <img
-                  src="https://routine.vn/static/version1693379826/frontend/Magenest/routine/vi_VN/images/returns.png"
-                  alt=""
-                />
-              </div>
-
-              <div className={styles.text}>
-                <strong>Đổi trả linh hoạt</strong>
-                <p>Với sản phẩm không tham gia chương trình khuyến mãi</p>
-              </div>
-            </li>
-            <li>
-              <div className={styles.icon}>
-                <img
-                  src="https://routine.vn/static/version1693379826/frontend/Magenest/routine/vi_VN/images/pay.png"
-                  alt=""
-                />
-              </div>
-
-              <div className={styles.text}>
-                <strong>Thanh toán dễ dàng nhiều hình thức</strong>
-              </div>
-            </li>
-            <li>
-              <div className={styles.icon}>
-                <img
-                  src="https://routine.vn/static/version1693379826/frontend/Magenest/routine/vi_VN/images/hotline.png"
-                  alt=""
-                />
-              </div>
-
-              <div className={styles.text}>
-                <strong>Hotline hỗ trợ</strong>
-                <h6>0967 334 520</h6>
-              </div>
-            </li>
-          </ul>
         </div>
       </div>
       <ServiceComponent />

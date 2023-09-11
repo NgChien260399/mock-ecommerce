@@ -21,7 +21,7 @@ export default function ServiceComponent() {
   ];
 
   return (
-    <Container maxWidth="xl">
+    <div className={`container-fluid ${styles.container}`}>
       <div className={styles.service}>
         {dataService.map((item, index) => (
           <div key={index} className={styles.item}>
@@ -35,7 +35,6 @@ export default function ServiceComponent() {
           </div>
         ))}
       </div>
-    </Container>
+    </div>
   );
 }
-
