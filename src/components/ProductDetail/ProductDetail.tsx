@@ -108,9 +108,6 @@ export default function ProductDetail() {
       notifyError("Vui lòng chọn màu và size cho sản phẩm !", toastError);
     }
   };
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  });
 
   return (
     <div>
