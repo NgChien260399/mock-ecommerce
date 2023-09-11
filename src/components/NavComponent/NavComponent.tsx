@@ -88,14 +88,14 @@ const NavComponent = () => {
                     <NavLink to="/child">Trẻ em</NavLink>
                   </div>
                   <div>
-                    <NavLink style={{ color: "red" }} to="/product/6DS23S006">
+                    <NavLink style={{ color: "red" }} to="/product/8TS23S004">
                       1
                     </NavLink>
                   </div>
                   <div>
                     <NavLink
                       style={{ color: "red" }}
-                      to="/product/6DS23W023-SE249"
+                      to="/product/8TS23S021"
                     >
                       2
                     </NavLink>
@@ -103,7 +103,7 @@ const NavComponent = () => {
                   <div>
                     <NavLink
                       style={{ color: "red" }}
-                      to="/product/6TP23W005-SL213"
+                      to="/product/8TH23S003"
                     >
                       3
                     </NavLink>
@@ -111,7 +111,7 @@ const NavComponent = () => {
                   <div>
                     <NavLink
                       style={{ color: "red" }}
-                      to="/product/6DS23S003-SK010"
+                      to="/product/8TA23S002"
                     >
                       4
                     </NavLink>

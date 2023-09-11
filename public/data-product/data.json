@@ -1,73 +1,71 @@
 [
   {
-    "id": "6DS23S006",
-    "product_name": "Váy liền nữ sát nách cổ đức có đai thắt eo",
-    "price": 1299000,
+    "id": "8TS23S004",
+    "product_name": "Áo phông nam cotton cổ tròn có hình in dáng suông",
+    "price": 169000,
     "sale": {
       "isSale": true,
-      "priceSale": 399000
+      "priceSale": 129000
     },
     "imageUrl": [
-      "https://canifa.com/img/1000/1500/resize/6/d/6ds23s006-sl114-1.webp",
-      "https://canifa.com/img/1000/1500/resize/6/d/6ds23s006-sl114-2.webp",
-      "https://canifa.com/img/1000/1500/resize/6/d/6ds23s006-sl114-m-1.webp",
-      "https://canifa.com/img/1000/1500/resize/6/d/6ds23s006-sl114-m-2.webp"
+      "https://canifa.com/img/1000/1500/resize/8/t/8ts23s004-sw001-2-thumb.webp",
+      "https://canifa.com/img/1000/1500/resize/8/t/8ts23s004-sw001-xl-1.webp",
+      "https://canifa.com/img/1000/1500/resize/8/t/8ts23s004-sg428-3.webp",
+      "https://canifa.com/img/1000/1500/resize/8/t/8ts23s004-sg428-xl-1.webp"
     ],
     "sizes": ["S", "M", "L", "XL"],
     "colors": ["Black", "Green", "Purple", "Red"],
-    "category": "vay"
+    "category": "ao"
   },
   {
-    "id": "6DS23W023-SE249",
-    "product_name": "Váy liền nữ interlock cổ bẻ dáng dài",
-    "price": 899000,
+    "id": "8TS23S021",
+    "product_name": "Áo phông nam cotton cổ tròn cộc tay có hình in",
+    "price": 249000,
     "sale": {
-      "isSale": false,
-      "priceSale": 399000
+      "isSale": true,
+      "priceSale": 149000
     },
     "imageUrl": [
-      "https://canifa.com/img/1000/1500/resize/6/d/6ds23w023-se249-1-thumb.webp",
-      "https://canifa.com/img/1000/1500/resize/6/d/6ds23w023-se249-2.webp",
-      "https://canifa.com/img/1000/1500/resize/6/d/6ds23w023-se249-3.webp",
-      "https://canifa.com/img/1000/1500/resize/6/d/6ds23w023-se249-m-1-a.webp"
+      "https://canifa.com/img/1000/1500/resize/8/t/8ts23s021-sb148-1.webp",
+      "https://canifa.com/img/1000/1500/resize/8/t/8ts23s021-sb148-2-thumb.webp",
+      "https://canifa.com/img/1000/1500/resize/8/t/8ts23s021-sb148-3.webp",
+      "https://canifa.com/img/1000/1500/resize/8/t/8ts23s021-sb148-xl-1.webp"
     ],
     "sizes": ["S", "M", "L", "XL"],
     "colors": ["Black", "Gray", "Navy", "Red"],
-    "category": "vay"
+    "category": "ao"
   },
   {
-    "id": "6TP23W005-SL213",
-    "product_name": "Áo polo nữ interlock dáng ngắn",
-    "price": 299000,
+    "id": "8TH23S003",
+    "product_name": "Áo sơ mi nam cổ đức cộc tay hai túi ốp ngực có hình in",
+    "price": 599000,
     "sale": {
-      "isSale": true,
+      "isSale": false,
       "priceSale": 199000
     },
     "imageUrl": [
-      "https://canifa.com/img/1000/1500/resize/6/t/6tp23w005-sl213-2-thumb.webp",
-      "https://canifa.com/img/1000/1500/resize/6/t/6tp23w005-sl213-1.webp",
-      "https://canifa.com/img/1000/1500/resize/6/t/6tp23w005-sl213-4.webp",
-      "https://canifa.com/img/1000/1500/resize/6/t/6tp23w005-sl213-m-1-u.webp",
-      "https://canifa.com/img/1000/1500/resize/6/t/6tp23w005-sl213-m-2.webp"
+      "https://canifa.com/img/1000/1500/resize/8/t/8th23s003-sk010-1.webp",
+      "https://canifa.com/img/1000/1500/resize/8/t/8th23s003-sk010-2.webp",
+      "https://canifa.com/img/1000/1500/resize/8/t/8th23s003-sk010-xl-1.webp",
+      "https://canifa.com/img/1000/1500/resize/8/t/8th23s003-sk010-xl-2.webp"
     ],
     "sizes": ["S", "M", "L"],
     "colors": ["Black", "Navy"],
     "category": "ao"
   },
   {
-    "id": "6DS23S003-SK010",
-    "product_name": "Váy liền nữ cotton xẻ tà dáng suông",
-    "price": 499000,
+    "id": "8TA23S002",
+    "product_name": "Áo sát nách nam drytech cổ tròn dáng suông có hình in",
+    "price": 699000,
     "sale": {
       "isSale": true,
-      "priceSale": 249500
+      "priceSale": 399000
     },
     "imageUrl": [
-      "https://canifa.com/img/1000/1500/resize/6/d/6ds23s003-sk010-1-thumb.webp",
-      "https://canifa.com/img/1000/1500/resize/6/d/6ds23s003-sk010-2.webp",
-      "https://canifa.com/img/1000/1500/resize/6/d/6ds23s003-sk010-3.webp",
-      "https://canifa.com/img/1000/1500/resize/6/d/6ds23s003-sk010-m-1.webp",
-      "https://canifa.com/img/1000/1500/resize/6/d/6ds23s003-sk010-m-2.webp"
+      "https://canifa.com/img/1000/1500/resize/8/t/8ta23s002-sg179-1.webp",
+      "https://canifa.com/img/1000/1500/resize/8/t/8ta23s002-sg179-2-thumb.webp",
+      "https://canifa.com/img/1000/1500/resize/8/t/8ta23s002-sg179-3.webp",
+      "https://canifa.com/img/1000/1500/resize/8/t/8ta23s002-sg179-xl-1.webp"
     ],
     "sizes": ["S", "M", "L", "XL", "XXL"],
     "colors": ["Yellow", "Navy", "Grey", "Cyan"],

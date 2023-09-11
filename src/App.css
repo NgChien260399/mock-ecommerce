@@ -18,6 +18,9 @@
 .thumbs {
   transform: none !important;
 }
+.carousel .thumbs-wrapper {
+  margin: 0 20px !important;
+}
 .control-arrow {
   display: none;
 }
