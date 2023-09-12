@@ -1,28 +1,30 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
 import { Button, TextField } from "@mui/material";
 import FacebookIcon from "@mui/icons-material/Facebook";
 import InstagramIcon from "@mui/icons-material/Instagram";
 import YouTubeIcon from "@mui/icons-material/YouTube";
 import TwitterIcon from "@mui/icons-material/Twitter";
-import { ToastContainer, toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import styles from "./Footer.module.css";
 
+
 const SubscribeForm = () => {
-  const [email, setEmail] = useState('');
+  const [email, setEmail] = useState("");
 
   const handleSubscribe = () => {
     if (!email) {
-      toast.error('Email không được để trống');
+      toast.error("Email không được để trống");
     } else if (!/^[\w-.]+@([\w-]+\.)+[\w-]{2,4}$/g.test(email)) {
-      toast.error('Email đã tồn tại hoặc không đúng định dạng.Vui lòng kiểm tra lại email.');
+      toast.error(
+        "Email đã tồn tại hoặc không đúng định dạng.Vui lòng kiểm tra lại email."
+      );
     } else {
-      
+      toast.success(
+        "Cảm ơn bạn đã đăng ký . Hãy kiểm tra e-mail để xác nhận lại với Graceful,bạn nhé "
+      );
 
-      toast.success('Cảm ơn bạn đã đăng ký . Hãy kiểm tra e-mail để xác nhận lại với Graceful,bạn nhé ');
-
-      
-      setEmail('');
+      setEmail("");
     }
   };
 
@@ -31,7 +33,8 @@ const SubscribeForm = () => {
       <div className={styles.formSubscribe}>
         <h2 className={styles.Title}>Đăng ký nhận bản tin</h2>
         <p className={styles.formSubscribeP}>
-          Cùng Graceful Blog cập nhật những thông tin mới nhất về thời trang và phong cách sống.
+          Cùng Graceful Blog cập nhật những thông tin mới nhất về thời trang và
+          phong cách sống.
         </p>
         <div className={styles.inputContainer}>
           <ToastContainer />
@@ -75,8 +78,8 @@ const ContactInfo = () => {
     <div className={`${styles.footerSection} col-sm-4`}>
       <h3 className={styles.title}>CÔNG TY CỔ PHẦN Graceful</h3>
       <p>
-        Số ĐKKD: 9999999, ngày cấp: 1/09/2023, Nơi cấp: Sở Kế hoạch và đầu
-        tư Hà Nội
+        Số ĐKKD: 9999999, ngày cấp: 1/09/2023, Nơi cấp: Sở Kế hoạch và đầu tư Hà
+        Nội
       </p>
       <p>Địa chỉ trụ sở tại số 17 Duy Tân</p>
       <p>Địa chỉ liên hệ: 17 Duy Tân</p>
@@ -84,13 +87,25 @@ const ContactInfo = () => {
       <p>Fax: +8424 - ****.****</p>
       <p>Email: nhóm4@Graceful.com</p>
       <div className={styles.socialIcons1}>
-        <a className={styles.socialIcons1A} href="https://www.facebook.com/canifa.fanpage/" target="_blank">
+        <a
+          className={styles.socialIcons1A}
+          href="https://www.facebook.com/canifa.fanpage/"
+          target="_blank"
+        >
           <FacebookIcon />
         </a>
-        <a className={styles.socialIcons1A} href="https://www.instagram.com/canifa.fashion/" target="_blank">
+        <a
+          className={styles.socialIcons1A}
+          href="https://www.instagram.com/canifa.fashion/"
+          target="_blank"
+        >
           <InstagramIcon />
         </a>
-        <a className={styles.socialIcons1A} href="https://www.youtube.com/CANIFAOfficial" target="_blank">
+        <a
+          className={styles.socialIcons1A}
+          href="https://www.youtube.com/CANIFAOfficial"
+          target="_blank"
+        >
           <YouTubeIcon />
         </a>
         <a className={styles.socialIcons1A} href="#">
@@ -176,17 +191,25 @@ const AppDownload = () => {
               alt="qr"
             />
           </div>
-          <div className={styles.Apps}>
-            <a className={styles.AppsA} href="https://play.google.com/store/apps/details?id=com.app.canifa&hl=en" target="_blank">
+          <div className={styles.footerApps}>
+            <a
+              className={styles.footerAppsA}
+              href="https://play.google.com/store/apps/details?id=com.app.canifa&hl=en"
+              target="_blank"
+            >
               <img
-                className={`${styles.AppsImg} ${styles.Apps}`}
+                className={`${styles.footerAppsImg} ${styles.footerApps}`}
                 src="https://canifa.com/assets/images/googleplay.png"
                 alt=""
               />
             </a>
-            <a className={styles.AppsA} href="https://apps.apple.com/vn/app/canifa/id1175895653" target="_blank">
+            <a
+              className={styles.footerAppsA}
+              href="https://apps.apple.com/vn/app/canifa/id1175895653"
+              target="_blank"
+            >
               <img
-                className={`${styles.AppsImg} ${styles.Apps}`}
+                className={`${styles.footerAppsImg} ${styles.footerApps}`}
                 src="https://canifa.com/assets/images/appstore.png"
                 alt=""
               />
@@ -196,7 +219,9 @@ const AppDownload = () => {
       </div>
 
       <div>
-        <h3 className={styles.title} style={{ marginTop: "20px" }}>PHƯƠNG THỨC THANH TOÁN</h3>
+        <h3 className={styles.title} style={{ marginTop: "20px" }}>
+          PHƯƠNG THỨC THANH TOÁN
+        </h3>
         <img src="https://canifa.com/assets/images/pay.svg" alt="" />
       </div>
     </div>
@@ -209,7 +234,11 @@ const FooterBottom = () => {
       <div className={styles.footerBottom}>
         <div className="copyright">© 2023 Graceful</div>
         <div className="bct">
-          <a href="http://online.gov.vn/(X(1)S(edqk3incgl5uzlmn5mxjtu0b))/Home/WebDetails/36833?AspxAutoDetectCookieSupport=1" target="_blank" aria-label="Pay">
+          <a
+            href="http://online.gov.vn/(X(1)S(edqk3incgl5uzlmn5mxjtu0b))/Home/WebDetails/36833?AspxAutoDetectCookieSupport=1"
+            target="_blank"
+            aria-label="Pay"
+          >
             <img
               src="https://canifa.com/assets/images/bocongthuong.png"
               alt=""
@@ -228,7 +257,7 @@ const Footer = () => {
         <SubscribeForm />
         <div
           className={styles.footerEnd}
-          style={{ display: "flex", flexWrap: "wrap" , background:"b"}}
+          style={{ display: "flex", flexWrap: "wrap", background: "b" }}
         >
           <ContactInfo />
           <BrandLinks />

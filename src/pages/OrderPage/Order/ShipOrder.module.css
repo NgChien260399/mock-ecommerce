@@ -1,0 +1,8 @@
+.formContainer {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    grid-column-gap: 20px;
+    background-color: #fafafa;
+    padding: 2%;
+  }
+  
