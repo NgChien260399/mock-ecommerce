@@ -74,7 +74,9 @@ export default function NewMenPage() {
             <ul>
               <li>
                 <button
-                  className={styles.filter_item}
+                  className={`${styles.filter_item} ${
+                    filterSearch.category.includes("ao") ? styles.active : ""
+                  }`}
                   onClick={() =>
                     setFilterSearch((prevState: any) => ({
                       ...prevState,
@@ -87,6 +89,9 @@ export default function NewMenPage() {
               </li>
               <li>
                 <button
+                  className={`${styles.filter_item} ${
+                    filterSearch.category.includes("quan") ? styles.active : ""
+                  }`}
                   onClick={() =>
                     setFilterSearch((prevState: any) => ({
                       ...prevState,
@@ -99,6 +104,11 @@ export default function NewMenPage() {
               </li>
               <li>
                 <button
+                  className={`${styles.filter_item} ${
+                    filterSearch.category.includes("do-mac-ngoai")
+                      ? styles.active
+                      : ""
+                  }`}
                   onClick={() =>
                     setFilterSearch((prevState: any) => ({
                       ...prevState,
@@ -111,6 +121,11 @@ export default function NewMenPage() {
               </li>
               <li>
                 <button
+                  className={`${styles.filter_item} ${
+                    filterSearch.category.includes("do-mac-nha")
+                      ? styles.active
+                      : ""
+                  }`}
                   onClick={() =>
                     setFilterSearch((prevState: any) => ({
                       ...prevState,
@@ -123,6 +138,11 @@ export default function NewMenPage() {
               </li>
               <li>
                 <button
+                  className={`${styles.filter_item} ${
+                    filterSearch.category.includes("do-mac-trong")
+                      ? styles.active
+                      : ""
+                  }`}
                   onClick={() =>
                     setFilterSearch((prevState: any) => ({
                       ...prevState,
@@ -134,12 +154,21 @@ export default function NewMenPage() {
                 </button>
               </li>
               <li>
-                <button onClick={() =>
+                <button
+                  className={`${styles.filter_item} ${
+                    filterSearch.category.includes("phu-kien")
+                      ? styles.active
+                      : ""
+                  }`}
+                  onClick={() =>
                     setFilterSearch((prevState: any) => ({
                       ...prevState,
                       category: "phu-kien",
                     }))
-                  }>Phụ kiện</button>
+                  }
+                >
+                  Phụ kiện
+                </button>
               </li>
             </ul>
             <div className={styles.label}>Kích cỡ</div>

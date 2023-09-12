@@ -14,6 +14,7 @@
   background: none;
   padding: 0;
   text-align: left;
+  font-weight: 500;
 }
 .cate_left ul li {
   list-style-type: none;
@@ -81,6 +82,9 @@
 .selected {
   border: 1px solid #333f48;
   font-weight: 500;
+}
+.active{
+  color: red;
 }
 @media only screen and (max-width: 576px) {
   .size_option,
