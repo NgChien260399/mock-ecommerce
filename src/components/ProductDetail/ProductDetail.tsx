@@ -30,6 +30,11 @@ export interface data {
 }
 
 export default function ProductDetail() {
+  window.scrollTo({
+    top: 0,
+    left: 0,
+    behavior: "instant",
+  });
   const notifyError = (message: string, config: any) =>
     toast.error(message, config);
   const notifySuccess = (message: string, config: any) =>

@@ -70,5 +70,59 @@
     "sizes": ["S", "M", "L", "XL", "XXL"],
     "colors": ["Yellow", "Navy", "Grey", "Cyan"],
     "category": "ao"
+  },
+  {
+    "id": "8TP23S007",
+    "product_name": "Áo polo wicking active nam anti UV drytech dáng suông",
+    "price": 499000,
+    "sale": {
+      "isSale": false,
+      "priceSale": 399000
+    },
+    "imageUrl": [
+      "https://canifa.com/img/1000/1500/resize/8/t/8tp23s007-sa422-1.webp",
+      "https://canifa.com/img/1000/1500/resize/8/t/8tp23s007-sa422-2-thumb.webp",
+      "https://canifa.com/img/1000/1500/resize/8/t/8tp23s007-sa422-3.webp",
+      "https://canifa.com/img/1000/1500/resize/8/t/8tp23s007-sa422-xl-1.webp"
+    ],
+    "sizes": ["S", "M", "L", "XL", "XXL"],
+    "colors": ["Yellow", "Navy", "Grey", "Cyan"],
+    "category": "ao"
+  },
+  {
+    "id": "8BS23S006",
+    "product_name": "Quần soóc nam có túi hai bên",
+    "price": 549000,
+    "sale": {
+      "isSale": false,
+      "priceSale": 399000
+    },
+    "imageUrl": [
+      "https://canifa.com/img/1000/1500/resize/8/b/8bs23s006-sk010-1.webp",
+      "https://canifa.com/img/1000/1500/resize/8/b/8bs23s006-sk010-2-thumb.webp",
+      "https://canifa.com/img/1000/1500/resize/8/b/8bs23s006-sk010-3.webp",
+      "https://canifa.com/img/1000/1500/resize/8/b/8bs23s006-sk010-4.webp"
+    ],
+    "sizes": ["28", "29", "30", "31", "32"],
+    "colors": ["Maroon", "Fuchsia", "Olive", "Teal"],
+    "category": "quan"
+  },
+  {
+    "id": "8BS23S015",
+    "product_name": "Quần soóc nam cạp chun moi giả",
+    "price": 249000,
+    "sale": {
+      "isSale": false,
+      "priceSale": 399000
+    },
+    "imageUrl": [
+      "https://canifa.com/img/1000/1500/resize/8/b/8bs23s015-sk010-2-thumb.webp",
+      "https://canifa.com/img/1000/1500/resize/8/b/8bs23s015-sk010-1.webp",
+      "https://canifa.com/img/1000/1500/resize/8/b/8bs23s015-sk010-3.webp",
+      "https://canifa.com/img/1000/1500/resize/8/b/8bs23s015-sk010-xl-1.webp"
+    ],
+    "sizes": ["28", "29", "30", "31", "32"],
+    "colors": ["Maroon", "Fuchsia", "Olive", "Teal"],
+    "category": "quan"
   }
 ]

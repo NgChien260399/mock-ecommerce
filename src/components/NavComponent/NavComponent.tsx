@@ -124,7 +124,7 @@ const NavComponent = () => {
                     <Submenu categoryData={CAT_Women} />
                   </div>
                   <div>
-                    <NavLink to="/men">Nam</NavLink>
+                    <NavLink to="/newmen">Nam</NavLink>
                     <Submenu categoryData={CAT_Men} />
                   </div>
                   <div>
