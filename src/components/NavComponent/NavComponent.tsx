@@ -1,4 +1,4 @@
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import { Box } from "@mui/material";
 import StorefrontIcon from "@mui/icons-material/Storefront";
 import AccountCircleIcon from "@mui/icons-material/AccountCircle";
@@ -8,7 +8,9 @@ import CAT_Women from "./CAT_women.json";
 import { useDispatch, useSelector } from "react-redux";
 import { toggleCartPopup } from "../../redux/actions/DisplayCart.action";
 import styles from "./NavComponent.module.css";
-
+import { Col, Row } from "react-bootstrap";
+import dataProduct from "../../../public/data-product/data.json";
+import { useState, useRef, useEffect } from "react";
 interface MenuItem {
   path: string;
   name: string;
@@ -37,6 +39,46 @@ const Submenu: React.FC<SubmenuProps> = ({ categoryData }) => {
 };
 
 const NavComponent = () => {
+  const [inputSearch, setInputSearch] = useState("");
+  const inputRef = useRef<HTMLInputElement>(null);
+  const [showResult, setShowResult] = useState(false);
+  const resultRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (
+        inputRef.current &&
+        resultRef.current &&
+        !inputRef.current.contains(event.target as Node) &&
+        !resultRef.current.contains(event.target as Node)
+      ) {
+        setShowResult(false);
+        setInputSearch("");
+      }
+    };
+
+    document.addEventListener("mousedown", handleClickOutside);
+
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, []);
+  const handleInputFocus = () => {
+    setShowResult(true);
+  };
+
+  const handleChangeInput = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setInputSearch(event.target.value);
+  };
+  const resultSearch = dataProduct.filter((item) => {
+    return inputSearch
+      .trim()
+      .toLowerCase()
+      .split(" ")
+      .every((word) =>
+        item.product_name.toLowerCase().split(" ").includes(word)
+      );
+  });
   const dispatch = useDispatch();
   const numberItemCart = useSelector((state: any) =>
     state.cartItemReduceer.reduce((acc: any, item: any) => {
@@ -114,14 +156,75 @@ const NavComponent = () => {
             <div className="col-10 col-lg-6 my-auto">
               <div className={styles.menu_right}>
                 <div className={`${styles.search} d-none d-sm-block my-auto`}>
-                  <div className={styles.search_input_group}>
-                    <button className={styles.search_btn}></button>
+                  <div
+                    className={styles.search_input_group}
+                    ref={inputRef}
+                    onFocus={handleInputFocus}
+                  >
+                    <div className={styles.search_btn}></div>
                     <input
                       type="text"
                       placeholder="Tìm kiếm"
                       className={styles.search_input}
+                      onChange={handleChangeInput}
+                      value={inputSearch}
                     />
                   </div>
+                  {showResult && inputSearch !== "" && (
+                    <div className={styles.search_result} ref={resultRef}>
+                      <div className={styles.item_search}>
+                        {resultSearch.length > 0
+                          ? resultSearch.map((item, index) => (
+                              <Link
+                                to={`/product/${item.id}`}
+                                style={{
+                                  color: "white",
+                                  textDecoration: "none",
+                                }}
+                                onClick={() => {
+                                  setShowResult(false), setInputSearch("");
+                                }}
+                                key={index}
+                              >
+                                <div
+                                  className={styles.item_search_info}
+                                  key={index}
+                                >
+                                  <Row className="p-3">
+                                    <Col xs={3}>
+                                      <div
+                                        className={
+                                          styles.item_search_info_image
+                                        }
+                                      >
+                                        <img src={item.imageUrl[0]} alt="" />
+                                      </div>
+                                    </Col>
+                                    <Col xs={9} className="my-auto">
+                                      <div
+                                        className={styles.item_search_info_name}
+                                      >
+                                        <h6>{item.product_name}</h6>
+                                      </div>
+                                    </Col>
+                                  </Row>
+                                </div>
+                              </Link>
+                            ))
+                          : inputSearch !== "" && (
+                              <div className={styles.item_text}>
+                                <Row>
+                                  <Col>
+                                    <h6 style={{ textAlign: "center" }}>
+                                      Không có kết quả !
+                                    </h6>
+                                  </Col>
+                                </Row>
+                              </div>
+                            )}
+                      </div>
+                    </div>
+                  )}
                 </div>
                 <div className={styles.group_icon}>
                   <div className={styles.store}>
