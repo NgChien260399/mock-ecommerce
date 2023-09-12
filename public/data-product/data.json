@@ -103,7 +103,7 @@
       "https://canifa.com/img/1000/1500/resize/8/b/8bs23s006-sk010-3.webp",
       "https://canifa.com/img/1000/1500/resize/8/b/8bs23s006-sk010-4.webp"
     ],
-    "sizes": ["28", "29", "30", "31", "32"],
+    "sizes": ["S", "M", "L", "XL", "XXL"],
     "colors": ["Maroon", "Fuchsia", "Olive", "Teal"],
     "category": "quan"
   },
@@ -121,8 +121,61 @@
       "https://canifa.com/img/1000/1500/resize/8/b/8bs23s015-sk010-3.webp",
       "https://canifa.com/img/1000/1500/resize/8/b/8bs23s015-sk010-xl-1.webp"
     ],
-    "sizes": ["28", "29", "30", "31", "32"],
+    "sizes": ["S", "M", "L", "XL", "XXL"],
+
     "colors": ["Maroon", "Fuchsia", "Olive", "Teal"],
     "category": "quan"
+  },
+  {
+    "id": "8OT23S001",
+    "product_name": "Áo khoác chống nắng nam",
+    "price": 449000,
+    "sale": {
+      "isSale": false,
+      "priceSale": 399000
+    },
+    "imageUrl": [
+      "https://canifa.com/img/1000/1500/resize/8/o/8ot23s001-sb001-1.webp",
+      "https://canifa.com/img/1000/1500/resize/8/o/8ot23s001-sb001-2.webp",
+      "https://canifa.com/img/1000/1500/resize/8/o/8ot23s001-sb001-3-thumb.webp",
+      "https://canifa.com/img/1000/1500/resize/8/o/8ot23s001-sb001-4.webp"
+    ],
+    "sizes": ["S", "M", "L", "XL", "XXL"],
+    "colors": ["Maroon", "Fuchsia", "Olive", "Teal"],
+    "category": "do-mac-ngoai"
+  },
+  {
+    "id": "8US23A012",
+    "product_name": "Combo 3 quần sịp đùi nam dáng skinny",
+    "price": 199000,
+    "sale": {
+      "isSale": true,
+      "priceSale": 99000
+    },
+    "imageUrl": [
+      "https://canifa.com/img/1000/1500/resize/8/u/8us23a012-sl184-xl-1.webp",
+      "https://canifa.com/img/1000/1500/resize/8/u/8us23a012-sl185-xl-1.webp"
+    ],
+    "sizes": ["S", "M", "L", "XL", "XXL"],
+    "colors": ["Maroon", "Fuchsia", "Olive", "Teal"],
+    "category": "do-mac-trong"
+  },
+  {
+    "id": "8LS23S001",
+    "product_name": "Bộ mặc nhà nam áo ba lỗ quần soóc cạp chun có hình in",
+    "price": 299000,
+    "sale": {
+      "isSale": true,
+      "priceSale": 199000
+    },
+    "imageUrl": [
+      "https://canifa.com/img/1000/1500/resize/8/l/8ls23s001-sb740-1.webp",
+      "https://canifa.com/img/1000/1500/resize/8/l/8ls23s001-sb740-2-thumb.webp",
+      "https://canifa.com/img/1000/1500/resize/8/l/8ls23s001-sb740-3.webp",
+      "https://canifa.com/img/1000/1500/resize/8/l/8ls23s001-sb740-xl-2.webp"
+    ],
+    "sizes": ["S", "M", "L", "XL", "XXL"],
+    "colors": ["Maroon", "Fuchsia", "Olive", "Teal"],
+    "category": "do-mac-nha"
   }
 ]

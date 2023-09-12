@@ -1,5 +1,6 @@
 import React, { useCallback, useEffect, useState, useRef } from "react";
 import styles from "./MultiRangeSlider.module.css";
+import { convertPriceVnd } from "../ProductDetail/ProductDetail";
 
 interface MultiRangeSliderProps {
   min: number;
@@ -80,8 +81,12 @@ const MultiRangeSlider: React.FC<MultiRangeSliderProps> = ({
       <div className={styles.slider}>
         <div className={styles["slider__track"]} />
         <div ref={range} className={styles["slider__range"]} />
-        <div className={styles["slider__left-value"]}>{minVal} đ</div>
-        <div className={styles["slider__right-value"]}>{maxVal} đ</div>
+        <div className={styles["slider__left-value"]}>
+          {convertPriceVnd(minVal)} đ
+        </div>
+        <div className={styles["slider__right-value"]}>
+          {convertPriceVnd(maxVal)} đ
+        </div>
       </div>
     </div>
   );

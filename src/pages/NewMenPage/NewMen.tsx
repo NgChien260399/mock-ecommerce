@@ -3,7 +3,7 @@ import data from "../../../public/data-product/data.json";
 import { Col, Row } from "react-bootstrap";
 import styles from "./NewMen.module.css";
 import MultiRangeSlider from "../../components/MultiRangeSlider/MultiRangeSlider";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 
 export default function NewMenPage() {
   const listColors = [
@@ -24,33 +24,111 @@ export default function NewMenPage() {
     "Teal",
     "Aqua",
   ];
+
   const handleSliderChange = ({ min, max }: { min: number; max: number }) => {
-    console.log(`min = ${min}, max = ${max}`);
+    setFilterSearch((prevState) => ({
+      ...prevState,
+      priceMinFilter: min,
+      priceMaxFilter: max,
+    }));
   };
+
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
+
+  const [filterSearch, setFilterSearch] = useState({
+    category: "",
+    size: [],
+    color: [],
+    priceMinFilter: 0,
+    priceMaxFilter: 2000000,
+  });
+  const dataFilter = data
+    .map((item) => item)
+    .filter((item) => {
+      if (
+        (filterSearch.category !== ""
+          ? filterSearch.category == item.category
+          : true) &&
+        filterSearch.size.every((value) => item.sizes.includes(value)) &&
+        filterSearch.color.every((value) => item.colors.includes(value)) &&
+        (item.sale.isSale ? item.sale.priceSale : item.price) >
+          filterSearch.priceMinFilter &&
+        (item.sale.isSale ? item.sale.priceSale : item.price) <
+          filterSearch.priceMaxFilter
+      ) {
+        return true;
+      }
+      return false;
+    });
   return (
-    <div className={`container-fluid ${styles.container}`}>
+    <div className={`container-fluid  ${styles.container}`}>
       <Row>
         <Col xs={12} sm={2} md={3}>
           <div className={styles.cate_left}>
             <div className={styles.label}>Danh mục</div>
             <ul>
               <li>
-                <button className={styles.filter_item}>Áo</button>
+                <button
+                  className={styles.filter_item}
+                  onClick={() =>
+                    setFilterSearch((prevState) => ({
+                      ...prevState,
+                      category: "ao",
+                    }))
+                  }
+                >
+                  Áo
+                </button>
               </li>
               <li>
-                <button>Quần</button>
+                <button
+                  onClick={() =>
+                    setFilterSearch((prevState) => ({
+                      ...prevState,
+                      category: "quan",
+                    }))
+                  }
+                >
+                  Quần
+                </button>
               </li>
               <li>
-                <button>Đồ mặc ngoài</button>
+                <button
+                  onClick={() =>
+                    setFilterSearch((prevState) => ({
+                      ...prevState,
+                      category: "do-mac-ngoai",
+                    }))
+                  }
+                >
+                  Đồ mặc ngoài
+                </button>
               </li>
               <li>
-                <button>Đồ mặc nhà</button>
+                <button
+                  onClick={() =>
+                    setFilterSearch((prevState) => ({
+                      ...prevState,
+                      category: "do-mac-nha",
+                    }))
+                  }
+                >
+                  Đồ mặc nhà
+                </button>
               </li>
               <li>
-                <button>Đồ mặc trong</button>
+                <button
+                  onClick={() =>
+                    setFilterSearch((prevState) => ({
+                      ...prevState,
+                      category: "do-mac-trong",
+                    }))
+                  }
+                >
+                  Đồ mặc trong
+                </button>
               </li>
               <li>
                 <button>Giá tốt</button>
@@ -88,7 +166,7 @@ export default function NewMenPage() {
           </div>
         </Col>
         <Col xs={12} sm={10} md={9}>
-          <RenderCardItem dataItem={data} itemPerRow={3} />
+          <RenderCardItem dataItem={dataFilter} itemPerRow={3} />
         </Col>
       </Row>
     </div>
