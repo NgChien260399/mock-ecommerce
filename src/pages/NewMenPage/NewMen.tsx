@@ -162,7 +162,7 @@ export default function NewMenPage() {
                       } else
                         return {
                           ...prevState,
-                          size: [...prevState.color, item],
+                          size: [...prevState.size, item],
                         };
                     })
                   }
