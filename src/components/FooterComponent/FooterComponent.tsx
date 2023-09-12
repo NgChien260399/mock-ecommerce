@@ -8,6 +8,7 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import styles from "./Footer.module.css";
 
+
 const SubscribeForm = () => {
   const [email, setEmail] = useState("");
 
@@ -190,25 +191,25 @@ const AppDownload = () => {
               alt="qr"
             />
           </div>
-          <div className={styles.Apps}>
+          <div className={styles.footerApps}>
             <a
-              className={styles.AppsA}
+              className={styles.footerAppsA}
               href="https://play.google.com/store/apps/details?id=com.app.canifa&hl=en"
               target="_blank"
             >
               <img
-                className={`${styles.AppsImg} ${styles.Apps}`}
+                className={`${styles.footerAppsImg} ${styles.footerApps}`}
                 src="https://canifa.com/assets/images/googleplay.png"
                 alt=""
               />
             </a>
             <a
-              className={styles.AppsA}
+              className={styles.footerAppsA}
               href="https://apps.apple.com/vn/app/canifa/id1175895653"
               target="_blank"
             >
               <img
-                className={`${styles.AppsImg} ${styles.Apps}`}
+                className={`${styles.footerAppsImg} ${styles.footerApps}`}
                 src="https://canifa.com/assets/images/appstore.png"
                 alt=""
               />

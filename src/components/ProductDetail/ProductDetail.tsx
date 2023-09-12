@@ -4,7 +4,7 @@ import { Carousel } from "react-responsive-carousel";
 import ServiceComponent from "../ServiceComponent/ServiceComponent";
 import { useState, useEffect } from "react";
 import AppServices from "../../services/AppServices";
-import { Link, useParams } from "react-router-dom";
+import { Link, useNavigate, useParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { addItemToCart } from "../../redux/actions/CartItem.action";
 import { ToastContainer, toast } from "react-toastify";
@@ -30,6 +30,7 @@ export interface data {
 }
 
 export default function ProductDetail() {
+  const navigate = useNavigate();
   const notifyError = (message: string, config: any) =>
     toast.error(message, config);
   const notifySuccess = (message: string, config: any) =>
@@ -91,13 +92,28 @@ export default function ProductDetail() {
     };
   }
   const verifyAddItem = (payload: any) => {
-    console.log(payload);
     if (payload.size !== "" && payload.color !== "") {
       dispatch(addItemToCart(payload));
       notifySuccess(
         `Đã thêm thành công sản phẩm ${payload.product_name} vào giỏ hàng`,
         toastSucess
       );
+    }
+    if (payload.size !== "" && payload.color == "") {
+      notifyError("Vui lòng chọn màu  cho sản phẩm !", toastError);
+    }
+    if (payload.size == "" && payload.color !== "") {
+      notifyError("Vui lòng chọn  size cho sản phẩm !", toastError);
+    }
+    if (payload.size == "" && payload.color == "") {
+      notifyError("Vui lòng chọn màu và size cho sản phẩm !", toastError);
+    }
+  };
+  const [check, setCheck] = useState(false);
+  const verifyPayItem = (payload: any) => {
+    if (payload.size !== "" && payload.color !== "") {
+      setCheck(true);
+      dispatch(addItemToCart(payload));
     }
     if (payload.size !== "" && payload.color == "") {
       notifyError("Vui lòng chọn màu  cho sản phẩm !", toastError);
@@ -117,7 +133,6 @@ export default function ProductDetail() {
       behavior: "auto",
     });
   }, [itemRender]);
-
   return (
     <div>
       <div className={styles.breadcrumbs}>
@@ -237,7 +252,19 @@ export default function ProductDetail() {
                   >
                     Thêm vào giỏ hàng
                   </button>
-                  <button className="btn btn-danger btn-lg" type="button">
+
+                  <button
+                    className="btn btn-danger btn-lg"
+                    type="button"
+                    onClick={() => {
+                      verifyPayItem(currentItemChoose);
+                      navigate(
+                        currentColor !== "" && currentSize !== ""
+                          ? "/order"
+                          : "."
+                      );
+                    }}
+                  >
                     Mua ngay
                   </button>
                 </div>
