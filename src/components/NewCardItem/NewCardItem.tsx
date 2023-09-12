@@ -75,7 +75,7 @@ export default function RenderCardItem(props: render) {
       <Row>
         {props.dataItem &&
           props.dataItem.map((item: any, index: any) => (
-            <Col xs={12 / props.itemPerRow} key={index}>
+            <Col xs={6} md={12 / props.itemPerRow} key={index}>
               {NewCardItem(item)}
             </Col>
           ))}
