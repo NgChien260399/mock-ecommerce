@@ -66,11 +66,11 @@ export function NewCardItem(props: data) {
     </div>
   );
 }
-interface render {
+interface render1 {
   dataItem: any;
   itemPerRow: any;
 }
-export default function RenderCardItem(props: render) {
+export function RenderCardItem(props: render1) {
   return (
     <div className="container-fluid">
       <Row>
@@ -99,3 +99,4 @@ export default function RenderCardItem(props: render) {
     </div>
   );
 }
+

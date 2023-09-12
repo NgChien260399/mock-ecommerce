@@ -10,6 +10,7 @@ import SignUpPage from "../pages/SignUpPage/SignUpPage";
 import LoginPage from "../pages/LoginPage/LoginPage";
 import ProductDetail from "../components/ProductDetail/ProductDetail";
 import NewMenPage from "../pages/NewMenPage/NewMen";
+import ProductRelated from "../components/ProductRelated/ProductRelated";
 
 export const routes = [
   { path: "/", page: HomePage, isBlank: false },
@@ -24,4 +25,5 @@ export const routes = [
   { path: "*", page: NotFoundPage },
   { path: "/product/:id", page: ProductDetail },
   { path: "/newmen", page: NewMenPage },
+  { path: "/related", page: ProductRelated },
 ];

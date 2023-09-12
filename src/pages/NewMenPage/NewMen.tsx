@@ -1,9 +1,9 @@
-import RenderCardItem from "../../components/NewCardItem/NewCardItem";
 import data from "../../../public/data-product/data.json";
 import { Col, Row } from "react-bootstrap";
 import styles from "./NewMen.module.css";
 import MultiRangeSlider from "../../components/MultiRangeSlider/MultiRangeSlider";
 import { useEffect, useState } from "react";
+import { RenderCardItem } from "../../components/NewCardItem/NewCardItem";
 
 export default function NewMenPage() {
   console.log("re-render");
