@@ -6,6 +6,24 @@ import MultiRangeSlider from "../../components/MultiRangeSlider/MultiRangeSlider
 import { useEffect } from "react";
 
 export default function NewMenPage() {
+  const listColors = [
+    "Black",
+    "Silver",
+    "Gray",
+    "White",
+    "Maroon",
+    "Red",
+    "Purple",
+    "Fuchsia",
+    "Green",
+    "Lime",
+    "Olive",
+    "Yellow",
+    "Navy",
+    "Blue",
+    "Teal",
+    "Aqua",
+  ];
   const handleSliderChange = ({ min, max }: { min: number; max: number }) => {
     console.log(`min = ${min}, max = ${max}`);
   };
@@ -48,30 +66,14 @@ export default function NewMenPage() {
             </div>
             <div className={styles.label}>Màu sắc</div>
             <div className={styles.color_option}>
-              <div className={styles.box_wrap}>
-                <div
-                  className={styles.item_color}
-                  style={{ backgroundColor: "black" }}
-                ></div>
-              </div>
-              <div className={styles.box_wrap}>
-                <div
-                  className={styles.item_color}
-                  style={{ backgroundColor: "green" }}
-                ></div>
-              </div>
-              <div className={styles.box_wrap}>
-                <div
-                  className={styles.item_color}
-                  style={{ backgroundColor: "purple" }}
-                ></div>
-              </div>
-              <div className={styles.box_wrap}>
-                <div
-                  className={styles.item_color}
-                  style={{ backgroundColor: "red" }}
-                ></div>
-              </div>
+              {listColors.map((item, index) => (
+                <div key={index} className={styles.box_wrap}>
+                  <div
+                    className={styles.item_color}
+                    style={{ backgroundColor: item }}
+                  ></div>
+                </div>
+              ))}
             </div>
             <div className={`${styles.label} d-none d-lg-block`}>
               Khoảng giá
