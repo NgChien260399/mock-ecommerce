@@ -86,7 +86,7 @@ export default function RenderCardItem(props: render) {
                 {NewCardItem(item)}
               </Col>
               <Col
-                xs={10}
+                xs={12}
                 sm={6}
                 md={12 / props.itemPerRow}
                 key={index}
