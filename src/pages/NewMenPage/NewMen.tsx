@@ -25,20 +25,21 @@ export default function NewMenPage() {
     "Teal",
     "Aqua",
   ];
+  const listSizes = ["S", "M", "L", "XL", "XXL"];
 
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
 
   const handleSliderChange = ({ min, max }: { min: number; max: number }) => {
-    setFilterSearch((prevState) => ({
+    setFilterSearch((prevState: any) => ({
       ...prevState,
       priceMinFilter: min,
       priceMaxFilter: max,
     }));
   };
 
-  const [filterSearch, setFilterSearch] = useState({
+  const [filterSearch, setFilterSearch] = useState<any>({
     category: "",
     size: [],
     color: [],
@@ -53,8 +54,8 @@ export default function NewMenPage() {
         (filterSearch.category !== ""
           ? filterSearch.category == item.category
           : true) &&
-        filterSearch.size.every((value) => item.sizes.includes(value)) &&
-        filterSearch.color.every((value) => item.colors.includes(value)) &&
+        filterSearch.size.every((value: any) => item.sizes.includes(value)) &&
+        filterSearch.color.every((value: any) => item.colors.includes(value)) &&
         (item.sale.isSale ? item.sale.priceSale : item.price) >
           filterSearch.priceMinFilter &&
         (item.sale.isSale ? item.sale.priceSale : item.price) <
@@ -75,7 +76,7 @@ export default function NewMenPage() {
                 <button
                   className={styles.filter_item}
                   onClick={() =>
-                    setFilterSearch((prevState) => ({
+                    setFilterSearch((prevState: any) => ({
                       ...prevState,
                       category: "ao",
                     }))
@@ -87,7 +88,7 @@ export default function NewMenPage() {
               <li>
                 <button
                   onClick={() =>
-                    setFilterSearch((prevState) => ({
+                    setFilterSearch((prevState: any) => ({
                       ...prevState,
                       category: "quan",
                     }))
@@ -99,7 +100,7 @@ export default function NewMenPage() {
               <li>
                 <button
                   onClick={() =>
-                    setFilterSearch((prevState) => ({
+                    setFilterSearch((prevState: any) => ({
                       ...prevState,
                       category: "do-mac-ngoai",
                     }))
@@ -111,7 +112,7 @@ export default function NewMenPage() {
               <li>
                 <button
                   onClick={() =>
-                    setFilterSearch((prevState) => ({
+                    setFilterSearch((prevState: any) => ({
                       ...prevState,
                       category: "do-mac-nha",
                     }))
@@ -123,7 +124,7 @@ export default function NewMenPage() {
               <li>
                 <button
                   onClick={() =>
-                    setFilterSearch((prevState) => ({
+                    setFilterSearch((prevState: any) => ({
                       ...prevState,
                       category: "do-mac-trong",
                     }))
@@ -138,16 +139,68 @@ export default function NewMenPage() {
             </ul>
             <div className={styles.label}>Kích cỡ</div>
             <div className={styles.size_option}>
-              <div className={styles.box_wrap}>S</div>
-              <div className={styles.box_wrap}>M</div>
-              <div className={styles.box_wrap}>L</div>
-              <div className={styles.box_wrap}>XL</div>
-              <div className={styles.box_wrap}>XXL</div>
+              {listSizes.map((item, index) => (
+                <div
+                  key={index}
+                  className={`${styles.box_wrap} ${
+                    filterSearch.size.includes(item) ? styles.selected : ""
+                  }`}
+                  onClick={() =>
+                    setFilterSearch((prevState: any) => {
+                      if (
+                        prevState.size.length > 0 &&
+                        prevState.size.includes(item)
+                      ) {
+                        return {
+                          ...prevState,
+                          size: [
+                            ...prevState.size
+                              .map((value: any) => value)
+                              .filter((value: any) => value !== item),
+                          ],
+                        };
+                      } else
+                        return {
+                          ...prevState,
+                          size: [...prevState.color, item],
+                        };
+                    })
+                  }
+                >
+                  {item}
+                </div>
+              ))}
             </div>
             <div className={styles.label}>Màu sắc</div>
             <div className={styles.color_option}>
               {listColors.map((item, index) => (
-                <div key={index} className={styles.box_wrap}>
+                <div
+                  key={index}
+                  className={`${styles.box_wrap} ${
+                    filterSearch.color.includes(item) ? styles.selected : ""
+                  }`}
+                  onClick={() =>
+                    setFilterSearch((prevState: any) => {
+                      if (
+                        prevState.color.length > 0 &&
+                        prevState.color.includes(item)
+                      ) {
+                        return {
+                          ...prevState,
+                          color: [
+                            ...prevState.color
+                              .map((value: any) => value)
+                              .filter((value: any) => value !== item),
+                          ],
+                        };
+                      } else
+                        return {
+                          ...prevState,
+                          color: [...prevState.color, item],
+                        };
+                    })
+                  }
+                >
                   <div
                     className={styles.item_color}
                     style={{ backgroundColor: item }}

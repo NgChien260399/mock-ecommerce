@@ -78,6 +78,10 @@
   padding: 2px;
   background-size: cover !important;
 }
+.selected {
+  border: 1px solid #333f48;
+  font-weight: 500;
+}
 @media only screen and (max-width: 576px) {
   .size_option,
   .color_option {
