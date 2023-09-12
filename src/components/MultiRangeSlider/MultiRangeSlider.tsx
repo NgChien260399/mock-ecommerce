@@ -46,7 +46,7 @@ const MultiRangeSlider: React.FC<MultiRangeSliderProps> = ({
 
   useEffect(() => {
     onChange({ min: minVal, max: maxVal });
-  }, [minVal, maxVal, onChange]);
+  }, [minVal, maxVal]);
 
   return (
     <div className={styles.container}>

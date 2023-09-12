@@ -6,7 +6,7 @@ import MultiRangeSlider from "../../components/MultiRangeSlider/MultiRangeSlider
 import { useEffect, useState } from "react";
 
 export default function NewMenPage() {
-  console.log('re-render');
+  console.log("re-render");
   const listColors = [
     "Black",
     "Silver",
@@ -25,18 +25,18 @@ export default function NewMenPage() {
     "Teal",
     "Aqua",
   ];
-  const handleSliderChange = ({ min, max }: { min: number; max: number }) => {
-    console.log(min,max);
-    // setFilterSearch((prevState) => ({
-    //   ...prevState,
-    //   priceMinFilter: min,
-    //   priceMaxFilter: max,
-    // }));
-  };
 
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
+
+  const handleSliderChange = ({ min, max }: { min: number; max: number }) => {
+    setFilterSearch((prevState) => ({
+      ...prevState,
+      priceMinFilter: min,
+      priceMaxFilter: max,
+    }));
+  };
 
   const [filterSearch, setFilterSearch] = useState({
     category: "",
@@ -45,6 +45,7 @@ export default function NewMenPage() {
     priceMinFilter: 0,
     priceMaxFilter: 2000000,
   });
+
   const dataFilter = data
     .map((item) => item)
     .filter((item) => {
