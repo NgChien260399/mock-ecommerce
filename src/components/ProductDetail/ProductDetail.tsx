@@ -30,13 +30,6 @@ export interface data {
 }
 
 export default function ProductDetail() {
-  useEffect(() => {
-    window.scrollTo({
-      top: 0,
-      left: 0,
-      behavior: "instant",
-    });
-  }, []);
   const notifyError = (message: string, config: any) =>
     toast.error(message, config);
   const notifySuccess = (message: string, config: any) =>
@@ -117,6 +110,10 @@ export default function ProductDetail() {
     }
   };
 
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+  
   return (
     <div>
       <div className={styles.breadcrumbs}>

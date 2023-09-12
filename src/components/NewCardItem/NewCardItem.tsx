@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import { convertPriceVnd, data } from "../ProductDetail/ProductDetail";
 import styles from "./NewCardItem.module.css";
 import { Row, Col } from "react-bootstrap";
+import { Fragment } from "react";
 export function NewCardItem(props: data) {
   return (
     <div className={styles.product_item}>
@@ -75,12 +76,11 @@ export default function RenderCardItem(props: render) {
       <Row>
         {props.dataItem &&
           props.dataItem.map((item: any, index: any) => (
-            <>
+            <Fragment key={index}>
               <Col
                 xs={10}
                 sm={6}
                 md={12 / props.itemPerRow}
-                key={index}
                 className="d-sm-block d-none"
               >
                 {NewCardItem(item)}
@@ -89,12 +89,11 @@ export default function RenderCardItem(props: render) {
                 xs={12}
                 sm={6}
                 md={12 / props.itemPerRow}
-                key={index}
                 className="d-sm-none m-auto"
               >
                 {NewCardItem(item)}
               </Col>
-            </>
+            </Fragment>
           ))}
       </Row>
     </div>
