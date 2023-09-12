@@ -14,7 +14,7 @@
       "https://canifa.com/img/1000/1500/resize/8/t/8ts23s004-sg428-xl-1.webp"
     ],
     "sizes": ["S", "M", "L", "XL"],
-    "colors": ["Black", "Green", "Purple", "Red"],
+    "colors": ["Black", "Green", "Purple", "Red", "Silver"],
     "category": "ao"
   },
   {
@@ -31,7 +31,7 @@
       "https://canifa.com/img/1000/1500/resize/8/t/8ts23s021-sb148-3.webp",
       "https://canifa.com/img/1000/1500/resize/8/t/8ts23s021-sb148-xl-1.webp"
     ],
-    "sizes": ["S", "M", "L", "XL"],
+    "sizes": ["S", "M", "L", "XL", "XXL"],
     "colors": ["Black", "Gray", "Navy", "Red"],
     "category": "ao"
   },
@@ -50,7 +50,7 @@
       "https://canifa.com/img/1000/1500/resize/8/t/8th23s003-sk010-xl-2.webp"
     ],
     "sizes": ["S", "M", "L"],
-    "colors": ["Black", "Navy"],
+    "colors": ["Black", "Navy", "Silver", "White"],
     "category": "ao"
   },
   {
@@ -123,7 +123,7 @@
     ],
     "sizes": ["S", "M", "L", "XL", "XXL"],
 
-    "colors": ["Maroon", "Fuchsia", "Olive", "Teal"],
+    "colors": ["Maroon", "Fuchsia", "Olive", "Teal", "Lime"],
     "category": "quan"
   },
   {
@@ -177,5 +177,21 @@
     "sizes": ["S", "M", "L", "XL", "XXL"],
     "colors": ["Maroon", "Fuchsia", "Olive", "Teal"],
     "category": "do-mac-nha"
+  },
+  {
+    "id": "8AX23A014",
+    "product_name": "Pack 3 đôi tất nam",
+    "price": 149000,
+    "sale": {
+      "isSale": false,
+      "priceSale": 199000
+    },
+    "imageUrl": [
+      "https://canifa.com/img/1000/1500/resize/8/a/8ax23a014-sk336-0000-ghep-u.webp",
+      "https://canifa.com/img/1000/1500/resize/8/a/8ax23a014-sw344-0000-ghep-u.webp"
+    ],
+    "sizes": ["S", "M", "L", "XL", "XXL"],
+    "colors": ["Maroon", "Fuchsia", "Olive", "Teal"],
+    "category": "phu-kien"
   }
 ]

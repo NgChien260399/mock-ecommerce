@@ -134,7 +134,12 @@ export default function NewMenPage() {
                 </button>
               </li>
               <li>
-                <button>Giá tốt</button>
+                <button onClick={() =>
+                    setFilterSearch((prevState: any) => ({
+                      ...prevState,
+                      category: "phu-kien",
+                    }))
+                  }>Phụ kiện</button>
               </li>
             </ul>
             <div className={styles.label}>Kích cỡ</div>
