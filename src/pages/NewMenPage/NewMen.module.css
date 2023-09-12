@@ -77,3 +77,9 @@
   padding: 2px;
   background-size: cover !important;
 }
+@media only screen and (max-width: 576px) {
+  .size_option,
+  .color_option {
+    max-width: 100%;
+  }
+}

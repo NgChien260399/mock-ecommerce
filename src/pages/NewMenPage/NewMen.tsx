@@ -33,7 +33,7 @@ export default function NewMenPage() {
   return (
     <div className={`container-fluid ${styles.container}`}>
       <Row>
-        <Col xs={3}>
+        <Col xs={12} sm={2} md={3}>
           <div className={styles.cate_left}>
             <div className={styles.label}>Danh mục</div>
             <ul>
@@ -87,7 +87,7 @@ export default function NewMenPage() {
             </div>
           </div>
         </Col>
-        <Col xs={9}>
+        <Col xs={12} sm={10} md={9}>
           <RenderCardItem dataItem={data} itemPerRow={3} />
         </Col>
       </Row>

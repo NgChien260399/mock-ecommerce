@@ -71,13 +71,30 @@ interface render {
 }
 export default function RenderCardItem(props: render) {
   return (
-    <div className="container-fluid d-flex">
+    <div className="container-fluid">
       <Row>
         {props.dataItem &&
           props.dataItem.map((item: any, index: any) => (
-            <Col xs={6} md={12 / props.itemPerRow} key={index}>
-              {NewCardItem(item)}
-            </Col>
+            <>
+              <Col
+                xs={10}
+                sm={6}
+                md={12 / props.itemPerRow}
+                key={index}
+                className="d-sm-block d-none"
+              >
+                {NewCardItem(item)}
+              </Col>
+              <Col
+                xs={10}
+                sm={6}
+                md={12 / props.itemPerRow}
+                key={index}
+                className="d-sm-none m-auto"
+              >
+                {NewCardItem(item)}
+              </Col>
+            </>
           ))}
       </Row>
     </div>
