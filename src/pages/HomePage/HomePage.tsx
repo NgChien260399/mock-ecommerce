@@ -8,8 +8,7 @@ import { Fragment } from "react";
 import "./HomPage.css";
 import offerStyle from "./HomePage.module.css";
 import { Col, Row } from "react-bootstrap";
-import SuggestionForU from "../../components/SuggestionForU/SuggestionForU";
-import NewHotDeal from "../../components/NewHotDealComponent/NewHotDeal";
+import SuggestionComponent from "../../components/SuggestionForU/SuggestionComponent";
 
 const HomePage = () => {
   const settings = {
@@ -40,7 +39,6 @@ const HomePage = () => {
       <ServiceItemComponent />
       <Divider sx={{ borderBottomWidth: 3 }} />
       <HotDeal />
-      <NewHotDeal />
 
       {/* offer */}
       <div className={offerStyle.offer}>
@@ -108,7 +106,7 @@ const HomePage = () => {
           </Col>
         </Row>
       </div>
-      <SuggestionForU />
+      <SuggestionComponent />
     </Fragment>
   );
 };
