@@ -8,7 +8,7 @@ import { Fragment } from "react";
 import "./HomPage.css";
 import offerStyle from "./HomePage.module.css";
 import { Col, Row } from "react-bootstrap";
-import SuggestionForU from "../../components/SuggestionForU/SuggestionForU";
+import SuggestionComponent from "../../components/SuggestionForU/SuggestionComponent";
 
 const HomePage = () => {
   const settings = {
@@ -106,7 +106,7 @@ const HomePage = () => {
           </Col>
         </Row>
       </div>
-      <SuggestionForU />
+      <SuggestionComponent />
     </Fragment>
   );
 };
