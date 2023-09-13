@@ -26,7 +26,7 @@ export default function SlideCardItem(props: any) {
     },
   };
   return (
-    <div className={`container-fluid  ${styles.container}`}>
+    <div className={`container-fluid btn-slide-custom ${styles.container}`}>
       <Carousel responsive={responsive} autoPlay={true}>
         {props.props.map((item: any, index: any) => (
           <div key={index} className={styles.card_wrap}>
