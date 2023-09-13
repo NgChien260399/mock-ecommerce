@@ -69,3 +69,19 @@
 .react-multi-carousel-list {
   margin-right: -18px;
 }
+
+.btn-slide-custom .react-multiple-carousel__arrow {
+  z-index: 3 !important;
+  top: 34%;
+  min-width: 35px !important;
+  min-height: 35px !important;
+}
+.btn-slide-custom .react-multiple-carousel__arrow--left {
+  left: 1% !important;
+}
+.btn-slide-custom .react-multiple-carousel__arrow--right {
+  right: 1% !important;
+}
+.btn-slide-custom .react-multi-carousel-list {
+  margin-right: -18px;
+}
