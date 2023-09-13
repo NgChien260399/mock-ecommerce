@@ -1,40 +1,68 @@
-import * as React from "react";
-import Avatar from "@mui/material/Avatar";
-import Button from "@mui/material/Button";
+import React, { useState } from "react";
 import CssBaseline from "@mui/material/CssBaseline";
-import TextField from "@mui/material/TextField";
-import Link from "@mui/material/Link";
-import Box from "@mui/material/Box";
-import Grid from "@mui/material/Grid";
 import LockOutlinedIcon from "@mui/icons-material/LockOutlined";
-import Typography from "@mui/material/Typography";
 import { useFormik } from "formik";
 import * as Yup from "yup";
-import { AppBar, Container, Toolbar } from "@mui/material";
+import {
+  AppBar,
+  Container,
+  Toolbar,
+  Typography,
+  Grid,
+  Box,
+  Link,
+  TextField,
+  Button,
+  Avatar,
+} from "@mui/material";
 import Footer from "../../components/FooterComponent/FooterComponent";
+import axios from "../../axiosInterceptor";
+import { useNavigate } from "react-router";
 
 export default function SignInSide() {
-  // const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
-  //   event.preventDefault();
-  //   const data = new FormData(event.currentTarget);
-  //   console.log({
-  //     firstname: data.get("firstName"),
-  //     lastname: data.get("lastName"),
-  //     email: data.get("email"),
-  //     password: data.get("password"),
+  const navigate = useNavigate();
+
+  // const [formData, setFormData] = useState({
+  //   email: "",
+  //   password: "",
+  //   firstname: "",
+  //   lastname: "",
+  // });
+
+  // const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+  //   const { name, value } = e.target;
+  //   setFormData({
+  //     ...formData,
+  //     [name]: value,
   //   });
+  // };
+
+  // const handleSubmit = async (e: React.FormEvent) => {
+  //   e.preventDefault();
+  //   try {
+  //     if (formik.isValid) {
+  //       // Kiểm tra xem form có hợp lệ không
+  //       const response = await axios.post("/auth/register", formik.values);
+  //       console.log("Registered successfully!", response.data);
+  //       // Xử lý đăng ký thành công, ví dụ: chuyển hướng đến trang đăng nhập
+  //     } else {
+  //       console.error("Form is not valid.");
+  //     }
+  //   } catch (error) {
+  //     console.error("Registration failed!", error);
+  //   }
   // };
 
   const formik = useFormik({
     initialValues: {
-      firstName: "",
-      lastName: "",
+      firstname: "",
+      lastname: "",
       email: "",
       password: "",
     },
     validationSchema: Yup.object({
-      firstName: Yup.string().required("First Name is required"),
-      lastName: Yup.string().required("Last Name is required"),
+      firstname: Yup.string().required("First Name is required"),
+      lastname: Yup.string().required("Last Name is required"),
       email: Yup.string()
         .email("Invalid email address")
         .required("Email is required"),
@@ -42,9 +70,20 @@ export default function SignInSide() {
         .min(6, "Password must be at least 6 characters")
         .required("Password is required"),
     }),
-    onSubmit: (values) => {
-      console.log("Form is valid");
-      console.log(values);
+    onSubmit: async (values) => {
+      try {
+        if (formik.isValid) {
+          // Kiểm tra xem form có hợp lệ không
+          const response = await axios.post("/auth/register", values);
+          console.log("Registered successfully!", response.data);
+          navigate("/signin");
+          // Xử lý đăng ký thành công, ví dụ: chuyển hướng đến trang đăng nhập
+        } else {
+          console.error("Form is not valid.");
+        }
+      } catch (error) {
+        console.error("Registration failed!", error);
+      }
     },
   });
 
@@ -82,19 +121,19 @@ export default function SignInSide() {
               <Grid item xs={12} sm={6}>
                 <TextField
                   autoComplete="given-name"
-                  name="firstName"
+                  name="firstname"
                   required
                   fullWidth
-                  id="firstName"
+                  id="firstname"
                   label="First Name"
                   autoFocus
                   onChange={formik.handleChange}
-                  value={formik.values.firstName}
+                  value={formik.values.firstname}
                   error={
-                    formik.touched.firstName && Boolean(formik.errors.firstName)
+                    formik.touched.firstname && Boolean(formik.errors.firstname)
                   }
                   helperText={
-                    formik.touched.firstName && formik.errors.firstName
+                    formik.touched.firstname && formik.errors.firstname
                   }
                 />
               </Grid>
@@ -102,16 +141,16 @@ export default function SignInSide() {
                 <TextField
                   required
                   fullWidth
-                  id="lastName"
+                  id="lastname"
                   label="Last Name"
-                  name="lastName"
+                  name="lastname"
                   autoComplete="family-name"
                   onChange={formik.handleChange}
-                  value={formik.values.lastName}
+                  value={formik.values.lastname}
                   error={
-                    formik.touched.lastName && Boolean(formik.errors.lastName)
+                    formik.touched.lastname && Boolean(formik.errors.lastname)
                   }
-                  helperText={formik.touched.lastName && formik.errors.lastName}
+                  helperText={formik.touched.lastname && formik.errors.lastname}
                 />
               </Grid>
               <Grid item xs={12}>

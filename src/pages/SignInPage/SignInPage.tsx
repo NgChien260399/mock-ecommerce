@@ -1,28 +1,52 @@
-import * as React from "react";
-import Avatar from "@mui/material/Avatar";
-import Button from "@mui/material/Button";
+import React from "react";
 import CssBaseline from "@mui/material/CssBaseline";
-import TextField from "@mui/material/TextField";
 import FormControlLabel from "@mui/material/FormControlLabel";
-import Checkbox from "@mui/material/Checkbox";
-import Link from "@mui/material/Link";
-import Box from "@mui/material/Box";
-import Grid from "@mui/material/Grid";
 import LockOutlinedIcon from "@mui/icons-material/LockOutlined";
-import Typography from "@mui/material/Typography";
 import * as Yup from "yup";
 import { useFormik } from "formik";
 import Footer from "../../components/FooterComponent/FooterComponent";
-import { AppBar, Container, Toolbar } from "@mui/material";
+import {
+  AppBar,
+  Container,
+  Toolbar,
+  TextField,
+  Button,
+  Avatar,
+  Link,
+  Checkbox,
+  Box,
+  Grid,
+  Typography,
+} from "@mui/material";
+import axios from "../../axiosInterceptor";
+import { useNavigate } from "react-router";
 
 export default function SignInSide() {
-  // const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
-  //   event.preventDefault();
-  //   const data = new FormData(event.currentTarget);
-  //   console.log({
-  //     email: data.get("email"),
-  //     password: data.get("password"),
+  const navigate = useNavigate();
+  // const [formData, setFormData] = useState({
+  //   email: "",
+  //   password: "",
+  // });
+
+  // const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+  //   const { name, value } = e.target;
+  //   setFormData({
+  //     ...formData,
+  //     [name]: value,
   //   });
+  // };
+
+  // const handleSubmit = async (e: React.FormEvent) => {
+  //   e.preventDefault();
+  //   try {
+  //     const response = await axios.post("/auth/login", formData);
+  //     console.log("Logged in successfully!", response.data);
+  //     // Trong phần handleSubmit của trang đăng nhập (Login.tsx) sau khi đăng nhập thành công:
+  //     localStorage.setItem("token", response.data.access_token);
+  //     // Handle successful login, e.g., store token in localStorage
+  //   } catch (error) {
+  //     console.error("Login failed!", error);
+  //   }
   // };
 
   const formik = useFormik({
@@ -38,9 +62,15 @@ export default function SignInSide() {
         .min(6, "Password must be at least 6 characters")
         .required("Password is required"),
     }),
-    onSubmit: (values) => {
-      console.log("Form is valid");
-      console.log(values);
+    onSubmit: async (values) => {
+      try {
+        const response = await axios.post("/auth/login", values);
+        console.log("Logged in successfully!", response.data);
+        localStorage.setItem("token", response.data.access_token);
+        navigate("/");
+      } catch (error) {
+        console.error("Login failed!", error);
+      }
     },
   });
 
