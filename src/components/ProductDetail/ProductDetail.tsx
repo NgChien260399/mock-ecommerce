@@ -116,10 +116,8 @@ export default function ProductDetail() {
       notifyError("Vui lòng chọn màu và size cho sản phẩm !", toastError);
     }
   };
-  const [check, setCheck] = useState(false);
   const verifyPayItem = (payload: any) => {
     if (payload.size !== "" && payload.color !== "") {
-      setCheck(true);
       dispatch(addItemToCart(payload));
     }
     if (payload.size !== "" && payload.color == "") {
@@ -314,7 +312,6 @@ export default function ProductDetail() {
         <h4>Gợi ý cho bạn</h4>
       </div>
       <SlideCardItem props={relatedProduct} />
-      <ToastContainer />
     </div>
   );
 }

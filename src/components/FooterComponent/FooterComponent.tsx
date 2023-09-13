@@ -8,7 +8,6 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import styles from "./Footer.module.css";
 
-
 const SubscribeForm = () => {
   const [email, setEmail] = useState("");
 
@@ -37,7 +36,6 @@ const SubscribeForm = () => {
           phong cách sống.
         </p>
         <div className={styles.inputContainer}>
-          <ToastContainer />
           <TextField
             type="email"
             placeholder="Nhập địa chỉ email của bạn"
