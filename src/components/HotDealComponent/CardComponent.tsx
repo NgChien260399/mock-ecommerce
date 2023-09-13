@@ -24,8 +24,7 @@ const CardComponent = (props: any) => {
     <div className={styles.cardContainer}>
       <div className={styles.cardImg}>
         <img className={styles.img} src={props.imageUrl} alt="" />
-      </div>
-      <div className={styles.addToCart} onClick={() => console.log(props.colors)}>
+        <div className={styles.addToCart} onClick={() => console.log(props.colors)}>
         Thêm nhanh vào giỏ
         <div style={{marginTop: "15px"}}>
           <button className={styles.sizesBtn} type="button" onClick={() => {}}>S</button>
@@ -33,6 +32,7 @@ const CardComponent = (props: any) => {
           <button className={styles.sizesBtn} type="button" onClick={() => {}}>L</button>
           <button className={styles.sizesBtn} type="button" onClick={() => {}}>XL</button>
         </div>
+      </div>
       </div>
       
       <div className={styles.cardInfo}>
