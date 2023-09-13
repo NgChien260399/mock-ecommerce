@@ -1,4 +1,4 @@
-import { Link, NavLink } from "react-router-dom";
+import { Link, NavLink, useNavigate } from "react-router-dom";
 import { Box } from "@mui/material";
 import StorefrontIcon from "@mui/icons-material/Storefront";
 import AccountCircleIcon from "@mui/icons-material/AccountCircle";
@@ -43,6 +43,23 @@ const NavComponent = () => {
   const inputRef = useRef<HTMLInputElement>(null);
   const [showResult, setShowResult] = useState(false);
   const resultRef = useRef<HTMLDivElement>(null);
+
+  // navigate login or user
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    const token = localStorage.getItem("token");
+    if (token) {
+      setIsLoggedIn(true);
+    } else {
+      setIsLoggedIn(false);
+    }
+  }, []);
+
+  const handleUSer = () => {
+    isLoggedIn ? navigate("/userprofile") : navigate("/signin");
+  };
 
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
@@ -94,8 +111,7 @@ const NavComponent = () => {
           zIndex: "501",
           top: "0",
           bgcolor: "#fff",
-        }}
-      >
+        }}>
         <div className={`container-fluid ${styles.header}`}>
           <div className="row h-100 justify-content-between">
             <div className="d-lg-none my-auto col-1">
@@ -142,8 +158,7 @@ const NavComponent = () => {
                   <div
                     className={styles.search_input_group}
                     ref={inputRef}
-                    onFocus={handleInputFocus}
-                  >
+                    onFocus={handleInputFocus}>
                     <div className={styles.search_btn}></div>
                     <input
                       type="text"
@@ -167,26 +182,24 @@ const NavComponent = () => {
                                 onClick={() => {
                                   setShowResult(false), setInputSearch("");
                                 }}
-                                key={index}
-                              >
+                                key={index}>
                                 <div
                                   className={styles.item_search_info}
-                                  key={index}
-                                >
+                                  key={index}>
                                   <Row className="p-3">
                                     <Col xs={3}>
                                       <div
                                         className={
                                           styles.item_search_info_image
-                                        }
-                                      >
+                                        }>
                                         <img src={item.imageUrl[0]} alt="" />
                                       </div>
                                     </Col>
                                     <Col xs={9} className="my-auto">
                                       <div
-                                        className={styles.item_search_info_name}
-                                      >
+                                        className={
+                                          styles.item_search_info_name
+                                        }>
                                         <h6>{item.product_name}</h6>
                                       </div>
                                     </Col>
@@ -216,7 +229,7 @@ const NavComponent = () => {
                     </div>
                     <span>Cửa hàng</span>
                   </div>
-                  <div className={styles.account}>
+                  <div className={styles.account} onClick={handleUSer}>
                     <div>
                       <AccountCircleIcon />
                     </div>
@@ -224,8 +237,7 @@ const NavComponent = () => {
                   </div>
                   <div
                     className={styles.cart}
-                    onClick={() => dispatch(toggleCartPopup())}
-                  >
+                    onClick={() => dispatch(toggleCartPopup())}>
                     <div>
                       {" "}
                       <ShoppingCartIcon />

@@ -22,37 +22,6 @@ import { useNavigate } from "react-router";
 export default function SignInSide() {
   const navigate = useNavigate();
 
-  // const [formData, setFormData] = useState({
-  //   email: "",
-  //   password: "",
-  //   firstname: "",
-  //   lastname: "",
-  // });
-
-  // const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-  //   const { name, value } = e.target;
-  //   setFormData({
-  //     ...formData,
-  //     [name]: value,
-  //   });
-  // };
-
-  // const handleSubmit = async (e: React.FormEvent) => {
-  //   e.preventDefault();
-  //   try {
-  //     if (formik.isValid) {
-  //       // Kiểm tra xem form có hợp lệ không
-  //       const response = await axios.post("/auth/register", formik.values);
-  //       console.log("Registered successfully!", response.data);
-  //       // Xử lý đăng ký thành công, ví dụ: chuyển hướng đến trang đăng nhập
-  //     } else {
-  //       console.error("Form is not valid.");
-  //     }
-  //   } catch (error) {
-  //     console.error("Registration failed!", error);
-  //   }
-  // };
-
   const formik = useFormik({
     initialValues: {
       firstname: "",
@@ -92,7 +61,13 @@ export default function SignInSide() {
       <AppBar position="relative" style={{ background: "#E02725" }}>
         <Toolbar>
           <Typography variant="h6" color="inherit" noWrap>
-            GRACEFUL
+            <div
+              style={{ cursor: "pointer" }}
+              onClick={() => {
+                navigate("/");
+              }}>
+              GRACEFUL
+            </div>
           </Typography>
         </Toolbar>
       </AppBar>

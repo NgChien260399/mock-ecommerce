@@ -23,31 +23,6 @@ import { useNavigate } from "react-router";
 
 export default function SignInSide() {
   const navigate = useNavigate();
-  // const [formData, setFormData] = useState({
-  //   email: "",
-  //   password: "",
-  // });
-
-  // const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-  //   const { name, value } = e.target;
-  //   setFormData({
-  //     ...formData,
-  //     [name]: value,
-  //   });
-  // };
-
-  // const handleSubmit = async (e: React.FormEvent) => {
-  //   e.preventDefault();
-  //   try {
-  //     const response = await axios.post("/auth/login", formData);
-  //     console.log("Logged in successfully!", response.data);
-  //     // Trong phần handleSubmit của trang đăng nhập (Login.tsx) sau khi đăng nhập thành công:
-  //     localStorage.setItem("token", response.data.access_token);
-  //     // Handle successful login, e.g., store token in localStorage
-  //   } catch (error) {
-  //     console.error("Login failed!", error);
-  //   }
-  // };
 
   const formik = useFormik({
     initialValues: {
@@ -79,7 +54,13 @@ export default function SignInSide() {
       <AppBar position="relative" style={{ background: "#E02725" }}>
         <Toolbar>
           <Typography variant="h6" color="inherit" noWrap>
-            GRACEFUL
+            <div
+              style={{ cursor: "pointer" }}
+              onClick={() => {
+                navigate("/");
+              }}>
+              GRACEFUL
+            </div>
           </Typography>
         </Toolbar>
       </AppBar>

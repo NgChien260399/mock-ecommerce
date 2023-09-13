@@ -11,7 +11,8 @@ import LoginPage from "../pages/LoginPage/LoginPage";
 import ProductDetail from "../components/ProductDetail/ProductDetail";
 import NewMenPage from "../pages/NewMenPage/NewMen";
 import ShipOrder from "../pages/OrderPage/Order/ShipOrder";
-  
+import UserProfile from "../pages/UserProfile/UserProfile";
+
 export const routes = [
   { path: "/", page: HomePage, isBlank: false },
   { path: "/child", page: ChildProductPage },
@@ -25,4 +26,5 @@ export const routes = [
   { path: "*", page: NotFoundPage },
   { path: "/product/:id", page: ProductDetail },
   { path: "/newmen", page: NewMenPage },
+  { path: "/userprofile", page: UserProfile },
 ];
