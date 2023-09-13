@@ -3,7 +3,7 @@ import { Col, Row } from "react-bootstrap";
 import styles from "./NewMen.module.css";
 import MultiRangeSlider from "../../components/MultiRangeSlider/MultiRangeSlider";
 import { useEffect, useState } from "react";
-import { RenderCardItem } from "../../components/NewCardItem/NewCardItem";
+import RenderCardItem from "../../components/NewCardItem/NewCardItem";
 
 export default function NewMenPage() {
   console.log("re-render");
@@ -255,7 +255,22 @@ export default function NewMenPage() {
           </div>
         </Col>
         <Col xs={12} sm={10} md={9}>
-          <RenderCardItem dataItem={dataFilter} itemPerRow={3} />
+          {dataFilter.length > 0 ? (
+            <>
+              <RenderCardItem dataItem={dataFilter} itemPerRow={3} />
+            </>
+          ) : (
+            <div
+              style={{
+                display: "flex",
+                justifyContent: "center",
+              }}
+            >
+              <h2 style={{ textAlign: "center", fontWeight: "800" }}>
+                Không có kết quả !
+              </h2>
+            </div>
+          )}
         </Col>
       </Row>
     </div>

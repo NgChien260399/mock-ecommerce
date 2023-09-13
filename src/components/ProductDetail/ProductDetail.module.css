@@ -8,6 +8,15 @@
   margin-bottom: 40px;
   font-family: "Montserrat", sans-serif;
 }
+.container_related {
+  padding-left: 7.64vw;
+  padding-right: 7.64vw;
+  padding-top: 50px;
+  font-family: "Montserrat", sans-serif;
+}
+.container_related h4 {
+  font-weight: 700;
+}
 .product_name {
   display: block;
   margin: 0 0 6px;

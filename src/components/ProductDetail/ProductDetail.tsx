@@ -9,6 +9,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { addItemToCart } from "../../redux/actions/CartItem.action";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import SlideCardItem from "../SlideCardItem/SlideCardItem";
 export function convertPriceVnd(props: number) {
   let newPrice;
   return (newPrice = props.toLocaleString("it-IT", {
@@ -69,6 +70,12 @@ export default function ProductDetail() {
     .map((item) => item)
     .filter((item: data) => item.id === params.id);
   const itemRender: data = dataRender[0];
+  const relatedProduct = data
+    .map((item) => item)
+    .filter(
+      (item: data) =>
+        item.category === itemRender.category && item.id !== itemRender.id
+    );
   const [currentColor, setCurrentColor] = useState("");
   const [currentSize, setCurrentSize] = useState("");
   const isColorSelected = (color: string) => {
@@ -303,6 +310,10 @@ export default function ProductDetail() {
         </div>
       </div>
       <ServiceComponent />
+      <div className={`container-fluid ${styles.container_related}`}>
+        <h4>Gợi ý cho bạn</h4>
+      </div>
+      <SlideCardItem props={relatedProduct} />
       <ToastContainer />
     </div>
   );

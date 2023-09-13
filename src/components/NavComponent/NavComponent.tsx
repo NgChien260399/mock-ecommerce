@@ -124,31 +124,14 @@ const NavComponent = () => {
                     <Submenu categoryData={CAT_Women} />
                   </div>
                   <div>
-                    <NavLink to="/newmen">Nam</NavLink>
+                    <NavLink to="/men">Nam</NavLink>
                     <Submenu categoryData={CAT_Men} />
                   </div>
                   <div>
                     <NavLink to="/child">Trẻ em</NavLink>
                   </div>
                   <div>
-                    <NavLink style={{ color: "red" }} to="/product/8TS23S004">
-                      1
-                    </NavLink>
-                  </div>
-                  <div>
-                    <NavLink style={{ color: "red" }} to="/product/8TS23S021">
-                      2
-                    </NavLink>
-                  </div>
-                  <div>
-                    <NavLink style={{ color: "red" }} to="/product/8TH23S003">
-                      3
-                    </NavLink>
-                  </div>
-                  <div>
-                    <NavLink style={{ color: "red" }} to="/product/8TA23S002">
-                      4
-                    </NavLink>
+                    <NavLink to="/newmen">Nam 2</NavLink>
                   </div>
                 </div>
               </div>
