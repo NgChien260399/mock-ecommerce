@@ -4,6 +4,7 @@ import { productData } from "./ProductData";
 import styles from "./MenProduct.module.css";
 import Breadcrumb from 'react-bootstrap/Breadcrumb';
 import { NavLink } from "react-router-dom";
+import MultiRangeSlider from "../../components/MultiRangeSlider/MultiRangeSlider";
 
 const BreadcrumbExample = () => {
   return (
@@ -85,6 +86,43 @@ const Types = (props: any) => {
 
 const MenProductPage = () => {
   const [type, setType] = useState<string>("ao")
+
+  const listColors = [
+    "Black",
+    "Silver",
+    "Gray",
+    "White",
+    "Maroon",
+    "Red",
+    "Purple",
+    "Fuchsia",
+    "Green",
+    "Lime",
+    "Olive",
+    "Yellow",
+    "Navy",
+    "Blue",
+    "Teal",
+    "Aqua",
+  ];
+  const listSizes = ["S", "M", "L", "XL", "XXL"];
+
+  const [filterSearch, setFilterSearch] = useState<any>({
+    category: "",
+    size: [],
+    color: [],
+    priceMinFilter: 0,
+    priceMaxFilter: 2000000,
+  });
+
+  const handleSliderChange = ({ min, max }: { min: number; max: number }) => {
+    setFilterSearch((prevState: any) => ({
+      ...prevState,
+      priceMinFilter: min,
+      priceMaxFilter: max,
+    }));
+  };
+
   
   return (
     <div className={styles.wrapper}>
@@ -104,8 +142,55 @@ const MenProductPage = () => {
           <NavLink to="" className={styles.category} onClick={() => setType("hang-moi")}>Hàng mới</NavLink>
           <NavLink to="" className={styles.category} onClick={() => setType("gia-tot")}>Giá tốt</NavLink>
           <NavLink to="" className={styles.category} onClick={() => setType("craceful-active")}>Craceful Active</NavLink>
-        </div>
 
+          <div className={styles.label}>Màu sắc</div>
+            <div className={styles.color_option}>
+              {listColors.map((item, index) => (
+                <div
+                  key={index}
+                  className={`${styles.box_wrap} ${
+                    filterSearch.color.includes(item) ? styles.selected : ""
+                  }`}
+                  onClick={() =>
+                    setFilterSearch((prevState: any) => {
+                      if (
+                        prevState.color.length > 0 &&
+                        prevState.color.includes(item)
+                      ) {
+                        return {
+                          ...prevState,
+                          color: [
+                            ...prevState.color
+                              .map((value: any) => value)
+                              .filter((value: any) => value !== item),
+                          ],
+                        };
+                      } else
+                        return {
+                          ...prevState,
+                          color: [...prevState.color, item],
+                        };
+                    })
+                  }
+                >
+                  <div
+                    className={styles.item_color}
+                    style={{ backgroundColor: item }}
+                  ></div>
+                </div>
+              ))}
+            </div>
+            <div className={`${styles.label} d-none d-lg-block`}>
+              Khoảng giá
+            </div>
+            <div style={{ position: "relative" }} className="d-none d-lg-block">
+              <MultiRangeSlider
+                min={0}
+                max={2000000}
+                onChange={handleSliderChange}
+              />
+            </div>
+        </div>
         <div className={styles.main}>
           {type === "ao" && (
             <div>
@@ -577,6 +662,8 @@ const MenProductPage = () => {
     </div>
   )
 }
+
+
 
 export default MenProductPage;
 
