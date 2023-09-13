@@ -2,7 +2,7 @@ import styles from "./cartpopup.module.css";
 import { useDispatch, useSelector } from "react-redux";
 import { toggleCartPopup } from "../../redux/actions/DisplayCart.action";
 import { Button, Offcanvas } from "react-bootstrap";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import {
   decreaseQtyItem,
   increaseQtyItem,
@@ -22,6 +22,7 @@ export default function CartPopupComponent() {
   const totalPriceNotSale = cartItem.reduce((acc: any, item: any) => {
     return acc + item.price * item.qty;
   }, 0);
+  const navigate = useNavigate();
   return (
     <div>
       <Offcanvas
@@ -158,6 +159,10 @@ export default function CartPopupComponent() {
                   variant="danger"
                   size="lg"
                   className={styles.checkout_btn}
+                  onClick={() => {
+                    dispatch(toggleCartPopup());
+                    navigate("/order");
+                  }}
                 >
                   Thanh toán
                 </Button>

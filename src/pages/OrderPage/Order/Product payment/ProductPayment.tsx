@@ -1,5 +1,5 @@
-import React from 'react';
-import styles from './ProductPayment.module.css';
+import React from "react";
+import styles from "./ProductPayment.module.css";
 
 interface Product {
   id: number;
@@ -8,6 +8,12 @@ interface Product {
   size: string;
   price: number;
   quantity: number;
+  imageUrl: string;
+  product_name: string;
+  sale: any;
+  isSale: boolean;
+  priceSale: number;
+  qty: number;
 }
 
 interface FormProps {
@@ -22,27 +28,33 @@ const ProductPayment: React.FC<FormProps> = ({ products }) => {
         <React.Fragment key={product.id}>
           <div className={styles.productContainer}>
             <img
-              src={product.img}
-              alt={product.name}
+              src={product.imageUrl}
+              alt={product.product_name}
               className={styles.productImage}
             />
             <div className={styles.productDetails}>
-              <h3 className={styles.productName}>{product.name}</h3>
+              <h3 className={styles.productName}>{product.product_name}</h3>
               <p className={styles.productInfo}>
-                 {product.color} |  {product.size}
+                {product.color} | {product.size}
               </p>
               <div className={styles.priceQuantityContainer}>
                 <div className={styles.flexContainer}>
-                  <p className={styles.price}>Giá: {product.price}đ</p>
+                  <p className={styles.price}>
+                    Giá:{" "}
+                    {product.sale.isSale
+                      ? product.sale.priceSale
+                      : product.price}
+                    đ
+                  </p>
                   <div className={styles.center}></div>
                 </div>
-                <p className={styles.quantity}>Số lượng: {product.quantity}</p>
+                <p className={styles.quantity}>Số lượng: {product.qty}</p>
               </div>
             </div>
           </div>
           {index !== products.length - 1 && products.length > 1 && (
             <hr className={styles.separator} />
-          )} 
+          )}
         </React.Fragment>
       ))}
     </div>

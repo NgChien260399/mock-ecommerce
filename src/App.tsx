@@ -6,6 +6,8 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { routes } from "./routes";
 import CartPopupComponent from "./components/CartPopup/cartpopup";
 import ShipOrder from "./pages/OrderPage/Order/ShipOrder";
+import { ToastContainer, toast } from "react-toastify";
+
 function App() {
   return (
     <BrowserRouter>
@@ -23,7 +25,6 @@ function App() {
                     <CartPopupComponent />
                     <route.page />
                     <FooterComponent />
-                    <ShipOrder/>
                   </>
                 ) : (
                   <route.page />
@@ -33,6 +34,7 @@ function App() {
           />
         ))}
       </Routes>
+      <ToastContainer />
     </BrowserRouter>
   );
 }

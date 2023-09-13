@@ -9,6 +9,7 @@ import "./HomPage.css";
 import offerStyle from "./HomePage.module.css";
 import { Col, Row } from "react-bootstrap";
 import SuggestionForU from "../../components/SuggestionForU/SuggestionForU";
+import NewHotDeal from "../../components/NewHotDealComponent/NewHotDeal";
 
 const HomePage = () => {
   const settings = {
@@ -39,6 +40,7 @@ const HomePage = () => {
       <ServiceItemComponent />
       <Divider sx={{ borderBottomWidth: 3 }} />
       <HotDeal />
+      <NewHotDeal />
 
       {/* offer */}
       <div className={offerStyle.offer}>
