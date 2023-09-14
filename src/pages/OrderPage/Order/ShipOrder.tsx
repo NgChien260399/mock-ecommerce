@@ -25,7 +25,7 @@ const ShipOrder = () => {
           <Payment />
           <Product />
         </div>
-        <div className={styles.paymentContainer}>
+        <div className={`${styles.paymentContainer} order-container`}>
           <Order
             orderValue={totalPrice}
             discount={totalPrice - totalPriceAfterSale}
