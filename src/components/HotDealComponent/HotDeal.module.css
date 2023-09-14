@@ -1,16 +1,40 @@
-.box {
-  background-color: #63b1bc;
-  border-radius: 2px;
-  line-height: 28px;
-  color: #fff;
-  min-width: 36px;
-  width: 36px;
+.wrapper {
+  height: auto;
+  font-family: "Montserrat", serif;
+  margin: 0 auto;
+  max-width: none;
+  padding: 20px 7.64vw;
+
 }
-.text {
-  width: 13px;
-  color: #63b1bc;
-  font-size: 30px;
+
+.navBarWrapper {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+  
 }
-a {
-  text-decoration: none;
+
+.flashDealsLable {
+  padding: 0;
+  margin-right: 20px;
+  margin-top: 12px;
+  font-family: "Montserrat", serif;
+  color: #da291c;
+  font-weight: "bolder";
 }
+
+.clockContainer {
+  display: flex;
+  text-align: center;
+  align-items: center;
+}
+
+.clockItem {
+  background-color: #000;
+  border-radius: 5px;
+  line-height: 26px;
+  color: white;
+  min-width: 38px;
+  margin-right: 10px;
+}
+

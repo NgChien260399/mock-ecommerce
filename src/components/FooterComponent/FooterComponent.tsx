@@ -36,17 +36,17 @@ const SubscribeForm = () => {
           phong cách sống.
         </p>
         <div className={styles.inputContainer}>
-          <ToastContainer />
           <TextField
             type="email"
             placeholder="Nhập địa chỉ email của bạn"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
+            style={{borderRadius:"none"}}
           />
           <Button
             variant="contained"
             color="error"
-            style={{ borderRadius: "0" }}
+        
             className={styles.footerButton}
             onClick={handleSubscribe}
           >
