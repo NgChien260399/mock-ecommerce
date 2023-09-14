@@ -17,7 +17,7 @@ const ShipOrder = () => {
     
   return (
     <>
-    <form action="">
+    <form  style={{fontFamily:"Montserrat"}}>
       <div className={styles.formContainer}>
         <div>
           <ReactFormik />
