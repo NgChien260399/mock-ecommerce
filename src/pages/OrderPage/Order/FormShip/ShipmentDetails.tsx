@@ -383,7 +383,7 @@ export const ReactFormik: React.FC = () => {
               {" "}
               <label
                 htmlFor="province"
-                className={`${styles.labelShipmentDetails} ${styles.titleShipmentDetails}`}
+                className={`${styles.labelShipmentDetails} ${styles.titleShipmentDetails}  ${styles.errorShipmentDetails}`}
               >
                 {" "}
                 Tỉnh / Thành phố{" "}
@@ -408,7 +408,7 @@ export const ReactFormik: React.FC = () => {
             <div className="form-group">
               <label
                 htmlFor="district"
-                className={`${styles.labelShipmentDetails} ${styles.titleShipmentDetails}`}
+                className={`${styles.labelShipmentDetails} ${styles.titleShipmentDetails}  ${styles.errorShipmentDetails}`}
               >
                 Huyện
                 <Field as="select" name="district" className="form-control">
@@ -436,7 +436,7 @@ export const ReactFormik: React.FC = () => {
               {" "}
               <label
                 htmlFor="addressType"
-                className={`${styles.labelShipmentDetails} ${styles.titleShipmentDetails}`}
+                className={`${styles.labelShipmentDetails} ${styles.titleShipmentDetails}  ${styles.errorShipmentDetails}`}
               >
                 {" "}
                 Loại địa chỉ{" "}
@@ -471,7 +471,7 @@ export const ReactFormik: React.FC = () => {
             <div className="form-group">
               <label
                 htmlFor="note"
-                className={`${styles.labelShipmentDetails} ${styles.titleShipmentDetails}`}
+                className={`${styles.labelShipmentDetails} ${styles.titleShipmentDetails}  ${styles.errorShipmentDetails}`}
               >
                 Ghi chú
                 <Field as="textarea" name="note" className="form-control" />
@@ -482,7 +482,7 @@ export const ReactFormik: React.FC = () => {
                 className="text-danger"
               />
             </div>
-
+                  
            
           </div>
         </Form>

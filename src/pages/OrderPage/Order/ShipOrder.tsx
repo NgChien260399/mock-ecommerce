@@ -13,8 +13,11 @@ const ShipOrder = () => {
   const totalPriceAfterSale = dataFromCart.reduce((acc: any, item: any) => {
     return acc + (item.sale.isSale ? item.sale.priceSale : 0) * item.qty;
   }, 0);
+
+    
   return (
     <>
+    <form action="">
       <div className={styles.formContainer}>
         <div>
           <ReactFormik />
@@ -22,7 +25,7 @@ const ShipOrder = () => {
           <Payment />
           <Product />
         </div>
-        <div className={styles.paymentContainer}>
+        <div className={`${styles.paymentContainer} order-container`}>
           <Order
             orderValue={totalPrice}
             discount={totalPrice - totalPriceAfterSale}
@@ -32,6 +35,8 @@ const ShipOrder = () => {
           />
         </div>
       </div>
+   
+    </form>
     </>
   );
 };

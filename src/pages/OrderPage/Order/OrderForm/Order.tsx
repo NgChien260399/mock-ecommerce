@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { toast, ToastContainer, Slide, Zoom } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import styles from './Order.module.css';
+import { Button } from '@mui/material';
 
 interface OrderDetails {
   orderValue: number;
@@ -32,6 +33,7 @@ const Order: React.FC<OrderDetails> = ({
       progress: undefined,
       transition: Slide, 
     });
+    
   };
 
   return (
@@ -59,9 +61,9 @@ const Order: React.FC<OrderDetails> = ({
           <span className={styles.label1}>Tổng tiền thanh toán:</span>
           <span className={styles.value}>{totalAmount.toLocaleString()} ₫</span>
         </div>
-        <button className={styles.button} onClick={handlePayment}>
+        <Button variant='contained' color='error' className={styles.button} onClick={handlePayment}>
           Thanh Toán
-        </button>
+        </Button>
       </div>
       <ToastContainer transition={Zoom} />
     </div>

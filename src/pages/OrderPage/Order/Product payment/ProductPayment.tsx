@@ -33,7 +33,7 @@ const ProductPayment: React.FC<FormProps> = ({ products }) => {
               className={styles.productImage}
             />
             <div className={styles.productDetails}>
-              <h3 className={styles.productName}>{product.product_name}</h3>
+              <p className={styles.productName}>{product.product_name}</p>
               <p className={styles.productInfo}>
                 {product.color} | {product.size}
               </p>

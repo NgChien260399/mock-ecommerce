@@ -18,7 +18,7 @@ const UserProfile = () => {
     navigate("/signin");
   };
 
-  ////////////////////////////////
+  
 
   const [userData, setUserData] = useState<any>({});
   const [editableData, setEditableData] = useState<any>({
@@ -73,123 +73,127 @@ const UserProfile = () => {
         <Typography variant="h4" style={{ marginBottom: 20 }}>
           Thông tin tài khoản
         </Typography>
-        <Box>
-          <Grid container spacing={3}>
-            <Grid item xs={6}>
-              <TextField
-                fullWidth
-                label="Email"
-                margin="normal"
-                type="email"
-                name="email"
-                value={editableData.email}
-                variant="outlined"
-                onChange={handleInputChange}
-              />
-            </Grid>
-            <Grid item xs={6}>
-              <TextField
-                fullWidth
-                label="Họ"
-                margin="normal"
-                type="text"
-                name="firstname"
-                value={editableData.firstname}
-                variant="outlined"
-                onChange={handleInputChange}
-              />
-            </Grid>
-            <Grid item xs={6}>
-              <TextField
-                fullWidth
-                label="Tên"
-                margin="normal"
-                type="text"
-                name="lastname"
-                value={editableData.lastname}
-                variant="outlined"
-                onChange={handleInputChange}
-              />
-            </Grid>
-            <Grid item xs={6}>
-              <TextField
-                fullWidth
-                label="Giới tính"
-                margin="normal"
-                type="text"
-                name="gender"
-                value={editableData.gender}
-                variant="outlined"
-                onChange={handleInputChange}
-              />
-            </Grid>
-            <Grid item xs={6}>
-              <TextField
-                fullWidth
-                label="Số điện thoại"
-                margin="normal"
-                type="tel"
-                name="phone"
-                value={editableData.phone}
-                variant="outlined"
-                onChange={handleInputChange}
-              />
-            </Grid>
-            <Grid item xs={6}>
-              <TextField
-                fullWidth
-                label="Địa chỉ"
-                margin="normal"
-                type="text"
-                name="address"
-                value={editableData.address}
-                variant="outlined"
-                onChange={handleInputChange}
-              />
-            </Grid>
-            {/* <Grid item xs={6}>
-            <TextField
-              fullWidth
-              label="Avatar"
-              margin="normal"
-              type="text"
-              name="avatar"
-              value={editableData.avatar}
-              variant="outlined"
-              disabled={!isEditing}
-              onChange={handleInputChange}
-            />
-          </Grid>
-          <Grid item xs={6}>
-            <TextField
-              fullWidth
-              label="Role"
-              margin="normal"
-              type="text"
-              name="role"
-              value={editableData.role || ""}
-              variant="outlined"
-              disabled={!isEditing}
-              onChange={handleInputChange}
-            />
-          </Grid> */}
-          </Grid>
+        <Box display="flex" margin="30px">
+          {/* Form avatar */}
+          <Box
+            flex="1"
+            border="1px solid #ccc"
+            borderRadius="5px"
+            padding="20px"
+            marginRight="20px"
+          >
+            <Typography variant="h5" style={{ marginBottom: 20 }}>
+              Hình đại diện
+            </Typography>
 
-          <Box mt={2}>
-            <Button variant="contained" color="primary" onClick={handleSave}>
-              LƯU
-            </Button>
-            <Button variant="contained">HỦY BỎ</Button>
+            <img
+              style={{
+                width: "150px",
+                height: "150px",
+                border: "1px solid black",
+                borderRadius: "50%",
+               
+              }}
+            />
           </Box>
 
-          <Box mt={2}>
-            <Button variant="contained" color="primary">
-              LÀM MỚI
-            </Button>
+          <Box
+            flex="2"
+            border="1px solid #ccc"
+            borderRadius="5px"
+            padding="20px"
+          >
+            <Grid container spacing={3}>
+              <Grid item xs={6}>
+                <TextField
+                  fullWidth
+                  label="Email"
+                  margin="normal"
+                  type="text"
+                  name="email"
+                  value={editableData.email}
+                  variant="outlined"
+                  onChange={handleInputChange}
+                />
+              </Grid>
+              <Grid item xs={6}>
+                <TextField
+                  fullWidth
+                  label="Họ"
+                  margin="normal"
+                  type="text"
+                  name="firstname"
+                  value={editableData.firstname}
+                  variant="outlined"
+                  onChange={handleInputChange}
+                />
+              </Grid>
+              <Grid item xs={6}>
+                <TextField
+                  fullWidth
+                  label="Tên"
+                  margin="normal"
+                  type="text"
+                  name="lastname"
+                  value={editableData.lastname}
+                  variant="outlined"
+                  onChange={handleInputChange}
+                />
+              </Grid>
+              <Grid item xs={6}>
+                <TextField
+                  fullWidth
+                  label="Giới tính"
+                  margin="normal"
+                  type="text"
+                  name="gender"
+                  value={editableData.gender}
+                  variant="outlined"
+                  onChange={handleInputChange}
+                />
+              </Grid>
+              <Grid item xs={6}>
+                <TextField
+                  fullWidth
+                  label="Số điện thoại"
+                  margin="normal"
+                  type="tel"
+                  name="phone"
+                  value={editableData.phone}
+                  variant="outlined"
+                  onChange={handleInputChange}
+                />
+              </Grid>
+              <Grid item xs={6}>
+                <TextField
+                  fullWidth
+                  label="Địa chỉ"
+                  margin="normal"
+                  type="text"
+                  name="address"
+                  value={editableData.address}
+                  variant="outlined"
+                  onChange={handleInputChange}
+                />
+              </Grid>
+            </Grid>
+
+            <Box mt={2}>
+              <Button
+                variant="contained"
+                color="primary"
+                onClick={handleSave}
+                style={{ marginRight: "10px" }}
+              >
+                LƯU Mới
+              </Button>
+              <Button variant="contained" color="error" onClick={handleLogout}>
+                Đăng xuất
+              </Button>
+            </Box>
           </Box>
         </Box>
       </Container>
-      <button onClick={handleLogout}>Đăng xuất</button>
     </div>
   );
 };
