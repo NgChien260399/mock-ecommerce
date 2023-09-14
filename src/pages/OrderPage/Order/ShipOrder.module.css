@@ -6,3 +6,10 @@
     padding: 2%;
   }
   
+  @media (max-width: 768px) {
+    .formContainer {
+      grid-template-columns:  1fr;
+    }
+  }
+  
+ 
