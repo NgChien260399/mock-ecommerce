@@ -252,6 +252,7 @@ input[type="email"] {
     flex: 100%;
     margin-bottom: 30px;
     padding: 0 10px;
+    margin: 0;
   }
   .footerEnd {
     margin-top: 50px;
