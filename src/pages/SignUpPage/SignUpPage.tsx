@@ -1,4 +1,6 @@
-import React, { useState } from "react";
+import React from "react";
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import CssBaseline from "@mui/material/CssBaseline";
 import LockOutlinedIcon from "@mui/icons-material/LockOutlined";
 import { useFormik } from "formik";
@@ -43,15 +45,41 @@ export default function SignInSide() {
       try {
         if (formik.isValid) {
           // Kiểm tra xem form có hợp lệ không
-          const response = await axios.post("/auth/register", values);
-          console.log("Registered successfully!", response.data);
-          navigate("/signin");
-          // Xử lý đăng ký thành công, ví dụ: chuyển hướng đến trang đăng nhập
+          await axios.post("/auth/register", values);
+          toast.success("Đăng ký thành công!", {
+            position: "bottom-right",
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: false,
+            draggable: false,
+            progress: undefined,
+            theme: "dark",
+            autoClose: 2000,
+            onClose: () => {
+              setTimeout(() => {
+                navigate("/signin");
+              }, 2500);
+            },
+          });
         } else {
           console.error("Form is not valid.");
         }
       } catch (error) {
         console.error("Registration failed!", error);
+        toast.error(
+          "Đăng ký thất bại! Vui lòng kiểm tra lại tài khoản, mật khẩu.",
+          {
+            position: "bottom-right",
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: false,
+            draggable: false,
+            progress: undefined,
+            theme: "dark",
+            autoClose: 2000,
+            onClose: () => {},
+          }
+        );
       }
     },
   });

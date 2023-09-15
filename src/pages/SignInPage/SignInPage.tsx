@@ -13,13 +13,14 @@ import {
   Button,
   Avatar,
   Link,
-  Checkbox,
   Box,
   Grid,
   Typography,
 } from "@mui/material";
 import axios from "../../axiosInterceptor";
 import { useNavigate } from "react-router";
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 export default function SignInSide() {
   const navigate = useNavigate();
@@ -40,11 +41,38 @@ export default function SignInSide() {
     onSubmit: async (values) => {
       try {
         const response = await axios.post("/auth/login", values);
-        console.log("Logged in successfully!", response.data);
         localStorage.setItem("token", response.data.access_token);
-        navigate("/");
+        toast.success("Đăng nhập thành công!", {
+          position: "bottom-right",
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: false,
+          draggable: false,
+          progress: undefined,
+          theme: "dark",
+          autoClose: 2000,
+          onClose: () => {
+            setTimeout(() => {
+              navigate("/");
+            }, 2500);
+          },
+        });
       } catch (error) {
         console.error("Login failed!", error);
+        toast.error(
+          "Đăng nhập thất bại! Tài khoản hoặc mật khẩu không chính xác.",
+          {
+            position: "bottom-right",
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: false,
+            draggable: false,
+            progress: undefined,
+            theme: "dark",
+            autoClose: 1500,
+            onClose: () => {},
+          }
+        );
       }
     },
   });
@@ -113,10 +141,10 @@ export default function SignInSide() {
               error={formik.touched.password && Boolean(formik.errors.password)}
               helperText={formik.touched.password && formik.errors.password}
             />
-            <FormControlLabel
+            {/* <FormControlLabel
               control={<Checkbox value="remember" color="primary" />}
               label="Remember me"
-            />
+            /> */}
             <Button
               type="submit"
               fullWidth
