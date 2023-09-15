@@ -152,7 +152,6 @@ input[type="email"] {
 .footerSection {
   flex: 1;
   padding-top: 3%;
-  max-width: none;
   margin-left: 50px;
   font-family: "Montserrat", sans-serif;
 }
@@ -253,6 +252,7 @@ input[type="email"] {
     margin-bottom: 30px;
     padding: 0 10px;
     margin: 0;
+    
   }
   .footerEnd {
     margin-top: 50px;
