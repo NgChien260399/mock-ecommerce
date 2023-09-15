@@ -1,10 +1,8 @@
-// import { Box } from "@mui/material";
-// import KeyboardDoubleArrowRightIcon from "@mui/icons-material/KeyboardDoubleArrowRight";
 import styles from "./SuggestionForU.module.css"
 import ReactPaginate from 'react-paginate';
 import { useState } from "react";
 import CardComponent from "../HotDealComponent/CardComponent";
-import { productData } from "../../pages/MenProductPage/ProductData";
+import productData from "../../../public/data-product/data.json";
 
 const ProductsOnPage = (props: any) => {
   return (
@@ -13,11 +11,12 @@ const ProductsOnPage = (props: any) => {
           <div key={i} className={styles.productItem}>
             <CardComponent key={i}
               imageUrl={item.imageUrl}
-              productName={item.productName}
-              salePrice={item.salePrice}
+              productName={item.product_name}
+              salePrice={item.sale.priceSale}
               price={item.price}
-              percentDiscount={item.percentDiscount}
               colors={item.colors}
+              isSale={item.sale.isSale}
+              id={item.id}
             />
           </div>
         ))}
@@ -28,7 +27,7 @@ const ProductsOnPage = (props: any) => {
 const SuggestionComponent = () => {
   const [pageCount, setPageCount] = useState<number>(1)
   // const [totalCards, setTotalCards] = useState<number>(0)
-  const [totalPages, setTotalPages] = useState<number>(2)
+  const [totalPages] = useState<number>(2)
 
   const handlePageClick = (event: any) => {
     if(event.selected + 1 === 1) {
