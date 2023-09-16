@@ -10,7 +10,7 @@ import SignUpPage from "../pages/SignUpPage/SignUpPage";
 import LoginPage from "../pages/LoginPage/LoginPage";
 import ProductDetail from "../components/ProductDetail/ProductDetail";
 import NewMenPage from "../pages/NewMenPage/NewMen";
-import ShipOrder from "../pages/OrderPage/Order/ShipOrder";
+import ShipOrder from "../pages/OrderPage/Order/Order/ShipOrder";
 import UserProfile from "../pages/UserProfile/UserProfile";
 
 export const routes = [
