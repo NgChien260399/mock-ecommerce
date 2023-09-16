@@ -1,10 +1,7 @@
 
 import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
-import { productData } from '../../pages/MenProductPage/ProductData';
-// import { useDispatch } from "react-redux";
-// import { addItemToCart } from "../../redux/actions/CartItem.action";
-// import styles from "./HotDeal.module.css"
+import productData from '../../../public/data-product/data.json';
 import CardComponent from './CardComponent';
 
 const ProductComponent = () => {
@@ -34,11 +31,12 @@ const ProductComponent = () => {
       {productData.filter((items) => items.hotDeals).map((item, index) => (
         <CardComponent key={index}
           imageUrl={item.imageUrl}
-          productName={item.productName}
-          salePrice={item.salePrice}
+          productName={item.product_name}
+          salePrice={item.sale.priceSale}
           price={item.price}
-          percentDiscount={item.percentDiscount}
           colors={item.colors}
+          isSale={item.sale.isSale}
+          id={item.id}
         />
       ))}
         

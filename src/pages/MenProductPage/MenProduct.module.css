@@ -136,13 +136,6 @@
 .active {
   color: red;
 }
-@media only screen and (max-width: 576px) {
-  .size_option,
-  .color_option {
-    max-width: 100%;
-  }
-}
-
 
 @media only screen and (max-width: 1000px) {
   .productItem {
@@ -153,5 +146,9 @@
 @media only screen and (max-width: 600px) {
   .productItem {
     width: 100%;
+  }
+  .size_option,
+  .color_option {
+    max-width: 100%;
   }
 }
