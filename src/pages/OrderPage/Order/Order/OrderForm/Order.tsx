@@ -4,12 +4,33 @@ import 'react-toastify/dist/ReactToastify.css';
 import styles from './Order.module.css';
 import { Button } from '@mui/material';
 
+function areAllFieldsFilled(object) {
+  for (const key in object) {
+    if (object.hasOwnProperty(key)) {
+      const value = object[key];
+      if (value === undefined || value === null || value === '') {
+        return false;
+      }
+    }
+  }
+  return true;
+}
+
 interface OrderDetails {
   orderValue: number;
   discount: number;
   deliveryFee: number;
   loyaltyPoints: number;
   totalAmount: number;
+  orderDetail: {
+    user: string;
+    phoneNumber: string;
+    province: string;
+    district: string;
+    address: string;
+    addressType: string;
+    note: string;
+  },
 }
 
 const Order: React.FC<OrderDetails> = ({
@@ -18,10 +39,27 @@ const Order: React.FC<OrderDetails> = ({
   deliveryFee,
   loyaltyPoints,
   totalAmount,
+  orderDetail
 }) => {
   const [paymentStatus, setPaymentStatus] = useState('');
 
   const handlePayment = () => {
+    console.log(orderDetail);
+    console.log(areAllFieldsFilled(orderDetail));
+    if(!areAllFieldsFilled(orderDetail)) {
+      toast.error('Vui lòng nhập đầy đủ thông tin', {
+        position: 'top-right',
+        autoClose: 3000,
+        hideProgressBar: true,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        transition: Slide, 
+      });
+      return;
+    }
+
     setPaymentStatus('Thanh toán thành công');
     toast.success('Thanh toán thành công', {
       position: 'top-right',
