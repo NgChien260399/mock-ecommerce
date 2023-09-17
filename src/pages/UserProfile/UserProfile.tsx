@@ -115,8 +115,8 @@ const UserProfile = () => {
 
   return (
     <div>
-      <Container maxWidth="lg" style={{ marginBottom: "50px" }}>
-        <Typography variant="h4" style={{ margin: "30px 0" }}>
+      <Container maxWidth="lg" style={{ marginBottom: "30px" }}>
+        <Typography variant="h4" style={{ margin: "20px 0" }}>
           Thông tin tài khoản
         </Typography>
         <Grid container spacing={2}>
