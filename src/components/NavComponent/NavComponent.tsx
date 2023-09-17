@@ -47,7 +47,6 @@ const NavComponent = () => {
   // navigate login or user
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const navigate = useNavigate();
-
   useEffect(() => {
     const token = localStorage.getItem("token");
     if (token) {
@@ -56,10 +55,6 @@ const NavComponent = () => {
       setIsLoggedIn(false);
     }
   }, []);
-
-  const handleUSer = () => {
-    isLoggedIn ? navigate("/userprofile") : navigate("/signin");
-  };
 
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
@@ -229,7 +224,13 @@ const NavComponent = () => {
                     </div>
                     <span>Cửa hàng</span>
                   </div>
-                  <div className={styles.account} onClick={handleUSer}>
+                  <div
+                    className={styles.account}
+                    onClick={() => {
+                      isLoggedIn
+                        ? navigate("/userprofile")
+                        : navigate("/signin");
+                    }}>
                     <div>
                       <AccountCircleIcon />
                     </div>

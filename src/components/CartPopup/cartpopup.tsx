@@ -9,7 +9,19 @@ import {
   removeItemCart,
 } from "../../redux/actions/CartItem.action";
 import { convertPriceVnd } from "../ProductDetail/ProductDetail";
+import { useEffect, useState } from "react";
+
 export default function CartPopupComponent() {
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  useEffect(() => {
+    const token = localStorage.getItem("token");
+    if (token) {
+      setIsLoggedIn(true);
+    } else {
+      setIsLoggedIn(false);
+    }
+  }, []);
+
   const cartIsShow = useSelector(
     (state: any) => state.displayCartReducer.isShow
   );
@@ -28,18 +40,15 @@ export default function CartPopupComponent() {
       <Offcanvas
         placement="end"
         show={cartIsShow}
-        onHide={() => dispatch(toggleCartPopup())}
-      >
+        onHide={() => dispatch(toggleCartPopup())}>
         <Offcanvas.Header
           closeButton
-          style={{ borderBottom: " 1px solid #edf1f5" }}
-        >
+          style={{ borderBottom: " 1px solid #edf1f5" }}>
           <Offcanvas.Title>
             <h4
               style={{
                 fontFamily: '"Montserrat", sans-serif',
-              }}
-            >
+              }}>
               Giỏ hàng
             </h4>
           </Offcanvas.Title>
@@ -58,8 +67,9 @@ export default function CartPopupComponent() {
                           </Link>
                           <button
                             className={styles.remove_item_cart}
-                            onClick={() => dispatch(removeItemCart(item))}
-                          ></button>
+                            onClick={() =>
+                              dispatch(removeItemCart(item))
+                            }></button>
                         </div>
                       </div>
                       <div className={styles.itemDetails}>
@@ -70,8 +80,7 @@ export default function CartPopupComponent() {
                           <div className={styles.item_option}>
                             <span
                               className={styles.box_wrap}
-                              style={{ backgroundColor: item.color }}
-                            ></span>
+                              style={{ backgroundColor: item.color }}></span>
                             <span>{item.color}</span>
                           </div>
                           <div className={styles.item_option}>
@@ -110,8 +119,7 @@ export default function CartPopupComponent() {
                           <div className={styles.item_qty}>
                             <button
                               className={`${styles.btn_qty} ${styles.qty_min}`}
-                              onClick={() => dispatch(decreaseQtyItem(item))}
-                            >
+                              onClick={() => dispatch(decreaseQtyItem(item))}>
                               -
                             </button>
                             <input
@@ -122,8 +130,7 @@ export default function CartPopupComponent() {
                             />
                             <button
                               className={`${styles.btn_qty} ${styles.qty_max}`}
-                              onClick={() => dispatch(increaseQtyItem(item))}
-                            >
+                              onClick={() => dispatch(increaseQtyItem(item))}>
                               +
                             </button>
                           </div>
@@ -161,9 +168,8 @@ export default function CartPopupComponent() {
                   className={styles.checkout_btn}
                   onClick={() => {
                     dispatch(toggleCartPopup());
-                    navigate("/order");
-                  }}
-                >
+                    isLoggedIn ? navigate("/order") : navigate("/signin");
+                  }}>
                   Thanh toán
                 </Button>
               </div>
