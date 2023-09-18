@@ -28,6 +28,12 @@
   text-align: center;
   align-items: center;
 }
+.text {
+  /* width: 13px; */
+  color: black;
+  font-size: 24px;
+  font-weight: 600;
+}
 
 .clockItem {
   background-color: #000;
@@ -35,6 +41,7 @@
   line-height: 26px;
   color: white;
   min-width: 38px;
-  margin-right: 10px;
+  margin-right: 5px;
+  margin-left: 5px;
 }
 

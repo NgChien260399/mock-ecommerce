@@ -3,7 +3,7 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { CardMedia, Divider } from "@mui/material";
 import ServiceItemComponent from "../../components/ServiceComponent/ServiceComponent";
-import HotDeal from "../../components/HotDealComponent/HotDeal";
+import HotDeals from "../../components/HotDealComponent/HotDeal";
 import { Fragment } from "react";
 import "./HomPage.css";
 import offerStyle from "./HomePage.module.css";
@@ -39,7 +39,7 @@ const HomePage = () => {
       </Slider>
       <ServiceItemComponent />
       <Divider sx={{ borderBottomWidth: 3 }} />
-      <HotDeal />
+      <HotDeals />
 
       {/* <NewHotDeal /> */}
 
