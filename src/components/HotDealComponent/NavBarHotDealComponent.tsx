@@ -7,7 +7,7 @@ import styles from "./HotDeal.module.css";
 
 
 const NavBarHotDealComponent = () => {
-  const targetDate: any = new Date("2023-09-14T14:00:00");
+  const targetDate: any = new Date("2023-09-18T22:00:00");
 
   const [timeRemaining, setTimeRemaining] = useState({
     days: 0,

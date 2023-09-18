@@ -45,7 +45,7 @@ const ProductsList = (props: any) => {
 const ProductsSize = (props: any) => {
   return (
     <>
-      <div className={styles.type} style={{marginRight: "1000px"}}>
+      <div className={styles.type} style={{marginRight: "1000px",paddingLeft: "32px"}}>
         <label className={styles.categoryItem} style={{border: "1px solid black"}} htmlFor="">{props.type}</label>
       </div>
       {productData.filter((items) => items.sizes.includes(`${props.type}`)).map((item, i) => (
@@ -80,7 +80,7 @@ const ProductsColor = (props: any) => {
 
   return (
     <>
-      <div className={styles.type} style={{marginRight: "1000px"}}>
+      <div className={styles.type} style={{marginRight: "1000px",paddingLeft: "32px"}}>
         <label className={styles.categoryItem} style={{border: "1px solid black"}} htmlFor="">
           {props.type}
         </label>
@@ -167,6 +167,7 @@ const Types = (props: any) => {
 
 const MenProductPage = () => {
   const [type, setType] = useState<string>("ao")
+  // const [types, setTypes] = useState<string>("")
 
   const listColors = [
     "Black",
@@ -273,8 +274,6 @@ const MenProductPage = () => {
     }));
   };
 
-
-
   return (
     <div className={styles.wrapper}>
       <BreadcrumbExample />
@@ -341,7 +340,7 @@ const MenProductPage = () => {
           =</div>
         </div>
         <div className={styles.main}>
-        {listSizes.map((item, index) => (
+          {listSizes.map((item, index) => (
             <div key={index}>
               {(type === item) && (
               <div className={styles.productList} >
@@ -361,19 +360,19 @@ const MenProductPage = () => {
             </div>
           ))}
           
-          {(type === "Gray" || type === "Maroon" || type === "Red" || type === "Lime" || type === "Olive") && (
+          {(type === "Gray" || type === "Maroon" || type === "Red" || type === "Lime" || type === "Olive" || type === "s") && (
               <div className={styles.productList} style={{display: "flex", justifyContent: "center"}}>
                 <h2 style={{fontSize: "36px", fontWeight: "500"}}>Sản Phẩm Hết Hàng!</h2>
               </div>
           )}
 
-          {listType.shirts.map((item, index) => (
+          {listType.shirts.map((item, index, orArr) => (
             <div key={index}>
               {type === item && (
             <div>
               <div className={styles.type}>
                 <Types setType={setType}
-                  type1="ao-phong" type2="ao-polo" type3="ao-so-mi" type4="ao-ba-lo"
+                  type1={orArr[0]} type2={orArr[1]} type3={orArr[2]} type4={orArr[3]}
                   type5="Áo phông" type6="Áo polo" type7="Áo sơ mi" type8="Áo ba lỗ"
                 />
               </div>
@@ -385,13 +384,13 @@ const MenProductPage = () => {
             </div>
           ))}
 
-          {listType.trousers.map((item, index) => (
+          {listType.trousers.map((item, index, orArr) => (
             <div key={index}>
               {type === item && (
             <div>
               <div className={styles.type}>
                 <Types setType={setType}
-                  type1="quan-shorts" type2="quan-jeans" type3="quan-ni" type4="quan-khaki"
+                  type1={orArr[0]} type2={orArr[1]} type3={orArr[2]} type4={orArr[3]}
                   type5="Quần shorts" type6="Quần jeans" type7="Quần nỉ" type8="Quần khaki"
                 />
               </div>
@@ -403,31 +402,31 @@ const MenProductPage = () => {
             </div>
           ))}
 
-          {listType.outerwear.map((item, index) => (
+          {listType.outerwear.map((item, index, orArr) => (
             <div key={index}>
               {type === item && (
             <div>
               <div className={styles.type}>
                 <Types setType={setType}
-                  type1="chong-nang" type2="ao-khoac-ngan" type3="ao-khoac-gio" type4="ao-khoac-chan-bong"
+                  type1={orArr[0]} type2={orArr[1]} type3={orArr[2]} type4={orArr[3]}
                   type5="Chống nắng" type6="Áo khoác ngắn" type7="Áo khoác gió" type8="Áo khoác chần bông"
                 />
               </div>
               <div className={styles.productList}>
                 <TypeProductsList type={type}/>
               </div>
-          </div>
+            </div>
           )}
             </div>
           ))}
 
-          {listType.homelothes.map((item, index) => (
+          {listType.homelothes.map((item, index, orArr) => (
             <div key={index}>
               {type === item && (
             <div>
               <div className={styles.type}>
                 <Types setType={setType}
-                  type1="bo-mac-nha" type2="quan-mac-nha" type3="ao-mac-nha"
+                  type1={orArr[0]} type2={orArr[1]} type3={orArr[2]}
                   type5="Bộ mặc nhà" type6="Quần mặc nhà" type7="Áo mặc nhà"
                 />
               </div>
@@ -439,13 +438,13 @@ const MenProductPage = () => {
             </div>
           ))}
 
-          {listType.clothesInside.map((item, index) => (
+          {listType.clothesInside.map((item, index, orArr) => (
             <div key={index}>
               {type === item && (
             <div>
               <div className={styles.type}>
                 <Types setType={setType}
-                  type1="quan-lot-nam" type2="ao-mac-trong" type3="giu-nhiet" type4=""
+                  type1={orArr[0]} type2={orArr[1]} type3={orArr[2]}
                   type5="Quần lót nam" type6="Áo mặc trong" type7="giữ nhiệt" type8=""
                 />
               </div>
@@ -457,13 +456,13 @@ const MenProductPage = () => {
             </div>
           ))}
 
-          {listType.accessory.map((item, index) => (
+          {listType.accessory.map((item, index, orArr) => (
             <div key={index}>
               {type === item && (
             <div>
               <div className={styles.type}>
                 <Types setType={setType}
-                  type1="phu-kien-item" type2="do-dung-ca-nhan" type3="" type4=""
+                  type1={orArr[0]} type2={orArr[1]}
                   type5="Phụ kiện" type6="Đồ dùng cá nhân" type7="" type8=""
                 />
               </div>
@@ -475,13 +474,13 @@ const MenProductPage = () => {
             </div>
           ))}
 
-          {listType.newProducts.map((item, index) => (
+          {listType.newProducts.map((item, index, orArr) => (
             <div key={index}>
               {type === item && (
             <div>
               <div className={styles.type}>
                 <Types setType={setType}
-                  type1="mac-tren" type2="mac-duoi" type3="" type4=""
+                  type1={orArr[0]} type2={orArr[1]}
                   type5="Mặc trên" type6="Mặc dưới" type7="" type8=""
                 />
               </div>
@@ -493,13 +492,13 @@ const MenProductPage = () => {
             </div>
           ))}
 
-          {listType.goodPrice.map((item, index) => (
+          {listType.goodPrice.map((item, index, orArr) => (
             <div key={index}>
               {type === item && (
             <div>
               <div className={styles.type}>
                 <Types setType={setType}
-                  type1="gia-tot-item" type2="dong-gia-tu-99k" type3="" type4=""
+                  type1={orArr[0]} type2={orArr[1]}
                   type5="Giá tốt" type6="Đồng giá từ 99k" type7="" type8=""
                 />
               </div>
@@ -511,13 +510,13 @@ const MenProductPage = () => {
             </div>
           ))}
 
-          {listType.cracefulActive.map((item, index) => (
+          {listType.cracefulActive.map((item, index, orArr) => (
             <div key={index}>
               {type === item && (
             <div>
               <div className={styles.type}>
                 <Types setType={setType}
-                  type1="craceful-active-item" type2="craceful-trendy" type3="" type4=""
+                  type1={orArr[0]} type2={orArr[1]}
                   type5="Craceful Active" type6="Craceful Trendy" type7="" type8=""
                 />
               </div>
@@ -529,7 +528,7 @@ const MenProductPage = () => {
             </div>
           ))}
         
-        {type === "ao" && (
+          {type === "ao" && (
             <div>
               <div className={styles.type}>
                 <Types setType={setType}
@@ -542,6 +541,8 @@ const MenProductPage = () => {
               </div>
             </div>
           )}
+
+          
           
           {type === "quan" && (
             <div>

@@ -27,7 +27,7 @@ const ProductComponent = () => {
 
   return (
     <div style={{margin: "0 -16px 0 -32px"}}>
-      <Carousel responsive={responsive}>
+      <Carousel responsive={responsive}  autoPlay={true}>
       {productData.filter((items) => items.hotDeals).map((item, index) => (
         <CardComponent key={index}
           imageUrl={item.imageUrl}

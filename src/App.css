@@ -85,3 +85,7 @@
 .btn-slide-custom .react-multi-carousel-list {
   margin-right: -18px;
 }
+
+.pagination {
+  justify-content: center;
+}

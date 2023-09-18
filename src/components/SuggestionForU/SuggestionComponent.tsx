@@ -53,11 +53,11 @@ const SuggestionComponent = () => {
     </div>
       <ReactPaginate
         breakLabel="..."
-        nextLabel="->"
+        nextLabel=">>"
         onPageChange={handlePageClick}
         pageRangeDisplayed={5}
         pageCount={totalPages}
-        previousLabel="<-"
+        previousLabel="<<"
         pageClassName="page-item"
         previousClassName="page-item"
         nextClassName="page-item"

@@ -39,7 +39,7 @@ const CardComponent = (props: any) => {
         {colorState === props.colors[3] && (
           <img className={styles.img} src={props.imageUrl[3]} alt="" />
         )}
-        {/* <img className={styles.img} src={props.imageUrl[0]} alt="" /> */}
+
         {/* <div className={styles.addToCart}>
           Thêm nhanh vào giỏ
           <div style={{marginTop: "15px", height: "30%"}}>
@@ -125,7 +125,10 @@ const CardComponent = (props: any) => {
           )}
         </div>
         <br />
-        <span className={styles.productName} onClick={() => {}}>{props.productName}</span>
+        
+        <Link to={`/product/${props.id}`}>
+          <span className={styles.productName} onClick={() => {}}>{props.productName}</span>
+        </Link>
         <br />
         <span className={styles.salePrice}>{props.salePrice} ₫</span>
         <br />
