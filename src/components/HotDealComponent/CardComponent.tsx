@@ -40,15 +40,6 @@ const CardComponent = (props: any) => {
           <img className={styles.img} src={props.imageUrl[3]} alt="" />
         )}
 
-        {/* <div className={styles.addToCart}>
-          Thêm nhanh vào giỏ
-          <div style={{marginTop: "15px", height: "30%"}}>
-            <button className={styles.sizesBtn} type="button" onClick={() => {}}>S</button>
-            <button className={styles.sizesBtn} type="button" onClick={() => {}}>M</button>
-            <button className={styles.sizesBtn} type="button" onClick={() => {}}>L</button>
-            <button className={styles.sizesBtn} type="button" onClick={() => {}}>XL</button>
-          </div>
-        </div> */}
       </div>
       </Link>
       
@@ -126,7 +117,7 @@ const CardComponent = (props: any) => {
         </div>
         <br />
         
-        <Link to={`/product/${props.id}`}>
+        <Link to={`/product/${props.id}`} style={{color: "black", textDecoration: "none"}}>
           <span className={styles.productName} onClick={() => {}}>{props.productName}</span>
         </Link>
         <br />
@@ -142,9 +133,7 @@ const CardComponent = (props: any) => {
         )}
         
         <br />
-        {/* <div className={styles.onlineExclusive}>
-          Độc quyền online
-        </div> */}
+        
       </div>
     </div>
   );

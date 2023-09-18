@@ -4,7 +4,7 @@ import productData from "../../../public/data-product/data.json";
 import styles from "./MenProduct.module.css";
 import Breadcrumb from 'react-bootstrap/Breadcrumb';
 import { NavLink, useLinkClickHandler } from "react-router-dom";
-import MultiRangeSlider from "../../components/MultiRangeSlider/MultiRangeSlider";
+// import MultiRangeSlider from "../../components/MultiRangeSlider/MultiRangeSlider";
 import Radio from "@mui/material/Radio";
 import React from "react";
 
@@ -266,13 +266,13 @@ const MenProductPage = () => {
     priceMaxFilter: 2000000,
   });
 
-  const handleSliderChange = ({ min, max }: { min: number; max: number }) => {
-    setFilterSearch((prevState: any) => ({
-      ...prevState,
-      priceMinFilter: min,
-      priceMaxFilter: max,
-    }));
-  };
+  // const handleSliderChange = ({ min, max }: { min: number; max: number }) => {
+  //   setFilterSearch((prevState: any) => ({
+  //     ...prevState,
+  //     priceMinFilter: min,
+  //     priceMaxFilter: max,
+  //   }));
+  // };
 
   return (
     <div className={styles.wrapper}>
@@ -328,7 +328,7 @@ const MenProductPage = () => {
               </div>
             ))}
           </div>
-          <div className={`${styles.label} d-none d-lg-block`}>
+          {/* <div className={`${styles.label} d-none d-lg-block`}>
             Khoảng giá
           </div>
           <div style={{ position: "relative" }} className="d-none d-lg-block">
@@ -337,7 +337,7 @@ const MenProductPage = () => {
               max={2000000}
               onChange={handleSliderChange}
             />
-          =</div>
+          =</div> */}
         </div>
         <div className={styles.main}>
           {listSizes.map((item, index) => (
