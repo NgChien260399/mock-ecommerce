@@ -54,7 +54,7 @@ export default function SignInSide() {
           onClose: () => {
             setTimeout(() => {
               navigate("/");
-            }, 2500);
+            }, 2000);
           },
         });
       } catch (error) {
