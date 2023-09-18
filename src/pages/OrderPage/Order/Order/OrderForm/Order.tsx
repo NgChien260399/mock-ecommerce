@@ -1,14 +1,17 @@
-import React, { useState } from 'react';
-import { toast, ToastContainer, Slide, Zoom } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
-import styles from './Order.module.css';
-import { Button } from '@mui/material';
+import React, { useState } from "react";
+import { toast, ToastContainer, Slide, Zoom } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import styles from "./Order.module.css";
+import { Button } from "@mui/material";
+import { useNavigate } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { clearCart } from "../../../../../redux/actions/CartItem.action";
 
 function areAllFieldsFilled(object) {
   for (const key in object) {
     if (object.hasOwnProperty(key)) {
       const value = object[key];
-      if (value === undefined || value === null || value === '') {
+      if (value === undefined || value === null || value === "") {
         return false;
       }
     }
@@ -30,7 +33,7 @@ interface OrderDetails {
     address: string;
     addressType: string;
     note: string;
-  },
+  };
 }
 
 const Order: React.FC<OrderDetails> = ({
@@ -39,39 +42,44 @@ const Order: React.FC<OrderDetails> = ({
   deliveryFee,
   loyaltyPoints,
   totalAmount,
-  orderDetail
+  orderDetail,
 }) => {
-  const [paymentStatus, setPaymentStatus] = useState('');
+  const navigate = useNavigate();
+  const dispatch = useDispatch();
+  const [paymentStatus, setPaymentStatus] = useState("");
 
   const handlePayment = () => {
     console.log(orderDetail);
     console.log(areAllFieldsFilled(orderDetail));
-    if(!areAllFieldsFilled(orderDetail)) {
-      toast.error('Vui lòng nhập đầy đủ thông tin', {
-        position: 'top-right',
+    if (!areAllFieldsFilled(orderDetail)) {
+      toast.error("Vui lòng nhập đầy đủ thông tin", {
+        position: "top-right",
         autoClose: 3000,
         hideProgressBar: true,
         closeOnClick: true,
         pauseOnHover: true,
         draggable: true,
         progress: undefined,
-        transition: Slide, 
+        transition: Slide,
       });
       return;
     }
 
-    setPaymentStatus('Thanh toán thành công');
-    toast.success('Thanh toán thành công', {
-      position: 'top-right',
+    setPaymentStatus("Thanh toán thành công");
+    toast.success("Thanh toán thành công", {
+      position: "top-right",
       autoClose: 3000,
       hideProgressBar: true,
       closeOnClick: true,
       pauseOnHover: true,
       draggable: true,
       progress: undefined,
-      transition: Slide, 
+      transition: Slide,
     });
-    
+    dispatch(clearCart());
+    setTimeout(() => {
+      navigate("/");
+    }, 3000);
   };
 
   return (
@@ -99,7 +107,12 @@ const Order: React.FC<OrderDetails> = ({
           <span className={styles.label1}>Tổng tiền thanh toán:</span>
           <span className={styles.value}>{totalAmount.toLocaleString()} ₫</span>
         </div>
-        <Button variant='contained' color='error' className={styles.button} onClick={handlePayment}>
+        <Button
+          variant="contained"
+          color="error"
+          className={styles.button}
+          onClick={handlePayment}
+        >
           Thanh Toán
         </Button>
       </div>

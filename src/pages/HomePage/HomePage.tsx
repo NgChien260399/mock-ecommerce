@@ -41,7 +41,7 @@ const HomePage = () => {
       <Divider sx={{ borderBottomWidth: 3 }} />
       <HotDeal />
 
-      <NewHotDeal />
+      {/* <NewHotDeal /> */}
 
       {/* offer */}
       <div className={offerStyle.offer}>

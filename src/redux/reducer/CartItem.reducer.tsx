@@ -68,6 +68,9 @@ const cartItemReduceer = (state = initState, action: actionProps) => {
       });
       return newState;
     }
+    case actionTypes.CLEAR_CART: {
+      return initState;
+    }
     default:
       return state;
   }

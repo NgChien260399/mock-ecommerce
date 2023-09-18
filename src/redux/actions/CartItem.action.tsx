@@ -11,3 +11,6 @@ export function decreaseQtyItem(payload: any) {
 export function removeItemCart(payload: any) {
   return { type: actionTypes.REMOVE_ITEM_CART, payload };
 }
+export function clearCart() {
+  return { type: actionTypes.CLEAR_CART };
+}
