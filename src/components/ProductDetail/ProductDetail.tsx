@@ -31,6 +31,16 @@ export interface data {
 }
 
 export default function ProductDetail() {
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  useEffect(() => {
+    const token = localStorage.getItem("token");
+    if (token) {
+      setIsLoggedIn(true);
+    } else {
+      setIsLoggedIn(false);
+    }
+  }, []);
+
   const navigate = useNavigate();
   const notifyError = (message: string, config: any) =>
     toast.error(message, config);
@@ -157,8 +167,7 @@ export default function ProductDetail() {
               showArrows={false}
               className={styles.gallery}
               autoPlay
-              infiniteLoop
-            >
+              infiniteLoop>
               {itemRender &&
                 itemRender.imageUrl.map((item, index) => (
                   <div key={index}>
@@ -220,12 +229,10 @@ export default function ProductDetail() {
                           item
                         )}`}
                         onClick={() => setCurrentColor(item)}
-                        key={index}
-                      >
+                        key={index}>
                         <div
                           className={styles.item_color}
-                          style={{ backgroundColor: item }}
-                        ></div>
+                          style={{ backgroundColor: item }}></div>
                       </div>
                     ))}
                 </div>
@@ -241,8 +248,7 @@ export default function ProductDetail() {
                       <div
                         key={index}
                         className={`${styles.box_wrap} ${isSizeSelected(item)}`}
-                        onClick={() => setCurrentSize(item)}
-                      >
+                        onClick={() => setCurrentSize(item)}>
                         {item}
                       </div>
                     ))}
@@ -253,8 +259,7 @@ export default function ProductDetail() {
                   <button
                     className="btn btn-warning btn-lg"
                     type="button"
-                    onClick={() => verifyAddItem(currentItemChoose)}
-                  >
+                    onClick={() => verifyAddItem(currentItemChoose)}>
                     Thêm vào giỏ hàng
                   </button>
 
@@ -264,12 +269,15 @@ export default function ProductDetail() {
                     onClick={() => {
                       verifyPayItem(currentItemChoose);
                       navigate(
-                        currentColor !== "" && currentSize !== ""
+                        currentColor !== "" && currentSize !== "" && isLoggedIn
                           ? "/order"
+                          : currentColor !== "" &&
+                            currentSize !== "" &&
+                            !isLoggedIn
+                          ? "/signin"
                           : "."
                       );
-                    }}
-                  >
+                    }}>
                     Mua ngay
                   </button>
                 </div>

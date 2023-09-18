@@ -1,6 +1,5 @@
 import React from "react";
 import CssBaseline from "@mui/material/CssBaseline";
-import FormControlLabel from "@mui/material/FormControlLabel";
 import LockOutlinedIcon from "@mui/icons-material/LockOutlined";
 import * as Yup from "yup";
 import { useFormik } from "formik";

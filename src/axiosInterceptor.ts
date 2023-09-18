@@ -18,7 +18,7 @@ instance.interceptors.request.use(
   },
   (error) => {
     // Handle request error
-    return Promise.reject(error); // làm thế nào để gọi được cái phjuowng thức này đấy, cái interceptor nó có sẵn trong axios rồi mk chọc vào là dc thôi
+    return Promise.reject(error);
   }
 );
 
